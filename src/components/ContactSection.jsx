@@ -137,7 +137,7 @@ export default function ContactSection({ onShowToast }) {
                   <div className="contact-item-detail">
                     <MapPin size={18} color="#818cf8" />
                     <div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Location & Timezone</div>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Current Location</div>
                       <div style={{ fontSize: '0.92rem', fontWeight: 500, color: 'var(--text-primary)' }}>
                         {personalData.location}
                       </div>

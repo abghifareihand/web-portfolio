@@ -7,9 +7,9 @@ export const personalData = {
   name: "Abghi Fareihan",
   nickname: "Abghi",
   handle: "abghi.dev",
-  role: "Mobile Developer (Flutter & Dart)",
+  role: "Mobile Developer (Flutter)",
   tagline: "Crafting fluid, high-performance cross-platform mobile apps with end-to-end backend integration.",
-  location: "Indonesia (WIB / UTC+7)",
+  location: "Jakarta Selatan, Indonesia",
   availability: "Available for Full-time & Mobile Contracts",
   statusColor: "#10b981", // Emerald active status
   email: "abghifareihand@gmail.com",
@@ -19,15 +19,15 @@ export const personalData = {
 
   bio: [
     "I am a Mobile Developer specializing in Flutter and Dart. I focus on building responsive, 60fps cross-platform mobile applications with clean architecture, robust state management, and reliable offline-first capabilities.",
-    "In addition to mobile engineering, I regularly build the supporting backend ecosystem—including Laravel RESTful APIs and web admin dashboards—enabling me to deliver complete, production-ready solutions from database design to the mobile user interface."
+    "In addition to mobile engineering, I regularly build the supporting backend ecosystemâ€”including Laravel RESTful APIs and web admin dashboardsâ€”enabling me to deliver complete, production-ready solutions from database design to the mobile user interface."
   ],
 
   // Key metrics displayed in Hero section
   metrics: [
-    { value: "3+", label: "Years Experience", detail: "Flutter & Mobile Ecosystem" },
+    { value: "2+", label: "Years Experience", detail: "Flutter & Mobile Ecosystem" },
     { value: "15+", label: "Mobile Apps & Systems", detail: "End-to-End Client Solutions" },
     { value: "99.8%", label: "Crash-Free Rate", detail: "Stability & Quality Target" },
-    { value: "60 FPS", label: "Fluid UI Performance", detail: "Optimized Rendering & Memory" }
+    { value: "100%", label: "On-Time Delivery", detail: "Milestone & Sprint Target" }
   ]
 };
 
@@ -35,6 +35,13 @@ export const projectCategories = [
   { id: "all", label: "All Projects" },
   { id: "mobile", label: "Mobile Apps" },
   { id: "backend", label: "Mobile & Backend" }
+];
+
+// Common screenshots array for demonstration
+const defaultScreenshots = [
+  "/projects/union-getah/screen1.png",
+  "/projects/union-getah/screen2.png",
+  "/projects/union-getah/screen3.png"
 ];
 
 export const projectsData = [
@@ -61,6 +68,7 @@ export const projectsData = [
       "Web Admin Dashboard for menu, order, and driver management",
       "Firebase Cloud Messaging (FCM) high-priority notification dispatch"
     ],
+    screenshots: defaultScreenshots,
     github: "https://github.com/abghifareihand/quickbite-delivery-ecosystem",
     liveDemo: "https://github.com/abghifareihand/quickbite-delivery-ecosystem#preview"
   },
@@ -87,6 +95,7 @@ export const projectsData = [
       "Initial online token sync with resilient offline fallback",
       "Automated two-way batch sync upon restoring network connectivity"
     ],
+    screenshots: defaultScreenshots,
     github: "https://github.com/abghifareihand/union-getah-mobile",
     liveDemo: "https://github.com/abghifareihand/union-getah-mobile"
   },
@@ -113,6 +122,7 @@ export const projectsData = [
       "Biometric local auth (FaceID / Fingerprint) fallback",
       "Custom Chart painter for smooth 60fps financial analytics"
     ],
+    screenshots: defaultScreenshots,
     github: "https://github.com/abghifareihand/finpulse-wallet",
     liveDemo: "https://github.com/abghifareihand/finpulse-wallet#preview"
   },
@@ -139,6 +149,7 @@ export const projectsData = [
       "Background service handling for push incoming calls",
       "Encrypted medical history caching via Hive"
     ],
+    screenshots: defaultScreenshots,
     github: "https://github.com/abghifareihand/mediconnect-telemedicine",
     liveDemo: "https://github.com/abghifareihand/mediconnect-telemedicine#demo"
   },
@@ -165,6 +176,7 @@ export const projectsData = [
       "Dynamic audio cache management with size quotas",
       "Light and dark mode synced with system preferences"
     ],
+    screenshots: defaultScreenshots,
     github: "https://github.com/abghifareihand/devpulse-reader",
     liveDemo: "https://github.com/abghifareihand/devpulse-reader"
   },
@@ -191,6 +203,7 @@ export const projectsData = [
       "Golden UI tests across multiple device screen ratios",
       "Automated CI/CD release workflow via GitHub Actions"
     ],
+    screenshots: defaultScreenshots,
     github: "https://github.com/abghifareihand/flutter-adaptive-kit",
     liveDemo: "https://github.com/abghifareihand/flutter-adaptive-kit"
   }
@@ -198,11 +211,11 @@ export const projectsData = [
 
 export const experienceData = [
   {
-    period: "Sep 2024 — Present",
+    period: "Sep 2024 â€” Present",
     role: "Mobile Developer",
     company: "Ignatia",
     location: "Remote",
-    type: "Full-Time (Remote)",
+    type: "Fulltime",
     description: "Driving core mobile development, feature engineering, and hardware integrations for a flagship Point of Sale (POS) application and integrated merchant services.",
     achievements: [
       "Stabilized and optimized the production POS mobile application through systematic bug fixing, performance profiling, and refactoring.",
@@ -213,21 +226,21 @@ export const experienceData = [
     stack: ["Flutter", "Dart", "POS Terminal SDK", "Dual-Screen API", "Mobile WebViews", "REST API", "Git"]
   },
   {
-    period: "Jan 2023 — Present",
-    role: "Freelance Mobile & Full-Stack Developer",
+    period: "Jan 2023 â€” Present",
+    role: "Freelance Mobile Developer",
     company: "Self-Employed",
     location: "Remote",
-    type: "Freelance",
-    description: "Delivering end-to-end client applications, ranging from standalone cross-platform Flutter mobile apps to integrated full-stack solutions with Laravel backends.",
+    type: "Project-Based",
+    description: "Delivering custom client applications on a project-based milestone model, ranging from standalone cross-platform Flutter mobile apps to integrated full-stack solutions with Laravel backends.",
     achievements: [
       "Shipped multiple custom mobile applications and end-to-end ecosystems (Flutter mobile client + Laravel REST API + Web Admin Dashboard).",
       "Managed the full product lifecycle: Figma UI slicing, database architecture (MySQL), secure authentication, and payment integrations.",
-      "Consistently delivered clean, maintainable architecture with robust error handling and smooth 60fps mobile responsiveness."
+      "Consistently delivered clean, maintainable architecture with robust error handling and smooth, fluid mobile performance and responsiveness."
     ],
     stack: ["Flutter", "Dart", "Laravel", "MySQL", "Clean Architecture", "RESTful API", "Payment Gateways"]
   },
   {
-    period: "Nov 2023 — Feb 2024",
+    period: "Nov 2023 â€” Feb 2024",
     role: "Mobile Developer Intern",
     company: "Perum Perhutani",
     location: "Indonesia",
@@ -241,8 +254,8 @@ export const experienceData = [
     stack: ["Flutter", "Dart", "Offline-First Architecture", "Bluetooth ESC/POS Printer", "SQLite / Hive", "REST API"]
   },
   {
-    period: "Aug 2022 — Dec 2022",
-    role: "Mobile Development Trainee (Flutter)",
+    period: "Aug 2022 â€” Dec 2022",
+    role: "Mobile Development Trainee",
     company: "Alterra Academy",
     location: "Indonesia",
     type: "Intensive Bootcamp",
@@ -302,6 +315,24 @@ export const skillsData = [
       { name: "Widget & Unit Testing", level: "Advanced", highlight: true },
       { name: "Flutter DevTools & Profiling", level: "Advanced", highlight: true },
       { name: "Figma to Pixel-Perfect UI", level: "Expert", highlight: true }
+    ]
+  }
+];
+export const educationData = [
+  {
+    period: "2019 — 2023",
+    degree: "Bachelor of Computer Science (S.Kom)",
+    institution: "Universitas Nasional",
+    major: "Informatics (Teknik Informatika)",
+    location: "Jakarta, Indonesia",
+    status: "Graduated in 2023",
+    description: "Completed undergraduate degree in Informatics with a strong focus on Software Engineering, Object-Oriented Programming (OOP), Algorithms & Data Structures, and Database Management Systems.",
+    highlights: [
+      "Software Engineering & Architecture",
+      "Object-Oriented Programming (OOP)",
+      "Data Structures & Algorithms",
+      "Database Systems (SQL / Relational)",
+      "Mobile Computing Fundamentals"
     ]
   }
 ];

@@ -3,10 +3,9 @@ import {
   ArrowDown, 
   Copy, 
   Check, 
-  MapPin, 
-  ExternalLink, 
-  Smartphone 
+  MapPin 
 } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './TechIcons';
 import { personalData } from '../data/portfolioData';
 
 export default function Hero({ onShowToast }) {
@@ -24,7 +23,7 @@ export default function Hero({ onShowToast }) {
   };
 
   return (
-    <section id="hero" className="section-wrapper hero-section">
+    <section id="about" className="section-wrapper hero-section">
       <div className="site-container">
         {/* Availability & Location Badges */}
         <div className="hero-badge-row">
@@ -46,20 +45,10 @@ export default function Hero({ onShowToast }) {
 
         {/* Bio / Value Proposition */}
         <p className="hero-bio">
-          Hi, I am <strong style={{ color: 'var(--text-primary)' }}>{personalData.name}</strong> ({personalData.nickname}) — {personalData.role}. {personalData.tagline}
+          Hi, I am <strong style={{ color: 'var(--text-primary)' }}>{personalData.name}</strong> — {personalData.role}. {personalData.tagline}
         </p>
 
-        {/* Core Tech Stack */}
-        <div className="hero-tech-strip">
-          <span className="hero-tech-label">Core Stack:</span>
-          {['Flutter', 'Dart', 'BLoC', 'Riverpod', 'Clean Architecture', 'REST APIs', 'Firebase', 'Isar'].map((tech) => (
-            <span key={tech} className="tech-chip">
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        {/* Action Buttons */}
+        {/* Action Buttons: Primary CTA + Quick Links */}
         <div className="hero-actions">
           <a href="#projects" className="btn btn-primary">
             <span>Explore Featured Apps</span>
@@ -80,10 +69,22 @@ export default function Hero({ onShowToast }) {
             href={personalData.github} 
             target="_blank" 
             rel="noreferrer" 
-            className="btn btn-ghost"
+            className="btn btn-secondary"
+            title="View GitHub Profile"
           >
-            <span>GitHub Profile</span>
-            <ExternalLink size={14} />
+            <GithubIcon size={16} />
+            <span>GitHub</span>
+          </a>
+
+          <a 
+            href={personalData.linkedin} 
+            target="_blank" 
+            rel="noreferrer" 
+            className="btn btn-secondary"
+            title="View LinkedIn Profile"
+          >
+            <LinkedinIcon size={16} />
+            <span>LinkedIn</span>
           </a>
         </div>
 

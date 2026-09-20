@@ -4,7 +4,9 @@ import {
   ExternalLink, 
   BookOpen, 
   Smartphone, 
-  FilterX 
+  FilterX,
+  Image as ImageIcon,
+  Lock
 } from 'lucide-react';
 import { GithubIcon } from './TechIcons';
 import { projectCategories, projectsData } from '../data/portfolioData';
@@ -13,7 +15,6 @@ export default function ProjectsSection({ onSelectProject }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Filter projects by category and search keyword
   const filteredProjects = useMemo(() => {
     return projectsData.filter((project) => {
       const matchCategory = 
@@ -38,7 +39,6 @@ export default function ProjectsSection({ onSelectProject }) {
   return (
     <section id="projects" className="section-wrapper">
       <div className="site-container">
-        {/* Section Header */}
         <div className="section-header">
           <div className="section-tag">
             <Smartphone size={14} />
@@ -107,7 +107,7 @@ export default function ProjectsSection({ onSelectProject }) {
         <div className="projects-grid">
           {filteredProjects.map((project) => (
             <article key={project.id} className="project-card">
-              {/* Card Header */}
+              {/* Card Header: Category & Status */}
               <div className="project-header">
                 <span className="project-category">{project.categoryLabel}</span>
                 <span className="project-status">{project.year} • {project.status}</span>
@@ -116,18 +116,6 @@ export default function ProjectsSection({ onSelectProject }) {
               {/* Title & Summary */}
               <h3 className="project-title">{project.title}</h3>
               <p className="project-summary">{project.summary}</p>
-
-              {/* Architecture Highlight Box */}
-              <div className="project-arch-box">
-                <div className="arch-box-title">
-                  <span>Key Architectural Highlights</span>
-                </div>
-                <ul className="arch-box-list">
-                  {project.architecturePoints.slice(0, 2).map((point, idx) => (
-                    <li key={idx}>{point}</li>
-                  ))}
-                </ul>
-              </div>
 
               {/* Tech Stack Tags */}
               <div className="project-tags">
@@ -144,19 +132,32 @@ export default function ProjectsSection({ onSelectProject }) {
                 ))}
               </div>
 
-              {/* Action Buttons */}
+              {/* Action Buttons: View Details & View Screenshots */}
               <div className="project-actions">
-                <button
-                  type="button"
-                  className="btn btn-secondary btn-sm"
-                  onClick={() => onSelectProject(project)}
-                >
-                  <BookOpen size={14} />
-                  <span>Case Study</span>
-                </button>
+                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', flex: 1 }}>
+                  <button
+                    type="button"
+                    className="btn btn-secondary btn-sm"
+                    onClick={() => onSelectProject(project, 'details')}
+                    title="View case study & architecture details"
+                  >
+                    <BookOpen size={14} />
+                    <span>View Details</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm"
+                    onClick={() => onSelectProject(project, 'screenshots')}
+                    title="View app screenshots"
+                  >
+                    <ImageIcon size={14} />
+                    <span>View Screenshots</span>
+                  </button>
+                </div>
 
                 <div className="project-links">
-                  {project.github && (
+                  {project.github ? (
                     <a
                       href={project.github}
                       target="_blank"
@@ -166,7 +167,16 @@ export default function ProjectsSection({ onSelectProject }) {
                     >
                       <GithubIcon size={16} />
                     </a>
+                  ) : (
+                    <span 
+                      className="icon-btn" 
+                      style={{ cursor: 'default', opacity: 0.5 }} 
+                      title="Private Project"
+                    >
+                      <Lock size={14} />
+                    </span>
                   )}
+
                   {project.liveDemo && (
                     <a
                       href={project.liveDemo}

@@ -29,13 +29,13 @@ export default function Footer() {
           </div>
           <div className="footer-system-status">
             <span className="status-dot"></span>
-            <span>All systems operational • Indonesia (UTC+7)</span>
+            <span>All systems operational &bull; {personalData.location}</span>
           </div>
         </div>
 
         {/* Center: Tech Note */}
         <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-          © {new Date().getFullYear()} {personalData.name}.
+          &copy; {new Date().getFullYear()} {personalData.name}. Built with React &amp; Vite.
         </div>
 
         {/* Right: Scroll to Top */}

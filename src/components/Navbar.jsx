@@ -17,19 +17,19 @@ export default function Navbar({ theme, onToggleTheme }) {
     <header className="navbar">
       <div className="site-container navbar-container">
         {/* Brand Moniker */}
-        <a href="#hero" className="nav-brand" onClick={closeMenu}>
+        <a href="#about" className="nav-brand" onClick={closeMenu}>
           <div className="nav-brand-icon">
             <Terminal size={18} />
           </div>
           <span>{personalData.handle}</span>
         </a>
 
-        {/* Desktop Nav Links (Simple English) */}
+        {/* Desktop Nav Links */}
         <nav>
           <ul className="nav-links">
+            <li><a href="#about" className="nav-link">About</a></li>
             <li><a href="#projects" className="nav-link">Projects</a></li>
             <li><a href="#experience" className="nav-link">Experience</a></li>
-            <li><a href="#skills" className="nav-link">Skills</a></li>
             <li><a href="#contact" className="nav-link">Contact</a></li>
           </ul>
         </nav>
@@ -70,10 +70,10 @@ export default function Navbar({ theme, onToggleTheme }) {
       {/* Mobile Nav Dropdown */}
       {mobileMenuOpen && (
         <div className="mobile-nav-menu">
+          <a href="#about" className="nav-link" onClick={closeMenu}>About</a>
           <a href="#projects" className="nav-link" onClick={closeMenu}>Projects</a>
           <a href="#experience" className="nav-link" onClick={closeMenu}>Experience</a>
-          <a href="#skills" className="nav-link" onClick={closeMenu}>Technical Skills</a>
-          <a href="#contact" className="nav-link" onClick={closeMenu}>Get in Touch</a>
+          <a href="#contact" className="nav-link" onClick={closeMenu}>Contact</a>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px' }}>
             <div className="status-pill" style={{ width: 'fit-content' }}>
               <span className="status-dot"></span>
