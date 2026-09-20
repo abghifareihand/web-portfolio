@@ -70,7 +70,7 @@ export default function ProjectsSection({ onSelectProject }) {
               <input
                 type="text"
                 className="search-input"
-                placeholder="Search by tech (e.g. Flutter, BLoC, Firebase, Isar)..."
+                placeholder="Search by tech (e.g. Flutter, BLoC, Firebase, Hive)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search mobile projects by keyword or tech stack"
