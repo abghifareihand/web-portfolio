@@ -1,0 +1,39 @@
+name: Auto Deploy to Hosting
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Ambil kode terbaru dari GitHub
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Pasang Node.js di server GitHub
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # 3. Install & Build file statis (dist)
+      - name: Install & Build
+        run: |
+          npm ci
+          npm run build
+
+      # 4. Upload otomatis ke public_html hosting via FTP
+      - name: Sync to cPanel public_html
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ./public_html/
+          dangerous-clean-slate: false
