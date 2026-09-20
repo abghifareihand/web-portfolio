@@ -11,14 +11,19 @@ import {
   Maximize2,
   Image as ImageIcon,
   FileText,
-  Lock
+  Lock,
+  Smartphone
 } from 'lucide-react';
 import { GithubIcon } from './TechIcons';
 
 export default function ProjectModal({ project, initialTab = 'details', onClose }) {
   const [activeTab, setActiveTab] = useState(initialTab || 'details');
   const [activeImageIdx, setActiveImageIdx] = useState(0);
-  const [fullscreenImage, setFullscreenImage] = useState(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Touch swipe states
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   const screenshots = project?.screenshots || [];
   const hasScreenshots = screenshots.length > 0;
@@ -26,20 +31,20 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
   useEffect(() => {
     setActiveTab(initialTab || 'details');
     setActiveImageIdx(0);
-    setFullscreenImage(null);
+    setIsFullscreen(false);
   }, [project, initialTab]);
 
   // Handle ESC and Arrow key navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
-        if (fullscreenImage) {
-          setFullscreenImage(null);
+        if (isFullscreen) {
+          setIsFullscreen(false);
         } else {
           onClose();
         }
       }
-      if (activeTab === 'screenshots' && hasScreenshots) {
+      if (hasScreenshots) {
         if (e.key === 'ArrowRight') {
           setActiveImageIdx((prev) => (prev + 1) % screenshots.length);
         } else if (e.key === 'ArrowLeft') {
@@ -49,24 +54,50 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose, fullscreenImage, activeTab, hasScreenshots, screenshots.length]);
+  }, [onClose, isFullscreen, hasScreenshots, screenshots.length]);
 
   if (!project) return null;
 
   const nextImage = (e) => {
-    e.stopPropagation();
+    if (e) e.stopPropagation();
     setActiveImageIdx((prev) => (prev + 1) % screenshots.length);
   };
 
   const prevImage = (e) => {
-    e.stopPropagation();
+    if (e) e.stopPropagation();
     setActiveImageIdx((prev) => (prev - 1 + screenshots.length) % screenshots.length);
+  };
+
+  // Touch handlers for swipe navigation
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 45;
+    if (distance > minSwipeDistance) {
+      // Swiped left -> next
+      nextImage();
+    } else if (distance < -minSwipeDistance) {
+      // Swiped right -> prev
+      prevImage();
+    }
   };
 
   return (
     <>
       <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true">
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div 
+          className={`modal-content ${activeTab === 'screenshots' ? 'modal-content-wide' : ''}`} 
+          onClick={(e) => e.stopPropagation()}
+        >
           {/* Close Button */}
           <button 
             className="modal-close-btn" 
@@ -184,13 +215,19 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
             <div className="modal-gallery-view">
               {hasScreenshots ? (
                 <div className="modal-gallery-wrapper">
-                  <div className="gallery-main-view">
+                  {/* Gallery Viewport with Swipe Support */}
+                  <div 
+                    className="gallery-main-view"
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                  >
                     <img 
                       src={screenshots[activeImageIdx]} 
                       alt={`${project.title} Screenshot ${activeImageIdx + 1}`}
                       className="gallery-active-img"
-                      onClick={() => setFullscreenImage(screenshots[activeImageIdx])}
-                      title="Click to view full size"
+                      onClick={() => setIsFullscreen(true)}
+                      title="Click to view full size zoom"
                     />
 
                     {/* Navigation Prev / Next */}
@@ -202,7 +239,7 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
                           onClick={prevImage}
                           aria-label="Previous screenshot"
                         >
-                          <ChevronLeft size={20} />
+                          <ChevronLeft size={22} />
                         </button>
                         <button 
                           type="button"
@@ -210,7 +247,7 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
                           onClick={nextImage}
                           aria-label="Next screenshot"
                         >
-                          <ChevronRight size={20} />
+                          <ChevronRight size={22} />
                         </button>
                       </>
                     )}
@@ -218,18 +255,22 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
                     {/* Top Bar on Image: Counter & Zoom */}
                     <div className="gallery-top-bar">
                       <span className="gallery-counter">
-                        <ImageIcon size={13} />
+                        <Smartphone size={13} />
                         <span>Screenshot {activeImageIdx + 1} of {screenshots.length}</span>
                       </span>
                       <button 
                         type="button"
                         className="gallery-zoom-btn"
-                        onClick={() => setFullscreenImage(screenshots[activeImageIdx])}
-                        title="Fullscreen Preview"
+                        onClick={() => setIsFullscreen(true)}
+                        title="Open Fullscreen HD Zoom"
                       >
                         <Maximize2 size={13} />
-                        <span>Click to Zoom</span>
+                        <span>Zoom Fullscreen</span>
                       </button>
+                    </div>
+
+                    <div className="gallery-swipe-hint">
+                      <span>Click image to zoom • Swipe / Arrow keys to browse</span>
                     </div>
                   </div>
 
@@ -245,6 +286,7 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
                           title={`View screenshot ${idx + 1}`}
                         >
                           <img src={imgUrl} alt={`Thumbnail ${idx + 1}`} />
+                          <span className="thumb-idx">{idx + 1}</span>
                         </button>
                       ))}
                     </div>
@@ -308,25 +350,85 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
         </div>
       </div>
 
-      {/* FULLSCREEN ZOOM LIGHTBOX */}
-      {fullscreenImage && (
+      {/* FULLSCREEN / ZOOM LIGHTBOX WITH FULL SWIPE & NAVIGATION */}
+      {isFullscreen && hasScreenshots && (
         <div 
-          className="fullscreen-image-backdrop" 
-          onClick={() => setFullscreenImage(null)}
+          className="fullscreen-lightbox" 
+          onClick={() => setIsFullscreen(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
-          <button 
-            className="fullscreen-close-btn" 
-            onClick={() => setFullscreenImage(null)}
-            aria-label="Close zoom preview"
-          >
-            <X size={24} />
-          </button>
-          <img 
-            src={fullscreenImage} 
-            alt="Fullscreen view" 
-            className="fullscreen-image-img"
-            onClick={(e) => e.stopPropagation()} 
-          />
+          {/* Top Bar */}
+          <div className="lightbox-top-bar" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-title-box">
+              <span className="lightbox-project-name">{project.title}</span>
+              <span className="lightbox-counter">
+                Screenshot {activeImageIdx + 1} / {screenshots.length}
+              </span>
+            </div>
+
+            <div className="lightbox-actions">
+              <span className="lightbox-shortcut-hint">Swipe or use ← → to browse</span>
+              <button 
+                className="lightbox-close-btn" 
+                onClick={() => setIsFullscreen(false)}
+                title="Close fullscreen (Esc)"
+              >
+                <X size={20} />
+              </button>
+            </div>
+          </div>
+
+          {/* Left Arrow Button */}
+          {screenshots.length > 1 && (
+            <button 
+              type="button"
+              className="lightbox-arrow-btn lightbox-prev"
+              onClick={prevImage}
+              title="Previous screenshot (←)"
+            >
+              <ChevronLeft size={28} />
+            </button>
+          )}
+
+          {/* Main Large Image */}
+          <div className="lightbox-image-container" onClick={(e) => e.stopPropagation()}>
+            <img 
+              src={screenshots[activeImageIdx]} 
+              alt={`${project.title} Screenshot Fullscreen ${activeImageIdx + 1}`} 
+              className="lightbox-image"
+            />
+          </div>
+
+          {/* Right Arrow Button */}
+          {screenshots.length > 1 && (
+            <button 
+              type="button"
+              className="lightbox-arrow-btn lightbox-next"
+              onClick={nextImage}
+              title="Next screenshot (→)"
+            >
+              <ChevronRight size={28} />
+            </button>
+          )}
+
+          {/* Bottom Thumbnails Strip */}
+          {screenshots.length > 1 && (
+            <div className="lightbox-bottom-strip" onClick={(e) => e.stopPropagation()}>
+              {screenshots.map((imgUrl, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className={`lightbox-thumb ${activeImageIdx === idx ? 'active' : ''}`}
+                  onClick={() => setActiveImageIdx(idx)}
+                  title={`View screenshot ${idx + 1}`}
+                >
+                  <img src={imgUrl} alt={`Thumb ${idx + 1}`} />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </>

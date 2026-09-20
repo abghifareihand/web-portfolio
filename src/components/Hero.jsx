@@ -50,21 +50,6 @@ export default function Hero({ onShowToast }) {
 
         {/* Action Buttons: Primary CTA + Quick Links */}
         <div className="hero-actions">
-          <a href="#projects" className="btn btn-primary">
-            <span>Explore Featured Apps</span>
-            <ArrowDown size={16} />
-          </a>
-
-          <button 
-            type="button" 
-            onClick={handleCopyEmail} 
-            className="btn btn-secondary"
-            title="Copy email to clipboard"
-          >
-            {copied ? <Check size={16} color="#10b981" /> : <Copy size={16} />}
-            <span>{copied ? 'Email Copied!' : 'Copy Email Address'}</span>
-          </button>
-
           <a 
             href={personalData.github} 
             target="_blank" 

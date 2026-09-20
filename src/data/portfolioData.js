@@ -19,7 +19,7 @@ export const personalData = {
 
   bio: [
     "I am a Mobile Developer specializing in Flutter and Dart. I focus on building responsive, 60fps cross-platform mobile applications with clean architecture, robust state management, and reliable offline-first capabilities.",
-    "In addition to mobile engineering, I regularly build the supporting backend ecosystemâ€”including Laravel RESTful APIs and web admin dashboardsâ€”enabling me to deliver complete, production-ready solutions from database design to the mobile user interface."
+    "In addition to mobile engineering, I regularly build the supporting backend ecosystem (including Laravel RESTful APIs and web admin dashboards), enabling me to deliver complete, production-ready solutions from database design to the mobile user interface."
   ],
 
   // Key metrics displayed in Hero section
@@ -211,7 +211,7 @@ export const projectsData = [
 
 export const experienceData = [
   {
-    period: "Sep 2024 â€” Present",
+    period: "Sep 2024 - Present",
     role: "Mobile Developer",
     company: "Ignatia",
     location: "Remote",
@@ -226,7 +226,7 @@ export const experienceData = [
     stack: ["Flutter", "Dart", "POS Terminal SDK", "Dual-Screen API", "Mobile WebViews", "REST API", "Git"]
   },
   {
-    period: "Jan 2023 â€” Present",
+    period: "Jan 2023 - Present",
     role: "Freelance Mobile Developer",
     company: "Self-Employed",
     location: "Remote",
@@ -240,10 +240,10 @@ export const experienceData = [
     stack: ["Flutter", "Dart", "Laravel", "MySQL", "Clean Architecture", "RESTful API", "Payment Gateways"]
   },
   {
-    period: "Nov 2023 â€” Feb 2024",
+    period: "Nov 2023 - Feb 2024",
     role: "Mobile Developer Intern",
     company: "Perum Perhutani",
-    location: "Indonesia",
+    location: "Jakarta Selatan",
     type: "Internship",
     description: "Developed 'Union Getah', a specialized offline-first mobile application for field forest rangers and farmers to record, calculate, and invoice resin harvest yields directly in remote forests.",
     achievements: [
@@ -254,10 +254,10 @@ export const experienceData = [
     stack: ["Flutter", "Dart", "Offline-First Architecture", "Bluetooth ESC/POS Printer", "SQLite / Hive", "REST API"]
   },
   {
-    period: "Aug 2022 â€” Dec 2022",
+    period: "Aug 2022 - Dec 2022",
     role: "Mobile Development Trainee",
     company: "Alterra Academy",
-    location: "Indonesia",
+    location: "Remote",
     type: "Intensive Bootcamp",
     description: "Completed an intensive professional Flutter engineering program mastering Dart fundamentals, OOP, state management, and full application testing.",
     achievements: [
@@ -320,7 +320,7 @@ export const skillsData = [
 ];
 export const educationData = [
   {
-    period: "2019 — 2023",
+    period: "2019 - 2023",
     degree: "Bachelor of Computer Science (S.Kom)",
     institution: "Universitas Nasional",
     major: "Informatics (Teknik Informatika)",
