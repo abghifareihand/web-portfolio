@@ -3,7 +3,7 @@ name: Auto Deploy to Hosting
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
