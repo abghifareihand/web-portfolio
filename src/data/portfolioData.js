@@ -10,7 +10,7 @@ export const personalData = {
   role: "Mobile Developer (Flutter)",
   tagline: "Crafting fluid, high-performance cross-platform mobile apps with end-to-end backend integration.",
   location: "Jakarta Selatan, Indonesia",
-  availability: "Available for Full-time & Mobile Contracts",
+  availability: "Available for Fulltime & Project-Based",
   statusColor: "#10b981", // Emerald active status
   email: "abghifareihand@gmail.com",
   github: "https://github.com/abghifareihand",
