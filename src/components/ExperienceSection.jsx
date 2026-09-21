@@ -1,8 +1,13 @@
 import React from 'react';
 import { Briefcase, Calendar, GraduationCap, MapPin } from 'lucide-react';
-import { experienceData, educationData } from '../data/portfolioData';
+import { getExperienceData, getEducationData } from '../data/portfolioData';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ExperienceSection() {
+  const { lang, t } = useLanguage();
+  const experienceData = getExperienceData(lang);
+  const educationData = getEducationData(lang);
+
   return (
     <section id="experience" className="section-wrapper">
       <div className="site-container">
@@ -10,11 +15,11 @@ export default function ExperienceSection() {
         <div className="section-header">
           <div className="section-tag">
             <Briefcase size={14} />
-            <span>Career Journey & Background</span>
+            <span>{t('experience.tag')}</span>
           </div>
-          <h2 className="section-title">Work Experience & Education</h2>
+          <h2 className="section-title">{t('experience.title')}</h2>
           <p className="section-desc">
-            Professional mobile engineering track record across production POS apps, offline-first systems, and a formal Computer Science degree.
+            {t('experience.desc')}
           </p>
         </div>
 
@@ -66,7 +71,7 @@ export default function ExperienceSection() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
             <GraduationCap size={20} color="#38bdf8" />
             <h3 style={{ fontSize: '1.25rem', color: 'var(--text-primary)', fontWeight: 600 }}>
-              Formal Education
+              {t('experience.educationHeading')}
             </h3>
           </div>
 
@@ -98,7 +103,7 @@ export default function ExperienceSection() {
                       <div className="education-badge-col">
                         <span className="status-pill education-status-pill">
                           <span className="status-dot"></span>
-                          <span>Graduated ({edu.period || "2019 – 2023"})</span>
+                          <span>{t('experience.graduated')} ({edu.period || "2019 – 2023"})</span>
                         </span>
                       </div>
                     </div>

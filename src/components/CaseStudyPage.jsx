@@ -11,8 +11,11 @@ import {
   Link2 
 } from 'lucide-react';
 import { GithubIcon } from './TechIcons';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
+  const { t } = useLanguage();
+
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -33,10 +36,10 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
             type="button" 
             className="case-study-back-btn" 
             onClick={onBack}
-            title="Return to projects list"
+            title={t('caseStudy.backBtn')}
           >
             <ArrowLeft size={16} />
-            <span>ALL PORTFOLIO PROJECTS</span>
+            <span>{t('caseStudy.backBtn')}</span>
           </button>
         </div>
 
@@ -77,18 +80,18 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
             <div className="case-study-section-card">
               <div className="case-study-section-title-box">
                 <span className="title-vertical-bar" />
-                <h2 className="case-study-section-heading">PROJECT OVERVIEW</h2>
+                <h2 className="case-study-section-heading">{t('caseStudy.projectOverview')}</h2>
               </div>
               <div className="case-study-overview-body">
                 {project.problem && (
                   <div className="overview-subblock">
-                    <h3 className="overview-subhead">The Engineering Challenge</h3>
+                    <h3 className="overview-subhead">{t('caseStudy.theChallenge')}</h3>
                     <p>{project.problem}</p>
                   </div>
                 )}
                 {project.solution && (
                   <div className="overview-subblock" style={{ marginTop: '18px' }}>
-                    <h3 className="overview-subhead">The Architectural Solution</h3>
+                    <h3 className="overview-subhead">{t('caseStudy.theSolution')}</h3>
                     <p>{project.solution}</p>
                   </div>
                 )}
@@ -99,7 +102,7 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
             <div className="case-study-section-card">
               <div className="case-study-section-title-box">
                 <span className="title-vertical-bar" />
-                <h2 className="case-study-section-heading">KEY FEATURES</h2>
+                <h2 className="case-study-section-heading">{t('caseStudy.keyFeatures')}</h2>
               </div>
 
               <div className="case-study-features-grid">
@@ -119,7 +122,7 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
             <div className="sidebar-card">
               <div className="sidebar-card-header">
                 <Link2 size={16} className="sidebar-header-icon" />
-                <h3 className="sidebar-title">PROJECT LINKS</h3>
+                <h3 className="sidebar-title">{t('caseStudy.projectLinks')}</h3>
               </div>
               <div className="sidebar-links-list">
                 {project.github ? (
@@ -131,14 +134,14 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
                   >
                     <div className="link-left">
                       <GithubIcon size={16} />
-                      <span>SOURCE CODE</span>
+                      <span>{t('caseStudy.sourceCode')}</span>
                     </div>
                     <ArrowRight size={15} />
                   </a>
                 ) : (
                   <div className="sidebar-private-note">
                     <Lock size={15} />
-                    <span>Private Client Code (Under NDA)</span>
+                    <span>{t('caseStudy.privateCode')}</span>
                   </div>
                 )}
 
@@ -151,7 +154,7 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
                   >
                     <div className="link-left">
                       <ExternalLink size={16} />
-                      <span>LIVE PREVIEW</span>
+                      <span>{t('caseStudy.livePreview')}</span>
                     </div>
                     <ArrowRight size={15} />
                   </a>
@@ -163,7 +166,7 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
             <div className="sidebar-card">
               <div className="sidebar-card-header">
                 <Tag size={15} className="sidebar-header-icon" />
-                <h3 className="sidebar-title">TECH STACK</h3>
+                <h3 className="sidebar-title">{t('caseStudy.techStack')}</h3>
               </div>
               <div className="sidebar-tags-wrap">
                 {project.tags.map((tag) => (
@@ -178,15 +181,15 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
             <div className="sidebar-card">
               <div className="sidebar-card-header">
                 <Layers size={15} className="sidebar-header-icon" />
-                <h3 className="sidebar-title">PROJECT INFO</h3>
+                <h3 className="sidebar-title">{t('caseStudy.projectInfo')}</h3>
               </div>
               <div className="sidebar-info-table">
                 <div className="info-row">
-                  <span className="info-key">Category</span>
+                  <span className="info-key">{t('caseStudy.category')}</span>
                   <span className="info-val">{project.categoryLabel}</span>
                 </div>
                 <div className="info-row">
-                  <span className="info-key">Year</span>
+                  <span className="info-key">{t('caseStudy.year')}</span>
                   <span className="info-val">{project.year}</span>
                 </div>
               </div>
@@ -199,7 +202,7 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
           <div className="case-study-screenshots-card">
             <div className="case-study-section-title-box" style={{ marginBottom: '24px' }}>
               <span className="title-vertical-bar" />
-              <h2 className="case-study-section-heading">SCREENSHOTS & PREVIEWS</h2>
+              <h2 className="case-study-section-heading">{t('caseStudy.screenshotsPreviews')}</h2>
             </div>
 
             <div className="screenshots-gallery-grid">
@@ -208,12 +211,12 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
                   key={idx} 
                   className="case-study-screenshot-item"
                   onClick={() => onOpenLightbox(project, idx)}
-                  title="Click to view Fullscreen HD"
+                  title={t('caseStudy.inspectFullscreen')}
                 >
                   <img src={imgUrl} alt={`${project.title} Preview ${idx + 1}`} />
                   <div className="screenshot-zoom-overlay">
                     <Maximize2 size={22} />
-                    <span>Inspect Fullscreen HD</span>
+                    <span>{t('caseStudy.inspectFullscreen')}</span>
                   </div>
                 </div>
               ))}
@@ -229,10 +232,11 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
             onClick={onBack}
           >
             <ArrowLeft size={16} />
-            <span>RETURN TO ALL PROJECTS</span>
+            <span>{t('caseStudy.backBtn')}</span>
           </button>
         </div>
       </div>
     </div>
   );
 }
+

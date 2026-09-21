@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { X, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { GithubIcon } from './TechIcons';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy }) {
+  const { t } = useLanguage();
+
   // Close on ESC
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -40,7 +43,7 @@ export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy })
 
         {/* SECTION 1: PROJECT SUMMARY & OVERVIEW */}
         <div className="specs-section">
-          <h3 className="specs-section-label">PROJECT SUMMARY & OVERVIEW</h3>
+          <h3 className="specs-section-label">{t('specsModal.summaryOverview')}</h3>
           <p className="specs-summary-text">{project.summary}</p>
         </div>
 
@@ -48,7 +51,7 @@ export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy })
 
         {/* SECTION 2: KEY ARCHITECTURAL HIGHLIGHTS */}
         <div className="specs-section">
-          <h3 className="specs-section-label">KEY ARCHITECTURAL HIGHLIGHTS</h3>
+          <h3 className="specs-section-label">{t('specsModal.archHighlights')}</h3>
           <ul className="specs-highlights-list">
             {highlights.map((item, idx) => (
               <li key={idx} className="specs-highlight-item">
@@ -63,7 +66,7 @@ export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy })
 
         {/* SECTION 3: TECHNOLOGY STACK & TAGS */}
         <div className="specs-section">
-          <h3 className="specs-section-label">TECHNOLOGY STACK & TAGS</h3>
+          <h3 className="specs-section-label">{t('specsModal.techStackTags')}</h3>
           <div className="specs-tags-row">
             {project.tags.map((tag) => (
               <span key={tag} className="tag-pill">
@@ -85,7 +88,7 @@ export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy })
                 title="View GitHub Repository"
               >
                 <GithubIcon size={15} />
-                <span>GITHUB</span>
+                <span>{t('specsModal.btnGithub')}</span>
               </a>
             )}
 
@@ -94,7 +97,7 @@ export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy })
               className="btn btn-primary btn-sm specs-case-study-cta"
               onClick={() => onOpenCaseStudy(project)}
             >
-              <span>FULL CASE STUDY</span>
+              <span>{t('specsModal.btnFullCaseStudy')}</span>
               <ArrowUpRight size={15} />
             </button>
           </div>
@@ -103,3 +106,4 @@ export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy })
     </div>
   );
 }
+

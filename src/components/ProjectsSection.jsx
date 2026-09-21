@@ -6,11 +6,16 @@ import {
   Eye, 
   ArrowUpRight 
 } from 'lucide-react';
-import { projectCategories, projectsData } from '../data/portfolioData';
+import { getProjectCategories, getProjectsData } from '../data/portfolioData';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
+  const { lang, t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const projectCategories = useMemo(() => getProjectCategories(lang), [lang]);
+  const projectsData = useMemo(() => getProjectsData(lang), [lang]);
 
   const filteredProjects = useMemo(() => {
     return projectsData.filter((project) => {
@@ -26,7 +31,7 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
 
       return matchCategory && (matchName || matchSummary || matchTags);
     });
-  }, [activeCategory, searchQuery]);
+  }, [projectsData, activeCategory, searchQuery]);
 
   const handleResetFilters = () => {
     setActiveCategory('all');
@@ -40,11 +45,11 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
         <div className="section-header">
           <div className="section-tag">
             <Smartphone size={14} />
-            <span>Mobile Engineering & Production</span>
+            <span>{t('projects.tag')}</span>
           </div>
-          <h2 className="section-title">Featured Mobile Applications</h2>
+          <h2 className="section-title">{t('projects.title')}</h2>
           <p className="section-desc">
-            Production-grade cross-platform apps, offline-first systems, and architecture case studies built with Flutter and clean code principles.
+            {t('projects.desc')}
           </p>
         </div>
 
@@ -70,7 +75,7 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
               <input
                 type="text"
                 className="search-input"
-                placeholder="Search project by tech, title or tags..."
+                placeholder={t('projects.searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search mobile projects by keyword or tech stack"
@@ -78,7 +83,7 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
             </div>
 
             <div className="results-count">
-              Showing <strong>{filteredProjects.length}</strong> of {projectsData.length} projects
+              {t('projects.showing')} <strong>{filteredProjects.length}</strong> {t('projects.of')} {projectsData.length} {t('projects.projectsText')}
             </div>
           </div>
         </div>
@@ -87,12 +92,12 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
         {filteredProjects.length === 0 && (
           <div className="projects-empty-state">
             <FilterX size={36} color="#64748b" style={{ marginBottom: '12px' }} />
-            <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>No projects match your query</h3>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>{t('projects.noResultsTitle')}</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>
-              No mobile projects found matching "{searchQuery}".
+              {t('projects.noResultsMatching')} "{searchQuery}".
             </p>
             <button onClick={handleResetFilters} className="btn btn-secondary btn-sm">
-              Reset Filters & Search
+              {t('projects.resetFilters')}
             </button>
           </div>
         )}
@@ -105,7 +110,7 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
               <div 
                 className="card-cover-container"
                 onClick={() => onOpenCaseStudy(project)}
-                title="View Case Study"
+                title={t('projects.btnCaseStudy')}
               >
                 <img 
                   src={project.coverImage || `/projects/${project.id}/screen1.png`} 
@@ -153,19 +158,19 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
                   type="button"
                   className="card-action-btn specs-preview-btn"
                   onClick={() => onOpenSpecs(project)}
-                  title="Open quick specifications modal"
+                  title={t('projects.btnPreview')}
                 >
                   <Eye size={15} />
-                  <span>PREVIEW</span>
+                  <span>{t('projects.btnPreview')}</span>
                 </button>
 
                 <button
                   type="button"
                   className="card-action-btn case-study-action-btn"
                   onClick={() => onOpenCaseStudy(project)}
-                  title="Read full project case study"
+                  title={t('projects.btnCaseStudy')}
                 >
-                  <span>CASE STUDY</span>
+                  <span>{t('projects.btnCaseStudy')}</span>
                   <ArrowUpRight size={15} />
                 </button>
               </div>
@@ -176,3 +181,4 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
     </section>
   );
 }
+

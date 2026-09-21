@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import { 
-  ArrowDown, 
-  Copy, 
-  Check, 
-  MapPin,
   FileText,
   ArrowUpRight 
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './TechIcons';
-import { personalData } from '../data/portfolioData';
+import { getPersonalData } from '../data/portfolioData';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero({ onShowToast }) {
+  const { lang, t } = useLanguage();
+  const personal = getPersonalData(lang);
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personalData.email);
+    navigator.clipboard.writeText(personal.email);
     setCopied(true);
     if (onShowToast) {
-      onShowToast(`Email copied: ${personalData.email}`);
+      onShowToast(`${t('hero.copiedEmail')}${personal.email}`);
     }
     setTimeout(() => {
       setCopied(false);
@@ -31,19 +30,19 @@ export default function Hero({ onShowToast }) {
         <div className="hero-badge-row">
           <div className="status-pill">
             <span className="status-dot"></span>
-            <span>{personalData.availability}</span>
+            <span>{personal.availability}</span>
           </div>
         </div>
 
         {/* Main Engineer Headline */}
         <h1 className="hero-title">
-          Building Fluid, Scalable & <br />
-          <span className="text-gradient">High-Performance Mobile Apps.</span>
+          {t('hero.headlinePart1')} <br />
+          <span className="text-gradient">{t('hero.headlinePart2')}</span>
         </h1>
 
         {/* Bio / Value Proposition */}
         <p className="hero-bio">
-          Hi, I am <strong style={{ color: 'var(--text-primary)' }}>{personalData.name}</strong> — {personalData.role}. {personalData.tagline}
+          {t('hero.greeting')} <strong style={{ color: 'var(--text-primary)' }}>{personal.name}</strong> — {personal.role}. {personal.tagline}
         </p>
 
         {/* Action Buttons: Primary CTA Row + Secondary Social Row */}
@@ -51,20 +50,20 @@ export default function Hero({ onShowToast }) {
           {/* Row 1: Primary Action Button (Resume) */}
           <div className="hero-primary-action">
             <a 
-              href={personalData.resumeUrl || "#"} 
-              target={personalData.resumeUrl && personalData.resumeUrl !== '#' ? "_blank" : undefined}
+              href={personal.resumeUrl || "#"} 
+              target={personal.resumeUrl && personal.resumeUrl !== '#' ? "_blank" : undefined}
               rel="noreferrer" 
               className="btn btn-primary hero-resume-btn"
               onClick={(e) => {
-                if (!personalData.resumeUrl || personalData.resumeUrl === '#') {
+                if (!personal.resumeUrl || personal.resumeUrl === '#') {
                   e.preventDefault();
-                  if (onShowToast) onShowToast('File Resume/CV belum ditautkan (atur di portfolioData.js)');
+                  if (onShowToast) onShowToast(t('hero.resumeNotLinked'));
                 }
               }}
-              title="View Resume / CV"
+              title={t('hero.viewResume')}
             >
               <FileText size={16} />
-              <span>View Resume</span>
+              <span>{t('hero.viewResume')}</span>
               <ArrowUpRight size={15} className="resume-arrow-icon" />
             </a>
           </div>
@@ -72,7 +71,7 @@ export default function Hero({ onShowToast }) {
           {/* Row 2: Secondary Social Links (GitHub & LinkedIn) */}
           <div className="hero-secondary-actions">
             <a 
-              href={personalData.github} 
+              href={personal.github} 
               target="_blank" 
               rel="noreferrer" 
               className="btn btn-secondary"
@@ -83,7 +82,7 @@ export default function Hero({ onShowToast }) {
             </a>
 
             <a 
-              href={personalData.linkedin} 
+              href={personal.linkedin} 
               target="_blank" 
               rel="noreferrer" 
               className="btn btn-secondary"
@@ -97,7 +96,7 @@ export default function Hero({ onShowToast }) {
 
         {/* Metrics Grid */}
         <div className="hero-metrics-grid">
-          {personalData.metrics.map((metric, idx) => (
+          {personal.metrics.map((metric, idx) => (
             <div key={idx} className="metric-card">
               <div className="metric-value">{metric.value}</div>
               <div className="metric-label">{metric.label}</div>
@@ -108,4 +107,4 @@ export default function Hero({ onShowToast }) {
       </div>
     </section>
   );
-}
+}

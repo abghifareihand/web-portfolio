@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Terminal, Menu, X, Sun, Moon } from 'lucide-react';
 import { personalData } from '../data/portfolioData';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar({ theme, onToggleTheme, onBrandClick }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { lang, toggleLang, t } = useLanguage();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -27,23 +29,32 @@ export default function Navbar({ theme, onToggleTheme, onBrandClick }) {
         {/* Desktop Nav Links */}
         <nav>
           <ul className="nav-links">
-            <li><a href="#about" className="nav-link">About</a></li>
-            <li><a href="#projects" className="nav-link">Projects</a></li>
-            <li><a href="#experience" className="nav-link">Experience</a></li>
-            <li><a href="#contact" className="nav-link">Contact</a></li>
+            <li><a href="#about" className="nav-link">{t('nav.about')}</a></li>
+            <li><a href="#projects" className="nav-link">{t('nav.projects')}</a></li>
+            <li><a href="#experience" className="nav-link">{t('nav.experience')}</a></li>
+            <li><a href="#contact" className="nav-link">{t('nav.contact')}</a></li>
           </ul>
         </nav>
 
-        {/* Status Pill, Theme Toggle, & Action */}
+        {/* Status Pill, Theme Toggle, Language Toggle, & Action */}
         <div className="nav-actions">
-          
+          {/* Language Toggle EN / ID */}
+          <button
+            type="button"
+            className="icon-btn lang-toggle-btn"
+            onClick={toggleLang}
+            title={lang === 'en' ? t('nav.switchToId') : t('nav.switchToEn')}
+            aria-label="Toggle language between English and Indonesian"
+          >
+            <span className="lang-toggle-text">{lang.toUpperCase()}</span>
+          </button>
 
           {/* Dark / Light Theme Toggle */}
           <button
             type="button"
             className="icon-btn theme-toggle-btn"
             onClick={onToggleTheme}
-            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            title={theme === 'dark' ? t('nav.switchToLight') : t('nav.switchToDark')}
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
@@ -63,12 +74,12 @@ export default function Navbar({ theme, onToggleTheme, onBrandClick }) {
       {/* Mobile Nav Dropdown */}
       {mobileMenuOpen && (
         <div className="mobile-nav-menu">
-          <a href="#about" className="nav-link" onClick={closeMenu}>About</a>
-          <a href="#projects" className="nav-link" onClick={closeMenu}>Projects</a>
-          <a href="#experience" className="nav-link" onClick={closeMenu}>Experience</a>
-          <a href="#contact" className="nav-link" onClick={closeMenu}>Contact</a>
+          <a href="#about" className="nav-link" onClick={closeMenu}>{t('nav.about')}</a>
+          <a href="#projects" className="nav-link" onClick={closeMenu}>{t('nav.projects')}</a>
+          <a href="#experience" className="nav-link" onClick={closeMenu}>{t('nav.experience')}</a>
+          <a href="#contact" className="nav-link" onClick={closeMenu}>{t('nav.contact')}</a>
         </div>
       )}
     </header>
   );
-}
+}

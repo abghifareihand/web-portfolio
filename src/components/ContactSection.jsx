@@ -6,13 +6,15 @@ import {
   MessageSquare,
   ExternalLink,
   ArrowRight,
-  MapPin,
   UserCheck
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './TechIcons';
-import { personalData } from '../data/portfolioData';
+import { getPersonalData } from '../data/portfolioData';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ContactSection({ onShowToast }) {
+  const { lang, t } = useLanguage();
+  const personalData = getPersonalData(lang);
   const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -25,7 +27,7 @@ export default function ContactSection({ onShowToast }) {
     navigator.clipboard.writeText(personalData.email);
     setCopied(true);
     if (onShowToast) {
-      onShowToast(`Email copied: ${personalData.email}`);
+      onShowToast(`${t('contact.copiedEmailToast')}${personalData.email}`);
     }
     setTimeout(() => setCopied(false), 2500);
   };
@@ -44,14 +46,22 @@ export default function ContactSection({ onShowToast }) {
   };
 
   const buildBody = () => {
+    const greeting = lang === 'id' ? 'Halo Abghi,' : 'Hi Abghi,';
+    const nameLabel = lang === 'id' ? 'Nama:' : 'Name:';
+    const emailLabel = 'Email:';
+    const msgLabel = lang === 'id' ? 'Pesan:' : 'Message:';
+    const defaultMsg = lang === 'id' 
+      ? 'Saya melihat portofolio mobile developer Anda dan tertarik untuk berdiskusi.' 
+      : 'I came across your mobile developer portfolio and would like to connect.';
+
     const lines = [
-      `Hi Abghi,`,
+      greeting,
       ``,
-      formData.name ? `Name: ${formData.name}` : '',
-      formData.email ? `Email: ${formData.email}` : '',
+      formData.name ? `${nameLabel} ${formData.name}` : '',
+      formData.email ? `${emailLabel} ${formData.email}` : '',
       ``,
-      `Message:`,
-      formData.message || `I came across your mobile developer portfolio and would like to connect.`
+      msgLabel,
+      formData.message || defaultMsg
     ].filter(line => line !== null);
     return encodeURIComponent(lines.join('\n'));
   };
@@ -77,7 +87,7 @@ export default function ContactSection({ onShowToast }) {
     setRedirected(true);
 
     if (onShowToast) {
-      onShowToast('Redirecting to Gmail with prefilled message...');
+      onShowToast(t('contact.redirectingToast'));
     }
   };
 
@@ -88,11 +98,11 @@ export default function ContactSection({ onShowToast }) {
         <div className="section-header">
           <div className="section-tag">
             <MessageSquare size={14} />
-            <span>Connect & Collaborate</span>
+            <span>{t('contact.tag')}</span>
           </div>
-          <h2 className="section-title">Let's Connect & Work Together</h2>
+          <h2 className="section-title">{t('contact.title')}</h2>
           <p className="section-desc">
-            Interested in discussing mobile app engineering opportunities, Flutter consulting, or project collaborations? Reach out through the channels below.
+            {t('contact.desc')}
           </p>
         </div>
 
@@ -117,7 +127,9 @@ export default function ContactSection({ onShowToast }) {
               </div>
 
               <p className="lead-summary-text">
-                Mobile Developer with 2+ years of experience delivering end-to-end client solutions, specializing in Flutter mobile applications and integrated backend ecosystems.
+                {lang === 'id' 
+                  ? 'Mobile Developer dengan 2+ tahun pengalaman menghadirkan solusi klien end-to-end, berfokus pada aplikasi mobile Flutter dan ekosistem backend terintegrasi.'
+                  : 'Mobile Developer with 2+ years of experience delivering end-to-end client solutions, specializing in Flutter mobile applications and integrated backend ecosystems.'}
               </p>
 
               <div className="lead-card-footer">
@@ -131,7 +143,7 @@ export default function ContactSection({ onShowToast }) {
             {/* Bottom Card: Direct Contact Channels */}
             <div className="contact-channels-card">
               <div className="contact-channels-header">
-                DIRECT CONTACT CHANNELS
+                {t('contact.directChannels')}
               </div>
 
               <div className="contact-channel-list">
@@ -147,13 +159,13 @@ export default function ContactSection({ onShowToast }) {
                       handleCopyEmail();
                     }
                   }}
-                  title="Click to copy email address"
+                  title={t('contact.copyEmail')}
                 >
                   <div className="channel-icon-box channel-icon-email">
                     <Mail size={18} />
                   </div>
                   <div className="channel-text-content">
-                    <span className="channel-category-label">EMAIL DISPATCH</span>
+                    <span className="channel-category-label">{t('contact.emailDispatch')}</span>
                     <span className="channel-value-text">{personalData.email}</span>
                   </div>
                   <button 
@@ -163,7 +175,7 @@ export default function ContactSection({ onShowToast }) {
                       e.stopPropagation();
                       handleCopyEmail();
                     }}
-                    title={copied ? "Copied!" : "Copy email address"}
+                    title={copied ? t('contact.copied') : t('contact.copyEmail')}
                     aria-label="Copy email address"
                   >
                     {copied ? (
@@ -180,13 +192,15 @@ export default function ContactSection({ onShowToast }) {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="contact-channel-row"
-                  title="Open LinkedIn Profile in new tab"
+                  title={t('contact.openLinkedin')}
                 >
                   <div className="channel-icon-box channel-icon-linkedin">
                     <LinkedinIcon size={18} />
                   </div>
                   <div className="channel-text-content">
-                    <span className="channel-category-label">PROFESSIONAL NETWORK</span>
+                    <span className="channel-category-label">
+                      {lang === 'id' ? 'JARINGAN PROFESIONAL' : 'PROFESSIONAL NETWORK'}
+                    </span>
                     <span className="channel-value-text">linkedin.com/in/abghifareihand</span>
                   </div>
                   <div className="channel-action-btn">
@@ -200,13 +214,15 @@ export default function ContactSection({ onShowToast }) {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="contact-channel-row"
-                  title="Open GitHub Profile in new tab"
+                  title={t('contact.openGithub')}
                 >
                   <div className="channel-icon-box channel-icon-github">
                     <GithubIcon size={18} />
                   </div>
                   <div className="channel-text-content">
-                    <span className="channel-category-label">CODE REPOSITORY</span>
+                    <span className="channel-category-label">
+                      {lang === 'id' ? 'REPOSITORI KODE' : 'CODE REPOSITORY'}
+                    </span>
                     <span className="channel-value-text">github.com/abghifareihand</span>
                   </div>
                   <div className="channel-action-btn">
@@ -221,15 +237,15 @@ export default function ContactSection({ onShowToast }) {
           <div className="contact-form-card">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
               <h3 style={{ fontSize: '1.25rem' }}>
-                Send via Gmail
+                {t('contact.sendViaGmail')}
               </h3>
               <span style={{ fontSize: '0.75rem', color: '#38bdf8', background: 'rgba(56, 189, 248, 0.1)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(56, 189, 248, 0.25)', fontFamily: 'var(--font-mono)' }}>
-                Direct Redirect
+                {t('contact.directRedirect')}
               </span>
             </div>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '20px' }}>
-              Fill in your message below to open directly in Gmail compose with details prefilled.
+              {t('contact.formSubtitle')}
             </p>
 
             {redirected ? (
@@ -242,10 +258,12 @@ export default function ContactSection({ onShowToast }) {
               }}>
                 <Check size={36} color="#10b981" style={{ marginBottom: '12px' }} />
                 <h4 style={{ color: 'var(--text-primary)', fontSize: '1.1rem', marginBottom: '6px' }}>
-                  Gmail Compose Window Triggered!
+                  {lang === 'id' ? 'Jendela Compose Gmail Dibuka!' : 'Gmail Compose Window Triggered!'}
                 </h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '16px' }}>
-                  Your draft has been prepared for <strong style={{ color: 'var(--text-primary)' }}>{personalData.email}</strong>. If your browser blocked popups, click below:
+                  {lang === 'id' 
+                    ? <>Draf pesan telah disiapkan untuk <strong style={{ color: 'var(--text-primary)' }}>{personalData.email}</strong>. Jika browser Anda memblokir popup, silakan klik tombol di bawah:</>
+                    : <>Your draft has been prepared for <strong style={{ color: 'var(--text-primary)' }}>{personalData.email}</strong>. If your browser blocked popups, click below:</>}
                 </p>
                 <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '16px' }}>
                   <button 
@@ -254,7 +272,7 @@ export default function ContactSection({ onShowToast }) {
                     onClick={openGmail}
                   >
                     <ExternalLink size={14} />
-                    <span>Open in Gmail Web</span>
+                    <span>{lang === 'id' ? 'Buka di Gmail Web' : 'Open in Gmail Web'}</span>
                   </button>
                   <button 
                     type="button" 
@@ -262,7 +280,7 @@ export default function ContactSection({ onShowToast }) {
                     onClick={openMailto}
                   >
                     <Mail size={14} />
-                    <span>Open Mail App (mailto)</span>
+                    <span>{lang === 'id' ? 'Buka Aplikasi Mail' : 'Open Mail App (mailto)'}</span>
                   </button>
                 </div>
                 <button 
@@ -271,19 +289,19 @@ export default function ContactSection({ onShowToast }) {
                   onClick={() => setRedirected(false)}
                   style={{ fontSize: '0.82rem' }}
                 >
-                  Edit Message & Send Again
+                  {lang === 'id' ? 'Edit Pesan & Kirim Ulang' : 'Edit Message & Send Again'}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label className="form-label" htmlFor="contact-name">Full Name</label>
+                  <label className="form-label" htmlFor="contact-name">{t('contact.fullName')}</label>
                   <input
                     id="contact-name"
                     name="name"
                     type="text"
                     required
-                    placeholder="e.g. John Doe"
+                    placeholder={t('contact.namePlaceholder')}
                     value={formData.name}
                     onChange={handleChange}
                     className="form-input"
@@ -291,13 +309,13 @@ export default function ContactSection({ onShowToast }) {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label" htmlFor="contact-email">Email Address</label>
+                  <label className="form-label" htmlFor="contact-email">{t('contact.emailAddress')}</label>
                   <input
                     id="contact-email"
                     name="email"
                     type="email"
                     required
-                    placeholder="john@company.com"
+                    placeholder={t('contact.emailPlaceholder')}
                     value={formData.email}
                     onChange={handleChange}
                     className="form-input"
@@ -305,12 +323,12 @@ export default function ContactSection({ onShowToast }) {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label" htmlFor="contact-message">Message Details</label>
+                  <label className="form-label" htmlFor="contact-message">{t('contact.messageDetails')}</label>
                   <textarea
                     id="contact-message"
                     name="message"
                     required
-                    placeholder="Describe your mobile app requirements, Flutter role, or project scope..."
+                    placeholder={t('contact.messagePlaceholder')}
                     value={formData.message}
                     onChange={handleChange}
                     className="form-textarea"
@@ -323,7 +341,7 @@ export default function ContactSection({ onShowToast }) {
                   className="btn btn-primary"
                   style={{ width: '100%', justifyContent: 'center', marginTop: '6px' }}
                 >
-                  <span>Send Message</span>
+                  <span>{t('contact.btnSend')}</span>
                   <ExternalLink size={16} />
                 </button>
               </form>
@@ -334,3 +352,4 @@ export default function ContactSection({ onShowToast }) {
     </section>
   );
 }
+

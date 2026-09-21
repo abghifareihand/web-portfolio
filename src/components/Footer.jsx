@@ -2,8 +2,11 @@ import React from 'react';
 import { ArrowUp, Terminal } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './TechIcons';
 import { personalData } from '../data/portfolioData';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -23,7 +26,7 @@ export default function Footer() {
 
           <div className="footer-status-pill">
             <span className="status-dot"></span>
-            <span>All systems operational</span>
+            <span>{t('footer.statusOperational')}</span>
           </div>
         </div>
 
@@ -32,7 +35,7 @@ export default function Footer() {
         {/* Bottom Row: Actions & Copyright */}
         <div className="footer-bottom-row">
           <p className="footer-copyright-text">
-            &copy; {new Date().getFullYear()} {personalData.name}. All rights reserved.
+            &copy; {new Date().getFullYear()} {personalData.name}. {t('footer.rightsReserved')}
           </p>
 
           <div className="footer-actions-cluster">
@@ -63,9 +66,9 @@ export default function Footer() {
               type="button" 
               onClick={scrollToTop} 
               className="btn btn-secondary btn-sm footer-top-btn"
-              title="Scroll back to top"
+              title={t('footer.backToTop')}
             >
-              <span>Back to Top</span>
+              <span>{t('footer.backToTop')}</span>
               <ArrowUp size={14} />
             </button>
           </div>

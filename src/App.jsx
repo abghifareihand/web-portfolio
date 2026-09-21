@@ -9,16 +9,18 @@ import SpecsPreviewModal from './components/SpecsPreviewModal';
 import CaseStudyPage from './components/CaseStudyPage';
 import FullscreenLightbox from './components/FullscreenLightbox';
 import { CheckCircle2 } from 'lucide-react';
-import { projectsData } from './data/portfolioData';
+import { getProjectsData } from './data/portfolioData';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import './App.css';
 
-export default function App() {
+function PortfolioApp() {
+  const { lang } = useLanguage();
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('theme') || 'dark';
   });
 
-  const [activeCaseStudy, setActiveCaseStudy] = useState(null);
-  const [specsModalProject, setSpecsModalProject] = useState(null);
+  const [activeCaseStudyId, setActiveCaseStudyId] = useState(null);
+  const [specsModalProjectId, setSpecsModalProjectId] = useState(null);
   const [lightboxConfig, setLightboxConfig] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
 
@@ -27,20 +29,29 @@ export default function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  // Retrieve current localized projects array
+  const currentProjects = getProjectsData(lang);
+  const activeCaseStudy = activeCaseStudyId 
+    ? currentProjects.find((p) => p.id === activeCaseStudyId) 
+    : null;
+  const specsModalProject = specsModalProjectId 
+    ? currentProjects.find((p) => p.id === specsModalProjectId) 
+    : null;
+
   // Handle URL hash changes (e.g. #case-study/quickbite-ecosystem)
   const syncHashToState = useCallback(() => {
     const hash = window.location.hash;
     if (hash.startsWith('#case-study/')) {
       const pid = hash.replace('#case-study/', '');
-      const found = projectsData.find((p) => p.id === pid);
+      const found = currentProjects.find((p) => p.id === pid);
       if (found) {
-        setActiveCaseStudy(found);
-        setSpecsModalProject(null);
+        setActiveCaseStudyId(found.id);
+        setSpecsModalProjectId(null);
         return;
       }
     }
-    setActiveCaseStudy(null);
-  }, []);
+    setActiveCaseStudyId(null);
+  }, [currentProjects]);
 
   useEffect(() => {
     syncHashToState();
@@ -60,13 +71,13 @@ export default function App() {
   };
 
   const handleOpenCaseStudy = (project) => {
-    setSpecsModalProject(null);
-    setActiveCaseStudy(project);
+    setSpecsModalProjectId(null);
+    setActiveCaseStudyId(project.id);
     window.location.hash = `case-study/${project.id}`;
   };
 
   const handleBackToProjects = () => {
-    setActiveCaseStudy(null);
+    setActiveCaseStudyId(null);
     window.history.pushState(null, '', window.location.pathname + '#projects');
     const elem = document.getElementById('projects');
     if (elem) {
@@ -97,7 +108,7 @@ export default function App() {
           <>
             <Hero onShowToast={showToast} />
             <ProjectsSection 
-              onOpenSpecs={(p) => setSpecsModalProject(p)}
+              onOpenSpecs={(p) => setSpecsModalProjectId(p.id)}
               onOpenCaseStudy={handleOpenCaseStudy}
             />
             <ExperienceSection />
@@ -112,7 +123,7 @@ export default function App() {
       {specsModalProject && (
         <SpecsPreviewModal 
           project={specsModalProject}
-          onClose={() => setSpecsModalProject(null)}
+          onClose={() => setSpecsModalProjectId(null)}
           onOpenCaseStudy={handleOpenCaseStudy}
         />
       )}
@@ -136,3 +147,12 @@ export default function App() {
     </div>
   );
 }
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <PortfolioApp />
+    </LanguageProvider>
+  );
+}
+
