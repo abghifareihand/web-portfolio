@@ -3,7 +3,8 @@ import {
   ArrowDown, 
   Copy, 
   Check, 
-  MapPin 
+  MapPin,
+  FileText 
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './TechIcons';
 import { personalData } from '../data/portfolioData';
@@ -46,6 +47,23 @@ export default function Hero({ onShowToast }) {
 
         {/* Action Buttons: Primary CTA + Quick Links */}
         <div className="hero-actions">
+          <a 
+            href={personalData.resumeUrl || "#"} 
+            target={personalData.resumeUrl && personalData.resumeUrl !== '#' ? "_blank" : undefined}
+            rel="noreferrer" 
+            className="btn btn-primary"
+            onClick={(e) => {
+              if (!personalData.resumeUrl || personalData.resumeUrl === '#') {
+                e.preventDefault();
+                if (onShowToast) onShowToast('File Resume/CV belum ditautkan (atur di portfolioData.js)');
+              }
+            }}
+            title="View Resume / CV"
+          >
+            <FileText size={16} />
+            <span>View Resume</span>
+          </a>
+
           <a 
             href={personalData.github} 
             target="_blank" 

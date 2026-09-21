@@ -15,7 +15,7 @@ export const personalData = {
   email: "abghifareihand@gmail.com",
   github: "https://github.com/abghifareihand",
   linkedin: "https://www.linkedin.com/in/abghifareihand",
-  resumeUrl: "#",
+  resumeUrl: "https://drive.google.com/file/d/1E3yO_SLr5Zdg-fICt4NFPPSMRKAawK9N/view",
 
   bio: [
     "I am a Mobile Developer specializing in Flutter and Dart. I focus on building responsive, 60fps cross-platform mobile applications with clean architecture, robust state management, and reliable offline-first capabilities.",
@@ -27,7 +27,7 @@ export const personalData = {
     { value: "2+", label: "Years Experience", detail: "Flutter & Mobile Ecosystem" },
     { value: "10+", label: "Mobile Apps & Systems", detail: "End-to-End Solutions Delivered" },
     { value: "1:1", label: "Pixel-Perfect UI", detail: "Precise Figma-to-Code Slicing" },
-    { value: "Full-Stack", label: "Fullstack Systems", detail: "Flutter & Laravel REST API" }
+    { value: "Fullstack", label: "Fullstack Systems", detail: "Flutter & Laravel REST API" }
   ]
 };
 
