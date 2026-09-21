@@ -12,7 +12,7 @@ export const personalDataI18n = {
     role: "Mobile Developer (Flutter)",
     tagline: "Crafting fluid, high-performance cross-platform mobile apps with end-to-end backend integration.",
     location: "Jakarta Selatan, Indonesia",
-    availability: "Available for Fulltime & Project-Based",
+    availability: "Available for Fulltime & Project Based",
     statusColor: "#10b981",
     email: "abghifareihand@gmail.com",
     github: "https://github.com/abghifareihand",
@@ -84,74 +84,6 @@ const defaultScreenshots = [
   "/projects/union-getah/screen2.png",
   "/projects/union-getah/screen3.png"
 ];
-
-/**
- * ============================================================================
- * TEMPLATE UNTUK MENAMBAH PROJECT BARU
- * Copy template object di bawah ini dan paste ke dalam array rawProjectsData.
- * ============================================================================
- * {
- *   id: "nama-project-unik", // Digunakan untuk URL: /#case-study/nama-project-unik
- *   title: "Nama Project - Subtitle / Tagline",
- *   category: "mobile", // Pilihan: "mobile" atau "backend"
- *   categoryLabel: "Flutter", // Label singkat yang tampil di badge
- *   year: "2024",
- *   status: "Production", // Contoh: "Production", "In Development", atau "Open Source"
- *   featured: true, // true jika ingin tampil paling depan
- *   summary: {
- *     en: "Brief English overview of the project and what it does.",
- *     id: "Ringkasan singkat tentang proyek dan apa kegunaannya dalam Bahasa Indonesia."
- *   },
- *   tags: ["Flutter", "Dart", "BLoC", "REST API"], // Tag teknologi
- *   problem: {
- *     en: "The core technical challenge or problem statement.",
- *     id: "Tantangan teknis utama atau masalah yang dihadapi."
- *   },
- *   solution: {
- *     en: "The architectural solution and engineering approach.",
- *     id: "Solusi arsitektur dan pendekatan teknis yang diterapkan."
- *   },
- *   keyMetrics: {
- *     en: [
- *       "Metric 1 (e.g. 60fps smooth animation)",
- *       "Metric 2 (e.g. Sub-200ms response time)"
- *     ],
- *     id: [
- *       "Metrik 1 (contoh: Animasi 60fps mulus)",
- *       "Metrik 2 (contoh: Waktu respon di bawah 200ms)"
- *     ]
- *   },
- *   architecturePoints: {
- *     en: [
- *       "Core architectural pillar 1",
- *       "Core architectural pillar 2"
- *     ],
- *     id: [
- *       "Pilar arsitektur utama 1",
- *       "Pilar arsitektur utama 2"
- *     ]
- *   },
- *   coverImage: "/projects/nama-project-unik/screen1.png",
- *   screenshots: [
- *     "/projects/nama-project-unik/screen1.png",
- *     "/projects/nama-project-unik/screen2.png",
- *     "/projects/nama-project-unik/screen3.png"
- *   ],
- *   highlights: {
- *     en: [
- *       "Key feature / technical highlight 1",
- *       "Key feature / technical highlight 2"
- *     ],
- *     id: [
- *       "Fitur unggulan / sorotan teknis 1",
- *       "Fitur unggulan / sorotan teknis 2"
- *     ]
- *   },
- *   github: "https://github.com/abghifareihand/repo-name", // Isi null atau '#' jika private NDA
- *   liveDemo: "https://link-preview-atau-demo.com" // Isi null jika belum ada preview
- * },
- * ============================================================================
- */
 
 const rawProjectsData = [
   {
@@ -646,9 +578,9 @@ const rawExperienceData = [
     role: { en: "Freelance Mobile Developer", id: "Mobile Developer Lepas (Freelance)" },
     company: { en: "Self-Employed", id: "Mandiri / Freelance" },
     location: "Remote",
-    type: { en: "Project-Based", id: "Berbasis Proyek" },
+    type: { en: "Project Based", id: "Berbasis Proyek" },
     description: {
-      en: "Delivering custom client applications on a project-based milestone model, ranging from standalone cross-platform Flutter mobile apps to integrated full-stack solutions with Laravel backends.",
+      en: "Delivering custom client applications on a project based milestone model, ranging from standalone cross-platform Flutter mobile apps to integrated full-stack solutions with Laravel backends.",
       id: "Mengirimkan aplikasi kustom untuk klien dengan model milestone berbasis proyek, mulai dari aplikasi mobile Flutter mandiri hingga solusi full-stack lengkap dengan backend Laravel."
     },
     achievements: {
@@ -730,7 +662,7 @@ export const experienceData = getExperienceData('en');
 
 const rawEducationData = [
   {
-    period: "2019 – 2023",
+    period: "2019 - 2023",
     degree: { en: "Bachelor of Computer Science (S.Kom)", id: "Sarjana Komputer (S.Kom)" },
     institution: "Universitas Nasional",
     major: { en: "Informatics", id: "Informatika" },
