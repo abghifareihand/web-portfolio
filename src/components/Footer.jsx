@@ -35,7 +35,7 @@ export default function Footer() {
 
         {/* Center: Tech Note */}
         <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-          &copy; {new Date().getFullYear()} {personalData.name}. Built with React &amp; Vite.
+          &copy; {new Date().getFullYear()} {personalData.name}. &nbsp;All rights reserved.
         </div>
 
         {/* Right: Scroll to Top */}

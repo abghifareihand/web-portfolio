@@ -31,10 +31,6 @@ export default function Hero({ onShowToast }) {
             <span className="status-dot"></span>
             <span>{personalData.availability}</span>
           </div>
-          <div className="hero-location">
-            <MapPin size={14} />
-            <span>{personalData.location}</span>
-          </div>
         </div>
 
         {/* Main Engineer Headline */}

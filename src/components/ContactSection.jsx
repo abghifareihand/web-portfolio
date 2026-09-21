@@ -3,9 +3,11 @@ import {
   Mail, 
   Copy, 
   Check, 
-  MapPin, 
   MessageSquare,
-  ExternalLink
+  ExternalLink,
+  ArrowRight,
+  MapPin,
+  UserCheck
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './TechIcons';
 import { personalData } from '../data/portfolioData';
@@ -95,81 +97,125 @@ export default function ContactSection({ onShowToast }) {
         </div>
 
         <div className="contact-container">
-          {/* Left Column: Direct Contact Info */}
-          <div className="contact-info-card">
-            <div>
-              <div className="status-pill" style={{ marginBottom: '20px' }}>
-                <span className="status-dot"></span>
-                <span>{personalData.availability}</span>
+          {/* Left Column: 2 Stacked Cards (Profile Lead Card + Direct Channels Card) */}
+          <div className="contact-left-col">
+            {/* Top Card: Direct Technical Lead Profile Card (Gambar 2) */}
+            <div className="contact-lead-card">
+              <div className="lead-card-header">
+                <div className="lead-avatar-badge">
+                  <span>AF</span>
+                </div>
+                <div className="lead-meta-info">
+                  <div className="lead-category-tag">
+                    <UserCheck size={14} />
+                    <span>MOBILE DEVELOPER</span>
+                  </div>
+                  <h3 className="lead-name-title">
+                    {personalData.name}
+                  </h3>
+                </div>
               </div>
 
-              <h3 style={{ fontSize: '1.4rem', marginBottom: '12px' }}>
-                Direct Channels
-              </h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', marginBottom: '20px' }}>
-                I typically respond within 24 hours on business days.
+              <p className="lead-summary-text">
+                Mobile Developer with 2+ years of experience delivering end-to-end client solutions, specializing in Flutter mobile applications and integrated backend ecosystems.
               </p>
 
-              <div className="contact-direct-items">
-                {/* Email Box */}
-                <div className="contact-item-box">
-                  <div className="contact-item-detail">
-                    <Mail size={18} color="#38bdf8" />
-                    <div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Official Email</div>
-                      <div style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--text-primary)' }}>
-                        {personalData.email}
-                      </div>
-                    </div>
-                  </div>
-                  <button 
-                    type="button" 
-                    onClick={handleCopyEmail}
-                    className="btn btn-ghost btn-sm"
-                    title="Copy email address"
-                  >
-                    {copied ? <Check size={16} color="#10b981" /> : <Copy size={16} />}
-                  </button>
+              <div className="lead-card-footer">
+                <div className="lead-location-tag">
+                  <MapPin size={14} />
+                  <span>{personalData.location}</span>
                 </div>
-
-                {/* Location Box */}
-                <div className="contact-item-box">
-                  <div className="contact-item-detail">
-                    <MapPin size={18} color="#818cf8" />
-                    <div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Current Location</div>
-                      <div style={{ fontSize: '0.92rem', fontWeight: 500, color: 'var(--text-primary)' }}>
-                        {personalData.location}
-                      </div>
-                    </div>
-                  </div>
+                <div className="lead-status-indicator">
+                  <span className="status-dot"></span>
+                  <span>Available</span>
                 </div>
               </div>
             </div>
 
-            {/* Social Links */}
-            <div style={{ marginTop: '32px' }}>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                Professional Profiles & Repositories:
+            {/* Bottom Card: Direct Contact Channels */}
+            <div className="contact-channels-card">
+              <div className="contact-channels-header">
+                DIRECT CONTACT CHANNELS
               </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <a 
-                  href={personalData.github} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="btn btn-secondary btn-sm"
+
+              <div className="contact-channel-list">
+                {/* Channel 1: Email Dispatch (Click to Copy) */}
+                <div 
+                  className="contact-channel-row"
+                  onClick={handleCopyEmail}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleCopyEmail();
+                    }
+                  }}
+                  title="Click to copy email address"
                 >
-                  <GithubIcon size={16} />
-                  <span>GitHub</span>
-                </a>
+                  <div className="channel-icon-box channel-icon-email">
+                    <Mail size={18} />
+                  </div>
+                  <div className="channel-text-content">
+                    <span className="channel-category-label">EMAIL DISPATCH</span>
+                    <span className="channel-value-text">{personalData.email}</span>
+                  </div>
+                  <button 
+                    type="button" 
+                    className="channel-action-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleCopyEmail();
+                    }}
+                    title={copied ? "Copied!" : "Copy email address"}
+                    aria-label="Copy email address"
+                  >
+                    {copied ? (
+                      <Check size={17} className="channel-check-icon" />
+                    ) : (
+                      <Copy size={17} className="channel-copy-icon" />
+                    )}
+                  </button>
+                </div>
+
+                {/* Channel 2: LinkedIn Profile (Arrow link) */}
                 <a 
                   href={personalData.linkedin} 
                   target="_blank" 
-                  rel="noreferrer" 
-                  className="btn btn-secondary btn-sm"
+                  rel="noopener noreferrer" 
+                  className="contact-channel-row"
+                  title="Open LinkedIn Profile in new tab"
                 >
-                  <LinkedinIcon size={16} />
-                  <span>LinkedIn</span>
+                  <div className="channel-icon-box channel-icon-linkedin">
+                    <LinkedinIcon size={18} />
+                  </div>
+                  <div className="channel-text-content">
+                    <span className="channel-category-label">PROFESSIONAL NETWORK</span>
+                    <span className="channel-value-text">linkedin.com/in/abghifareihand</span>
+                  </div>
+                  <div className="channel-action-btn">
+                    <ArrowRight size={17} className="channel-arrow-icon" />
+                  </div>
+                </a>
+
+                {/* Channel 3: GitHub Repository (Arrow link) */}
+                <a 
+                  href={personalData.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="contact-channel-row"
+                  title="Open GitHub Profile in new tab"
+                >
+                  <div className="channel-icon-box channel-icon-github">
+                    <GithubIcon size={18} />
+                  </div>
+                  <div className="channel-text-content">
+                    <span className="channel-category-label">CODE REPOSITORY</span>
+                    <span className="channel-value-text">github.com/abghifareihand</span>
+                  </div>
+                  <div className="channel-action-btn">
+                    <ArrowRight size={17} className="channel-arrow-icon" />
+                  </div>
                 </a>
               </div>
             </div>
@@ -182,12 +228,12 @@ export default function ContactSection({ onShowToast }) {
                 Send via Gmail
               </h3>
               <span style={{ fontSize: '0.75rem', color: '#38bdf8', background: 'rgba(56, 189, 248, 0.1)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(56, 189, 248, 0.25)', fontFamily: 'var(--font-mono)' }}>
-                ● Direct Redirect
+                Direct Redirect
               </span>
             </div>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '20px' }}>
-              Fill in your message below to open directly in Gmail compose with details prefilled. No third-party API or secret key needed.
+              Fill in your message below to open directly in Gmail compose with details prefilled.
             </p>
 
             {redirected ? (
@@ -276,26 +322,14 @@ export default function ContactSection({ onShowToast }) {
                   ></textarea>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <button 
-                    type="submit" 
-                    className="btn btn-primary"
-                    style={{ width: '100%', justifyContent: 'center' }}
-                  >
-                    <span>Send Message via Gmail</span>
-                    <ExternalLink size={16} />
-                  </button>
-
-                  <button 
-                    type="button"
-                    onClick={openMailto}
-                    className="btn btn-secondary btn-sm"
-                    style={{ width: '100%', justifyContent: 'center' }}
-                  >
-                    <Mail size={14} />
-                    <span>Or open with Default Mail Client</span>
-                  </button>
-                </div>
+                <button 
+                  type="submit" 
+                  className="btn btn-primary"
+                  style={{ width: '100%', justifyContent: 'center', marginTop: '6px' }}
+                >
+                  <span>Send Message</span>
+                  <ExternalLink size={16} />
+                </button>
               </form>
             )}
           </div>

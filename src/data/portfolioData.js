@@ -10,7 +10,7 @@ export const personalData = {
   role: "Mobile Developer (Flutter)",
   tagline: "Crafting fluid, high-performance cross-platform mobile apps with end-to-end backend integration.",
   location: "Jakarta Selatan, Indonesia",
-  availability: "Available for Fulltime & Project-Based",
+  availability: "Available for Fulltime & Project",
   statusColor: "#10b981", // Emerald active status
   email: "abghifareihand@gmail.com",
   github: "https://github.com/abghifareihand",
@@ -68,7 +68,20 @@ export const projectsData = [
       "Web Admin Dashboard for menu, order, and driver management",
       "Firebase Cloud Messaging (FCM) high-priority notification dispatch"
     ],
-    screenshots: defaultScreenshots,
+    coverImage: "/projects/quickbite-ecosystem/screen1.png",
+    screenshots: [
+      "/projects/quickbite-ecosystem/screen1.png",
+      "/projects/quickbite-ecosystem/screen2.png",
+      "/projects/quickbite-ecosystem/screen3.png"
+    ],
+    highlights: [
+      "Feature-First Clean Architecture separating data, domain, and presentation layers",
+      "BLoC state management pattern with strict unidirectional event-driven data flow",
+      "Google Maps SDK real-time rider GPS tracking with 60fps marker interpolation",
+      "FCM Push Notifications with automated background order state machine updates",
+      "Laravel 11 RESTful API backend utilizing database transactions & Sanctum authentication",
+      "Comprehensive Web Admin dashboard for instant merchant order & revenue oversight"
+    ],
     github: "https://github.com/abghifareihand/quickbite-delivery-ecosystem",
     liveDemo: "https://github.com/abghifareihand/quickbite-delivery-ecosystem#preview"
   },
@@ -95,7 +108,20 @@ export const projectsData = [
       "Initial online token sync with resilient offline fallback",
       "Automated two-way batch sync upon restoring network connectivity"
     ],
-    screenshots: defaultScreenshots,
+    coverImage: "/projects/union-getah/screen1.png",
+    screenshots: [
+      "/projects/union-getah/screen1.png",
+      "/projects/union-getah/screen2.png",
+      "/projects/union-getah/screen3.png"
+    ],
+    highlights: [
+      "100% Offline-first local database utilizing SQLite and Hive for zero-signal deep forest zones",
+      "Bluetooth thermal printer integration streaming native ESC/POS commands in < 2s",
+      "Automated two-way batch cloud synchronization with conflict resolution when online",
+      "Biometric fingerprint authentication ensuring tamper-proof field officer validation",
+      "Instant yield computation eliminating manual paper-based rubber harvest calculation errors",
+      "Role-based operational authorization between field harvesters and Perhutani supervisors"
+    ],
     github: "https://github.com/abghifareihand/union-getah-mobile",
     liveDemo: "https://github.com/abghifareihand/union-getah-mobile"
   },
@@ -122,7 +148,20 @@ export const projectsData = [
       "Biometric local auth (FaceID / Fingerprint) fallback",
       "Custom Chart painter for smooth 60fps financial analytics"
     ],
-    screenshots: defaultScreenshots,
+    coverImage: "/projects/finpulse-wallet/screen1.png",
+    screenshots: [
+      "/projects/finpulse-wallet/screen1.png",
+      "/projects/finpulse-wallet/screen2.png",
+      "/projects/finpulse-wallet/screen3.png"
+    ],
+    highlights: [
+      "Multi-currency digital wallet ledger with offline foreign exchange rate caching",
+      "Hardware-backed biometric authentication (Face ID & Fingerprint) with secure enclave",
+      "Interactive spending breakdown analytics powered by custom Flutter Canvas rendering",
+      "Dynamic QRIS payment generation and real-time merchant QR camera scanner",
+      "Optimistic UI state mutations for zero perceived transaction and transfer latency",
+      "Encrypted SQLite transaction history with instant export to downloadable PDF receipts"
+    ],
     github: "https://github.com/abghifareihand/finpulse-wallet",
     liveDemo: "https://github.com/abghifareihand/finpulse-wallet#preview"
   },
@@ -149,7 +188,20 @@ export const projectsData = [
       "Background service handling for push incoming calls",
       "Encrypted medical history caching via Hive"
     ],
-    screenshots: defaultScreenshots,
+    coverImage: "/projects/mediconnect-app/screen1.png",
+    screenshots: [
+      "/projects/mediconnect-app/screen1.png",
+      "/projects/mediconnect-app/screen2.png",
+      "/projects/mediconnect-app/screen3.png"
+    ],
+    highlights: [
+      "Real-time doctor appointment booking with conflict-free calendar slot reservations",
+      "Secure in-app telemedicine consultation room with live presence indicators",
+      "Electronic Medical Record (EMR) viewer with encrypted prescription history",
+      "Background local medication reminders and automated dosage countdown notifications",
+      "Interactive clinic geolocation maps with turn-by-turn navigation intents",
+      "Cashless consultation checkout integrated with midtrans payment gateways"
+    ],
     github: "https://github.com/abghifareihand/mediconnect-telemedicine",
     liveDemo: "https://github.com/abghifareihand/mediconnect-telemedicine#demo"
   },
@@ -176,7 +228,20 @@ export const projectsData = [
       "Dynamic audio cache management with size quotas",
       "Light and dark mode synced with system preferences"
     ],
-    screenshots: defaultScreenshots,
+    coverImage: "/projects/devpulse-offline/screen1.png",
+    screenshots: [
+      "/projects/devpulse-offline/screen1.png",
+      "/projects/devpulse-offline/screen2.png",
+      "/projects/devpulse-offline/screen3.png"
+    ],
+    highlights: [
+      "Full offline article caching with automated markdown syntax rendering engine",
+      "Background audio podcast playback engine with native OS lockscreen controls",
+      "Custom typography reader with dynamic line-height and eye-care night mode",
+      "Cross-device bookmark and reading progress synchronization via cloud DB",
+      "SQLite full-text search indexing across cached developer publications",
+      "Zero-latency audio scrubbing and dynamic variable playback speed"
+    ],
     github: "https://github.com/abghifareihand/devpulse-reader",
     liveDemo: "https://github.com/abghifareihand/devpulse-reader"
   },
@@ -203,7 +268,20 @@ export const projectsData = [
       "Golden UI tests across multiple device screen ratios",
       "Automated CI/CD release workflow via GitHub Actions"
     ],
-    screenshots: defaultScreenshots,
+    coverImage: "/projects/flutter-adaptive-ui/screen1.png",
+    screenshots: [
+      "/projects/flutter-adaptive-ui/screen1.png",
+      "/projects/flutter-adaptive-ui/screen2.png",
+      "/projects/flutter-adaptive-ui/screen3.png"
+    ],
+    highlights: [
+      "Universal responsive layout engine adapting smoothly across mobile, tablet, and desktop",
+      "Dynamic dual-pane Master-Detail navigation on wide screens",
+      "Platform-adaptive UI widgets (Cupertino on iOS, Material 3 on Android/Web)",
+      "Design system token architecture for instant dark/light and white-label theming",
+      "Full accessibility compliance with dynamic screen-reader label bindings",
+      "Comprehensive widget and integration test suite guaranteeing fluid 60fps"
+    ],
     github: "https://github.com/abghifareihand/flutter-adaptive-kit",
     liveDemo: "https://github.com/abghifareihand/flutter-adaptive-kit"
   }

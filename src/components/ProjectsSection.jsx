@@ -1,17 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import { 
   Search, 
-  ExternalLink, 
-  BookOpen, 
   Smartphone, 
-  FilterX,
-  Image as ImageIcon,
-  Lock
+  FilterX, 
+  Eye, 
+  ArrowUpRight 
 } from 'lucide-react';
-import { GithubIcon } from './TechIcons';
 import { projectCategories, projectsData } from '../data/portfolioData';
 
-export default function ProjectsSection({ onSelectProject }) {
+export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -39,6 +36,7 @@ export default function ProjectsSection({ onSelectProject }) {
   return (
     <section id="projects" className="section-wrapper">
       <div className="site-container">
+        {/* Section Header */}
         <div className="section-header">
           <div className="section-tag">
             <Smartphone size={14} />
@@ -52,16 +50,18 @@ export default function ProjectsSection({ onSelectProject }) {
 
         {/* Controls: Category Tabs & Search Bar */}
         <div className="projects-controls">
-          <div className="category-tabs">
-            {projectCategories.map((cat) => (
-              <button
-                key={cat.id}
-                className={`tab-btn ${activeCategory === cat.id ? 'active' : ''}`}
-                onClick={() => setActiveCategory(cat.id)}
-              >
-                {cat.label}
-              </button>
-            ))}
+          <div className="category-tabs-wrapper">
+            <div className="category-tabs">
+              {projectCategories.map((cat) => (
+                <button
+                  key={cat.id}
+                  className={`tab-btn ${activeCategory === cat.id ? 'active' : ''}`}
+                  onClick={() => setActiveCategory(cat.id)}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="search-bar-wrapper">
@@ -70,7 +70,7 @@ export default function ProjectsSection({ onSelectProject }) {
               <input
                 type="text"
                 className="search-input"
-                placeholder="Search by tech (e.g. Flutter, BLoC, Firebase, Hive)..."
+                placeholder="Search by tech (e.g. Flutter, BLoC, SQLite, Laravel)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search mobile projects by keyword or tech stack"
@@ -85,13 +85,7 @@ export default function ProjectsSection({ onSelectProject }) {
 
         {/* Empty State */}
         {filteredProjects.length === 0 && (
-          <div style={{
-            textAlign: 'center',
-            padding: '60px 20px',
-            background: 'var(--bg-surface)',
-            borderRadius: 'var(--radius-md)',
-            border: '1px solid var(--border-subtle)'
-          }}>
+          <div className="projects-empty-state">
             <FilterX size={36} color="#64748b" style={{ marginBottom: '12px' }} />
             <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>No projects match your query</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>
@@ -103,92 +97,77 @@ export default function ProjectsSection({ onSelectProject }) {
           </div>
         )}
 
-        {/* Projects Grid */}
+        {/* Projects Grid (GAMBAR 1) */}
         <div className="projects-grid">
           {filteredProjects.map((project) => (
-            <article key={project.id} className="project-card">
-              {/* Card Header: Category & Status */}
-              <div className="project-header">
-                <span className="project-category">{project.categoryLabel}</span>
-                <span className="project-status">{project.year} • {project.status}</span>
-              </div>
+            <article key={project.id} className="project-card modern-project-card">
+              {/* Card Cover Image with Badges */}
+              <div 
+                className="card-cover-container"
+                onClick={() => onOpenCaseStudy(project)}
+                title="View Case Study"
+              >
+                <img 
+                  src={project.coverImage || `/projects/${project.id}/screen1.png`} 
+                  alt={`${project.title} Preview`}
+                  className="card-cover-img"
+                  loading="lazy"
+                />
 
-              {/* Title & Summary */}
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-summary">{project.summary}</p>
-
-              {/* Tech Stack Tags */}
-              <div className="project-tags">
-                {project.tags.map((tag) => (
-                  <span 
-                    key={tag} 
-                    className="tech-chip"
-                    onClick={() => setSearchQuery(tag)}
-                    style={{ cursor: 'pointer' }}
-                    title={`Filter by ${tag}`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Action Buttons: View Details & View Screenshots */}
-              <div className="project-actions">
-                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', flex: 1 }}>
-                  <button
-                    type="button"
-                    className="btn btn-secondary btn-sm"
-                    onClick={() => onSelectProject(project, 'details')}
-                    title="View case study & architecture details"
-                  >
-                    <BookOpen size={14} />
-                    <span>View Details</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    className="btn btn-primary btn-sm"
-                    onClick={() => onSelectProject(project, 'screenshots')}
-                    title="View app screenshots"
-                  >
-                    <ImageIcon size={14} />
-                    <span>View Screenshots</span>
-                  </button>
+                {/* Floating Top Badges */}
+                <div className="card-top-badges">
+                  <span className="card-badge-category">{project.categoryLabel}</span>
+                  <span className="card-badge-year">{project.year}</span>
                 </div>
+              </div>
 
-                <div className="project-links">
-                  {project.github ? (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="icon-btn"
-                      title="View GitHub Repository"
-                    >
-                      <GithubIcon size={16} />
-                    </a>
-                  ) : (
+              {/* Card Content Body */}
+              <div className="card-body">
+                <h3 
+                  className="card-title"
+                  onClick={() => onOpenCaseStudy(project)}
+                >
+                  {project.title}
+                </h3>
+
+                <p className="card-summary">{project.summary}</p>
+
+                {/* Tech Tags */}
+                <div className="card-tags">
+                  {project.tags.slice(0, 4).map((tag) => (
                     <span 
-                      className="icon-btn" 
-                      style={{ cursor: 'default', opacity: 0.5 }} 
-                      title="Private Project"
+                      key={tag} 
+                      className="tag-pill"
+                      onClick={(e) => { e.stopPropagation(); setSearchQuery(tag); }}
+                      title={`Filter by ${tag}`}
                     >
-                      <Lock size={14} />
+                      {tag}
                     </span>
-                  )}
-
-                  {project.liveDemo && (
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="icon-btn"
-                      title="Open Live Preview or Demo"
-                    >
-                      <ExternalLink size={16} />
-                    </a>
-                  )}
+                  ))}
                 </div>
+              </div>
+
+              {/* Card Action Buttons (GAMBAR 1 FOOTER) */}
+              <div className="card-footer-actions">
+                <button
+                  type="button"
+                  className="card-action-btn specs-preview-btn"
+                  onClick={() => onOpenSpecs(project)}
+                  title="Open quick specifications modal"
+                >
+                  <Eye size={15} />
+                  <span>PREVIEW</span>
+                </button>
+
+                <button
+                  type="button"
+                  className="card-action-btn case-study-action-btn"
+                  onClick={() => onOpenCaseStudy(project)}
+                  title="Read full project case study"
+                >
+                  <span>CASE STUDY</span>
+                  <ArrowUpRight size={15} />
+                </button>
               </div>
             </article>
           ))}
