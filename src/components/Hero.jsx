@@ -4,7 +4,8 @@ import {
   Copy, 
   Check, 
   MapPin,
-  FileText 
+  FileText,
+  ArrowUpRight 
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './TechIcons';
 import { personalData } from '../data/portfolioData';
@@ -45,46 +46,53 @@ export default function Hero({ onShowToast }) {
           Hi, I am <strong style={{ color: 'var(--text-primary)' }}>{personalData.name}</strong> — {personalData.role}. {personalData.tagline}
         </p>
 
-        {/* Action Buttons: Primary CTA + Quick Links */}
-        <div className="hero-actions">
-          <a 
-            href={personalData.resumeUrl || "#"} 
-            target={personalData.resumeUrl && personalData.resumeUrl !== '#' ? "_blank" : undefined}
-            rel="noreferrer" 
-            className="btn btn-primary"
-            onClick={(e) => {
-              if (!personalData.resumeUrl || personalData.resumeUrl === '#') {
-                e.preventDefault();
-                if (onShowToast) onShowToast('File Resume/CV belum ditautkan (atur di portfolioData.js)');
-              }
-            }}
-            title="View Resume / CV"
-          >
-            <FileText size={16} />
-            <span>View Resume</span>
-          </a>
+        {/* Action Buttons: Primary CTA Row + Secondary Social Row */}
+        <div className="hero-actions-container">
+          {/* Row 1: Primary Action Button (Resume) */}
+          <div className="hero-primary-action">
+            <a 
+              href={personalData.resumeUrl || "#"} 
+              target={personalData.resumeUrl && personalData.resumeUrl !== '#' ? "_blank" : undefined}
+              rel="noreferrer" 
+              className="btn btn-primary hero-resume-btn"
+              onClick={(e) => {
+                if (!personalData.resumeUrl || personalData.resumeUrl === '#') {
+                  e.preventDefault();
+                  if (onShowToast) onShowToast('File Resume/CV belum ditautkan (atur di portfolioData.js)');
+                }
+              }}
+              title="View Resume / CV"
+            >
+              <FileText size={16} />
+              <span>View Resume</span>
+              <ArrowUpRight size={15} className="resume-arrow-icon" />
+            </a>
+          </div>
 
-          <a 
-            href={personalData.github} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="btn btn-secondary"
-            title="View GitHub Profile"
-          >
-            <GithubIcon size={16} />
-            <span>GitHub</span>
-          </a>
+          {/* Row 2: Secondary Social Links (GitHub & LinkedIn) */}
+          <div className="hero-secondary-actions">
+            <a 
+              href={personalData.github} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn btn-secondary"
+              title="View GitHub Profile"
+            >
+              <GithubIcon size={16} />
+              <span>GitHub</span>
+            </a>
 
-          <a 
-            href={personalData.linkedin} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="btn btn-secondary"
-            title="View LinkedIn Profile"
-          >
-            <LinkedinIcon size={16} />
-            <span>LinkedIn</span>
-          </a>
+            <a 
+              href={personalData.linkedin} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn btn-secondary"
+              title="View LinkedIn Profile"
+            >
+              <LinkedinIcon size={16} />
+              <span>LinkedIn</span>
+            </a>
+          </div>
         </div>
 
         {/* Metrics Grid */}
