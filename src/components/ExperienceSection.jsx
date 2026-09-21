@@ -26,12 +26,16 @@ export default function ExperienceSection() {
 
               <div className="timeline-meta">
                 <span className="timeline-period">
-                  <Calendar size={13} style={{ display: 'inline', marginRight: '4px' }} />
+                  <Calendar size={13} style={{ display: 'inline', marginRight: '5px' }} />
                   {item.period}
                 </span>
-                <span className="timeline-company">/ {item.company}</span>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                  ({item.location} &bull; {item.type})
+
+                <span className="timeline-company-badge">
+                  {item.company}
+                </span>
+
+                <span className="timeline-meta-type">
+                  {item.location} &bull; {item.type}
                 </span>
               </div>
 

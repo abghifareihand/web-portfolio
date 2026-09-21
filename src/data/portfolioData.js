@@ -304,7 +304,7 @@ export const experienceData = [
     stack: ["Flutter", "Dart", "POS Terminal SDK", "Dual-Screen API", "Mobile WebViews", "REST API", "Git"]
   },
   {
-    period: "Jan 2023 - Present",
+    period: "Oct 2023 - Present",
     role: "Freelance Mobile Developer",
     company: "Self-Employed",
     location: "Remote",
