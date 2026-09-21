@@ -301,7 +301,7 @@ export const experienceData = [
       "Implemented Dual-Screen presentation support for cashier terminals, enabling a synchronized real-time customer-facing display.",
       "Integrated responsive Mobile WebViews for the customer CRM portal and backoffice administration systems."
     ],
-    stack: ["Flutter", "Dart", "POS Terminal SDK", "Dual-Screen API", "Mobile WebViews", "REST API", "Git"]
+    stack: ["Flutter", "Dart", "POS Terminal SDK", "Dual-Screen API", "Mobile WebViews", "REST API", "Git", "Postman", "Figma"]
   },
   {
     period: "Oct 2023 - Present",
@@ -347,55 +347,6 @@ export const experienceData = [
   }
 ];
 
-export const skillsData = [
-  {
-    category: "Mobile & Core Languages",
-    description: "Primary programming languages and core mobile development frameworks",
-    skills: [
-      { name: "Flutter Framework", level: "Expert", highlight: true },
-      { name: "Dart", level: "Expert", highlight: true },
-      { name: "Kotlin (Native Android)", level: "Intermediate", highlight: false },
-      { name: "Java", level: "Intermediate", highlight: false },
-      { name: "Swift / iOS Basics", level: "Working Knowledge", highlight: false }
-    ]
-  },
-  {
-    category: "State Management & Architecture",
-    description: "Predictable mobile state architecture and clean software design patterns",
-    skills: [
-      { name: "BLoC & Cubit Pattern", level: "Expert", highlight: true },
-      { name: "Riverpod 2.0", level: "Expert", highlight: true },
-      { name: "Clean Architecture", level: "Expert", highlight: true },
-      { name: "Provider & GetIt", level: "Advanced", highlight: true },
-      { name: "Repository & Factory Pattern", level: "Expert", highlight: true },
-      { name: "OOP & SOLID Principles", level: "Advanced", highlight: true }
-    ]
-  },
-  {
-    category: "Networking, APIs & Local Storage",
-    description: "Client-server communication, local persistence, and backend API integration",
-    skills: [
-      { name: "RESTful APIs & Dio", level: "Expert", highlight: true },
-      { name: "Offline-First Sync Engine", level: "Advanced", highlight: true },
-      { name: "Isar / Hive / SQLite Storage", level: "Advanced", highlight: true },
-      { name: "Laravel API Integration (Sanctum)", level: "Advanced", highlight: true },
-      { name: "Firebase (FCM, Auth, Crashlytics)", level: "Advanced", highlight: true },
-      { name: "Secure Storage & Biometrics", level: "Advanced", highlight: false }
-    ]
-  },
-  {
-    category: "Tooling, Testing & DevOps",
-    description: "Mobile release automation, profiling, and app store deployment",
-    skills: [
-      { name: "Git & GitFlow Workflow", level: "Expert", highlight: true },
-      { name: "Fastlane & CI/CD", level: "Advanced", highlight: true },
-      { name: "Play Console & App Store Connect", level: "Advanced", highlight: true },
-      { name: "Widget & Unit Testing", level: "Advanced", highlight: true },
-      { name: "Flutter DevTools & Profiling", level: "Advanced", highlight: true },
-      { name: "Figma to Pixel-Perfect UI", level: "Expert", highlight: true }
-    ]
-  }
-];
 export const educationData = [
   {
     period: "2019 - 2023",
