@@ -78,13 +78,6 @@ export const projectCategoriesI18n = {
 export const getProjectCategories = (lang = 'en') => projectCategoriesI18n[lang] || projectCategoriesI18n.en;
 export const projectCategories = projectCategoriesI18n.en;
 
-// Common screenshots array for demonstration
-const defaultScreenshots = [
-  "/projects/union-getah/screen1.png",
-  "/projects/union-getah/screen2.png",
-  "/projects/union-getah/screen3.png"
-];
-
 const rawProjectsData = [
   {
     id: "quickbite-ecosystem",
