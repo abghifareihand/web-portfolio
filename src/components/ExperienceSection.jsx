@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar, GraduationCap } from 'lucide-react';
+import { Briefcase, Calendar, GraduationCap, MapPin } from 'lucide-react';
 import { experienceData, educationData } from '../data/portfolioData';
 
 export default function ExperienceSection() {
@@ -77,16 +77,30 @@ export default function ExperienceSection() {
                   <div className="education-icon-box">
                     <GraduationCap size={24} color="#38bdf8" />
                   </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '4px' }}>
-                      <h4 className="education-institution">{edu.institution}</h4>
-                      <span className="status-pill" style={{ fontSize: '0.75rem', padding: '2px 8px' }}>
-                        <span className="status-dot"></span>
-                        <span>{edu.status}</span>
-                      </span>
-                    </div>
-                    <div className="education-degree">
-                      {edu.degree} &bull; <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{edu.major}</span>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div className="education-top-bar">
+                      <div className="education-main-info">
+                        <div className="education-name-row">
+                          <h4 className="education-institution">{edu.institution}</h4>
+                          {edu.location && (
+                            <span className="education-location-pill">
+                              <MapPin size={12} />
+                              <span>{edu.location}</span>
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="education-degree">
+                          {edu.degree} &bull; <span className="education-major">{edu.major}</span>
+                        </div>
+                      </div>
+
+                      <div className="education-badge-col">
+                        <span className="status-pill education-status-pill">
+                          <span className="status-dot"></span>
+                          <span>Graduated ({edu.period || "2019 – 2023"})</span>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -401,7 +401,7 @@ export const educationData = [
     period: "2019 - 2023",
     degree: "Bachelor of Computer Science (S.Kom)",
     institution: "Universitas Nasional",
-    major: "Informatics (Teknik Informatika)",
+    major: "Informatics",
     location: "Jakarta, Indonesia",
     status: "Graduated in 2023",
     description: "Completed undergraduate degree in Informatics with a strong focus on Software Engineering, Object-Oriented Programming (OOP), Algorithms & Data Structures, and Database Management Systems.",
