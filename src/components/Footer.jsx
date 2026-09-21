@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp, Terminal } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './TechIcons';
 import { personalData } from '../data/portfolioData';
 
 export default function Footer() {
@@ -12,42 +13,63 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="site-container footer-inner">
-        {/* Left: Branding & Status */}
-        <div>
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '8px', 
-            color: 'var(--text-primary)', 
-            fontWeight: 600, 
-            marginBottom: '6px',
-            fontFamily: 'var(--font-mono)'
-          }}>
-            <Terminal size={16} color="#38bdf8" />
+      <div className="site-container footer-container">
+        {/* Top Header Row: Brand & Status Badge */}
+        <div className="footer-header-row">
+          <div className="footer-brand">
+            <Terminal size={16} color="var(--accent-cyan)" />
             <span>{personalData.handle}</span>
           </div>
-          <div className="footer-system-status">
+
+          <div className="footer-status-pill">
             <span className="status-dot"></span>
-            <span>All systems operational &bull; {personalData.location}</span>
+            <span>All systems operational</span>
           </div>
         </div>
 
-        {/* Center: Tech Note */}
-        <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-          &copy; {new Date().getFullYear()} {personalData.name}. &nbsp;All rights reserved.
-        </div>
+        <div className="footer-divider-line"></div>
 
-        {/* Right: Scroll to Top */}
-        <button 
-          type="button" 
-          onClick={scrollToTop} 
-          className="btn btn-secondary btn-sm"
-          title="Scroll back to top"
-        >
-          <span>Back to Top</span>
-          <ArrowUp size={14} />
-        </button>
+        {/* Bottom Row: Actions & Copyright */}
+        <div className="footer-bottom-row">
+          <p className="footer-copyright-text">
+            &copy; {new Date().getFullYear()} {personalData.name}. All rights reserved.
+          </p>
+
+          <div className="footer-actions-cluster">
+            <div className="footer-socials">
+              <a 
+                href={personalData.github} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="icon-btn" 
+                aria-label="GitHub"
+                title="GitHub"
+              >
+                <GithubIcon size={16} />
+              </a>
+              <a 
+                href={personalData.linkedin} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="icon-btn" 
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                <LinkedinIcon size={16} />
+              </a>
+            </div>
+
+            <button 
+              type="button" 
+              onClick={scrollToTop} 
+              className="btn btn-secondary btn-sm footer-top-btn"
+              title="Scroll back to top"
+            >
+              <span>Back to Top</span>
+              <ArrowUp size={14} />
+            </button>
+          </div>
+        </div>
       </div>
     </footer>
   );

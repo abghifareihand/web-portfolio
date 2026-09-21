@@ -70,7 +70,7 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
               <input
                 type="text"
                 className="search-input"
-                placeholder="Search by tech (e.g. Flutter, BLoC, SQLite, Laravel)..."
+                placeholder="Search project by tech, title or tags..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search mobile projects by keyword or tech stack"

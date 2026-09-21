@@ -121,13 +121,9 @@ export default function ContactSection({ onShowToast }) {
               </p>
 
               <div className="lead-card-footer">
-                <div className="lead-location-tag">
-                  <MapPin size={14} />
-                  <span>{personalData.location}</span>
-                </div>
                 <div className="lead-status-indicator">
                   <span className="status-dot"></span>
-                  <span>Available</span>
+                  <span>{personalData.availability}</span>
                 </div>
               </div>
             </div>

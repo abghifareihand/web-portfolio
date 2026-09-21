@@ -197,10 +197,11 @@ body::before {
 }
 
 .section-wrapper {
-  padding-top: clamp(60px, 8vw, 100px);
-  padding-bottom: clamp(60px, 8vw, 100px);
+  padding-top: clamp(40px, 6vw, 100px);
+  padding-bottom: clamp(40px, 6vw, 100px);
   border-bottom: 1px solid var(--border-subtle);
   position: relative;
+  scroll-margin-top: calc(var(--header-height) + 14px);
 }
 
 /* Typography styles */

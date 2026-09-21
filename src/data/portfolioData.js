@@ -25,16 +25,16 @@ export const personalData = {
   // Key metrics displayed in Hero section
   metrics: [
     { value: "2+", label: "Years Experience", detail: "Flutter & Mobile Ecosystem" },
-    { value: "15+", label: "Mobile Apps & Systems", detail: "End-to-End Client Solutions" },
-    { value: "99.8%", label: "Crash-Free Rate", detail: "Stability & Quality Target" },
-    { value: "100%", label: "On-Time Delivery", detail: "Milestone & Sprint Target" }
+    { value: "10+", label: "Mobile Apps & Systems", detail: "End-to-End Solutions Delivered" },
+    { value: "1:1", label: "Pixel-Perfect UI", detail: "Precise Figma-to-Code Slicing" },
+    { value: "Full-Stack", label: "Fullstack Systems", detail: "Flutter & Laravel REST API" }
   ]
 };
 
 export const projectCategories = [
   { id: "all", label: "All Projects" },
   { id: "mobile", label: "Mobile Apps" },
-  { id: "backend", label: "Mobile & Backend" }
+  { id: "backend", label: "Fullstack" }
 ];
 
 // Common screenshots array for demonstration

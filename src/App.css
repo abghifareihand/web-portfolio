@@ -233,11 +233,12 @@
 
 .metric-value {
   font-family: var(--font-mono);
-  font-size: 1.9rem;
+  font-size: clamp(1.4rem, 3.8vw, 1.9rem);
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.1;
   margin-bottom: 6px;
+  word-break: break-word;
 }
 
 .metric-label {
@@ -250,6 +251,32 @@
 .metric-detail {
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+
+@media (max-width: 580px) {
+  .hero-title br {
+    display: none;
+  }
+  .hero-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding-top: 24px;
+  }
+  .metric-card {
+    padding: 14px 12px;
+  }
+  .metric-label {
+    font-size: 0.82rem;
+  }
+  .metric-detail {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-metrics-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -274,8 +301,10 @@
   border: 1px solid var(--border-subtle);
   padding: 8px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -288,7 +317,7 @@
 .tab-btn.active {
   background: #f8fafc;
   color: #090d16;
-  font-weight: 600;
+  font-weight: 700;
   border-color: #f8fafc;
 }
 
@@ -305,6 +334,17 @@
   flex: 1;
   min-width: 260px;
   max-width: 440px;
+}
+
+@media (max-width: 640px) {
+  .search-box {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .results-count {
+    font-size: 0.82rem;
+    width: 100%;
+  }
 }
 
 .search-input {
@@ -1091,27 +1131,126 @@
    FOOTER
    -------------------------------------------------------------------------- */
 .footer {
-  padding: 40px 0;
+  padding: 32px 0 28px 0;
   background: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
   font-size: 0.88rem;
   color: var(--text-muted);
 }
 
-.footer-inner {
+.footer-container {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.footer-system-status {
+.footer-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-brand {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--text-primary);
+  font-weight: 600;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.footer-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+}
+
+.footer-divider-line {
+  width: 100%;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copyright-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.footer-actions-cluster {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .contact-lead-card {
+    padding: 18px 16px;
+  }
+  .contact-channels-card {
+    padding: 18px 16px;
+  }
+  .contact-channel-row {
+    padding: 10px 12px;
+  }
+  .channel-icon-box {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    margin-right: 10px;
+  }
+  .channel-value-text {
+    font-size: 0.85rem;
+  }
+  .contact-form-card {
+    padding: 20px 16px;
+  }
+  .footer {
+    padding: 24px 0 20px 0;
+  }
+  .footer-container {
+    gap: 14px;
+  }
+  .footer-header-row {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .footer-bottom-row {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .footer-actions-cluster {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .footer-copyright-text {
+    font-size: 0.78rem;
+  }
 }
 
 /* --------------------------------------------------------------------------
