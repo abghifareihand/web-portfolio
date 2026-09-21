@@ -6,13 +6,20 @@ import { useLanguage } from '../context/LanguageContext';
 export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy }) {
   const { t } = useLanguage();
 
-  // Close on ESC
+  // Close on ESC and lock body scroll
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
   }, [onClose]);
 
   if (!project) return null;
