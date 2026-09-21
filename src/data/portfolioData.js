@@ -78,6 +78,76 @@ export const projectCategoriesI18n = {
 export const getProjectCategories = (lang = 'en') => projectCategoriesI18n[lang] || projectCategoriesI18n.en;
 export const projectCategories = projectCategoriesI18n.en;
 
+/**
+ * ============================================================================
+ * TEMPLATE UNTUK MENAMBAH PROJECT BARU
+ * Copy template object di bawah ini dan paste ke dalam array rawProjectsData.
+ * ============================================================================
+ * {
+ *   id: "nama-project-unik", // Digunakan untuk URL: /#case-study/nama-project-unik
+ *   title: "Nama Project - Subtitle / Tagline",
+ *   category: "mobile", // Pilihan: "mobile" atau "backend"
+ *   categoryLabel: "Flutter", // Label singkat yang tampil di badge
+ *   year: "2024",
+ *   status: "Production", // Contoh: "Production", "In Development", atau "Open Source"
+ *   featured: true, // true jika ingin tampil paling depan
+ *   summary: {
+ *     en: "Brief English overview of the project and what it does.",
+ *     id: "Ringkasan singkat tentang proyek dan apa kegunaannya dalam Bahasa Indonesia."
+ *   },
+ *   tags: ["Flutter", "Dart", "BLoC", "REST API"], // Tag teknologi
+ *   overview: {
+ *     en: [
+ *       "Paragraph 1: Background, user needs, and architectural problem solved.",
+ *       "Paragraph 2: Implementation details, Flutter state management, and backend synergy."
+ *     ],
+ *     id: [
+ *       "Paragraf 1: Latar belakang, kebutuhan pengguna, dan masalah arsitektur yang diselesaikan.",
+ *       "Paragraf 2: Detail implementasi, manajemen state Flutter, dan sinergi backend."
+ *     ]
+ *   },
+ *   keyMetrics: {
+ *     en: [
+ *       "Metric 1 (e.g. 60fps smooth animation)",
+ *       "Metric 2 (e.g. Sub-200ms response time)"
+ *     ],
+ *     id: [
+ *       "Metrik 1 (contoh: Animasi 60fps mulus)",
+ *       "Metrik 2 (contoh: Waktu respon di bawah 200ms)"
+ *     ]
+ *   },
+ *   architecturePoints: {
+ *     en: [
+ *       "Core architectural pillar 1",
+ *       "Core architectural pillar 2"
+ *     ],
+ *     id: [
+ *       "Pilar arsitektur utama 1",
+ *       "Pilar arsitektur utama 2"
+ *     ]
+ *   },
+ *   coverImage: "/projects/nama-project-unik/screen1.png",
+ *   screenshots: [
+ *     "/projects/nama-project-unik/screen1.png",
+ *     "/projects/nama-project-unik/screen2.png",
+ *     "/projects/nama-project-unik/screen3.png"
+ *   ],
+ *   highlights: {
+ *     en: [
+ *       "Key feature / technical highlight 1",
+ *       "Key feature / technical highlight 2"
+ *     ],
+ *     id: [
+ *       "Fitur unggulan / sorotan teknis 1",
+ *       "Fitur unggulan / sorotan teknis 2"
+ *     ]
+ *   },
+ *   github: "https://github.com/abghifareihand/repo-name", // Isi null atau '#' jika private NDA
+ *   liveDemo: "https://link-preview-atau-demo.com" // Isi null jika belum ada preview
+ * },
+ * ============================================================================
+ */
+
 const rawProjectsData = [
   {
     id: "quickbite-ecosystem",
@@ -92,13 +162,15 @@ const rawProjectsData = [
       id: "Ekosistem pesan-antar makanan lengkap terdiri dari aplikasi mobile Flutter yang fluid, pelacakan GPS kurir real-time, backend REST API Laravel yang tangguh, serta dashboard web manajemen admin."
     },
     tags: ["Flutter", "Dart", "Laravel API", "Web Admin Dashboard", "MySQL", "BLoC", "FCM", "Google Maps"],
-    problem: {
-      en: "Coordinating instant order dispatches between customers, delivery riders, and restaurant operators required synchronizing mobile clients with an authoritative backend without race conditions.",
-      id: "Koordinasi pengiriman pesanan instan antara pelanggan, kurir, dan restoran memerlukan sinkronisasi klien mobile dengan backend secara konsisten tanpa race condition."
-    },
-    solution: {
-      en: "Engineered the Flutter mobile app using BLoC and Google Maps marker interpolation, paired with a Laravel 11 REST API utilizing database transactions, Sanctum authentication, and automated FCM push notifications.",
-      id: "Membangun aplikasi mobile Flutter menggunakan BLoC dan interpolasi marker Google Maps, dipadukan dengan REST API Laravel 11 berbasis transaksi database, autentikasi Sanctum, dan push notifikasi FCM otomatis."
+    overview: {
+      en: [
+        "Coordinating instant order dispatches between customers, delivery riders, and restaurant operators required synchronizing mobile clients with an authoritative backend without race conditions.",
+        "Engineered the Flutter mobile app using BLoC and Google Maps marker interpolation, paired with a Laravel 11 REST API utilizing database transactions, Sanctum authentication, and automated FCM push notifications."
+      ],
+      id: [
+        "Koordinasi pengiriman pesanan instan antara pelanggan, kurir, dan restoran memerlukan sinkronisasi klien mobile dengan backend secara konsisten tanpa race condition.",
+        "Membangun aplikasi mobile Flutter menggunakan BLoC dan interpolasi marker Google Maps, dipadukan dengan REST API Laravel 11 berbasis transaksi database, autentikasi Sanctum, dan push notifikasi FCM otomatis."
+      ]
     },
     keyMetrics: {
       en: [
@@ -166,13 +238,15 @@ const rawProjectsData = [
       id: "Aplikasi mobile offline-first khusus yang dibangun untuk Perum Perhutani untuk mencatat dan menghitung hasil panen getah di area tanpa sinyal, dilengkapi cetak struk termal via Bluetooth."
     },
     tags: ["Flutter", "Dart", "Bluetooth ESC/POS", "SQLite / Hive", "Offline-First", "REST API"],
-    problem: {
-      en: "Forest rangers operating deep in remote forest reserves had zero cellular connectivity, preventing data entry and resulting in paper-based delays and manual calculation errors.",
-      id: "Petugas mandor di pedalaman hutan lindung sama sekali tidak memiliki jaringan seluler, menghambat input data sehingga menimbulkan keterlambatan dan risiko kesalahan hitung manual."
-    },
-    solution: {
-      en: "Designed an offline-first mobile workflow with initial online authentication, local offline harvest computation, on-site Bluetooth thermal printing for farmers, and automatic cloud synchronization upon reconnection.",
-      id: "Merancang alur kerja mobile offline-first dengan autentikasi online awal, komputasi panen lokal secara offline, cetak struk termal Bluetooth langsung di lapangan untuk penyadap, dan sinkronisasi otomatis ke cloud saat terhubung kembali."
+    overview: {
+      en: [
+        "Forest rangers operating deep in remote forest reserves had zero cellular connectivity, preventing data entry and resulting in paper-based delays and manual calculation errors.",
+        "Designed an offline-first mobile workflow with initial online authentication, local offline harvest computation, on-site Bluetooth thermal printing for farmers, and automatic cloud synchronization upon reconnection."
+      ],
+      id: [
+        "Petugas mandor di pedalaman hutan lindung sama sekali tidak memiliki jaringan seluler, menghambat input data sehingga menimbulkan keterlambatan dan risiko kesalahan hitung manual.",
+        "Merancang alur kerja mobile offline-first dengan autentikasi online awal, komputasi panen lokal secara offline, cetak struk termal Bluetooth langsung di lapangan untuk penyadap, dan sinkronisasi otomatis ke cloud saat terhubung kembali."
+      ]
     },
     keyMetrics: {
       en: [
@@ -240,13 +314,15 @@ const rawProjectsData = [
       id: "Aplikasi dompet digital aman dengan autentikasi biometrik, transfer instan QRIS/peer-to-peer, dan grafik analitik pengeluaran real-time yang interaktif."
     },
     tags: ["Flutter", "Dart", "BLoC / Cubit", "Clean Architecture", "Biometrics", "REST API", "Dio"],
-    problem: {
-      en: "Financial applications require strict state predictability, encrypted local token storage, and zero data race conditions during concurrent financial requests.",
-      id: "Aplikasi finansial memerlukan prediktabilitas state yang ketat, penyimpanan token lokal terenkripsi, dan pencegahan race condition data saat transaksi bersamaan."
-    },
-    solution: {
-      en: "Implemented Clean Architecture with BLoC state management, Flutter Secure Storage for keychain/keystore tokens, and custom Dio interceptors for automated JWT refresh.",
-      id: "Menerapkan Clean Architecture dengan manajemen state BLoC, Flutter Secure Storage untuk keychain/keystore token, dan custom interceptor Dio untuk auto-refresh JWT."
+    overview: {
+      en: [
+        "Financial applications require strict state predictability, encrypted local token storage, and zero data race conditions during concurrent financial requests.",
+        "Implemented Clean Architecture with BLoC state management, Flutter Secure Storage for keychain/keystore tokens, and custom Dio interceptors for automated JWT refresh."
+      ],
+      id: [
+        "Aplikasi finansial memerlukan prediktabilitas state yang ketat, penyimpanan token lokal terenkripsi, dan pencegahan race condition data saat transaksi bersamaan.",
+        "Menerapkan Clean Architecture dengan manajemen state BLoC, Flutter Secure Storage untuk keychain/keystore token, dan custom interceptor Dio untuk auto-refresh JWT."
+      ]
     },
     keyMetrics: {
       en: [
@@ -314,13 +390,15 @@ const rawProjectsData = [
       id: "Aplikasi mobile layanan kesehatan komprehensif untuk konsultasi dokter real-time, panggilan video/audio, pelacakan resep, dan penjadwalan janji temu."
     },
     tags: ["Flutter", "Dart", "Riverpod", "WebRTC", "Firebase Cloud Messaging", "WebSockets"],
-    problem: {
-      en: "Unstable cellular connections in remote areas caused call dropouts and missing emergency doctor message notifications.",
-      id: "Koneksi seluler yang tidak stabil di area terpencil kerap memutus panggilan dan menghilangkan notifikasi pesan darurat dokter."
-    },
-    solution: {
-      en: "Engineered a resilient WebSocket auto-reconnect engine paired with high-priority FCM push notifications and adaptive WebRTC bitrate fallback.",
-      id: "Merancang mesin auto-reconnect WebSocket yang tangguh dipadukan dengan notifikasi push FCM prioritas tinggi dan adaptasi bitrate WebRTC."
+    overview: {
+      en: [
+        "Unstable cellular connections in remote areas caused call dropouts and missing emergency doctor message notifications.",
+        "Engineered a resilient WebSocket auto-reconnect engine paired with high-priority FCM push notifications and adaptive WebRTC bitrate fallback."
+      ],
+      id: [
+        "Koneksi seluler yang tidak stabil di area terpencil kerap memutus panggilan dan menghilangkan notifikasi pesan darurat dokter.",
+        "Merancang mesin auto-reconnect WebSocket yang tangguh dipadukan dengan notifikasi push FCM prioritas tinggi dan adaptasi bitrate WebRTC."
+      ]
     },
     keyMetrics: {
       en: [
@@ -388,13 +466,15 @@ const rawProjectsData = [
       id: "Agregator berita developer dan pemutar audio podcast dengan pemutaran di latar belakang, kontrol layar kunci, dan penyorot sintaks kode."
     },
     tags: ["Flutter", "Dart", "Just Audio", "Audio Service", "Hive", "Provider"],
-    problem: {
-      en: "Standard audio packages pause when the mobile device screen locks or when user switches to other applications.",
-      id: "Paket audio standar sering terhenti saat layar ponsel terkunci atau pengguna berpindah ke aplikasi lain."
-    },
-    solution: {
-      en: "Integrated Android foreground media services and iOS AVAudioSession with lock screen notifications and persistent local caching.",
-      id: "Mengintegrasikan media service foreground Android dan AVAudioSession iOS dengan notifikasi layar kunci dan penyimpanan cache lokal persisten."
+    overview: {
+      en: [
+        "Standard audio packages pause when the mobile device screen locks or when user switches to other applications.",
+        "Integrated Android foreground media services and iOS AVAudioSession with lock screen notifications and persistent local caching."
+      ],
+      id: [
+        "Paket audio standar sering terhenti saat layar ponsel terkunci atau pengguna berpindah ke aplikasi lain.",
+        "Mengintegrasikan media service foreground Android dan AVAudioSession iOS dengan notifikasi layar kunci dan penyimpanan cache lokal persisten."
+      ]
     },
     keyMetrics: {
       en: [
@@ -462,13 +542,15 @@ const rawProjectsData = [
       id: "Package open-source Flutter yang menyediakan komponen UI adaptif Cupertino (iOS) dan Material 3 (Android) dengan penskalaan breakpoint perangkat otomatis."
     },
     tags: ["Flutter", "Dart", "Open Source", "Material 3", "Cupertino", "Unit Testing"],
-    problem: {
-      en: "Developers frequently duplicate layout logic when targeting both iOS and Android platforms to match native design guidelines.",
-      id: "Developer sering menduplikasi logika layout saat menargetkan platform iOS dan Android agar sesuai dengan pedoman desain native."
-    },
-    solution: {
-      en: "Crafted unified wrapper widgets that dynamically evaluate platform target and render platform-authentic dialogs, sheets, buttons, and switches.",
-      id: "Membangun widget pembungkus terpadu yang mengevaluasi target platform secara dinamis dan me-render dialog, sheet, button, dan switch sesuai platform native."
+    overview: {
+      en: [
+        "Developers frequently duplicate layout logic when targeting both iOS and Android platforms to match native design guidelines.",
+        "Crafted unified wrapper widgets that dynamically evaluate platform target and render platform-authentic dialogs, sheets, buttons, and switches."
+      ],
+      id: [
+        "Developer sering menduplikasi logika layout saat menargetkan platform iOS dan Android agar sesuai dengan pedoman desain native.",
+        "Membangun widget pembungkus terpadu yang mengevaluasi target platform secara dinamis dan me-render dialog, sheet, button, dan switch sesuai platform native."
+      ]
     },
     keyMetrics: {
       en: [
@@ -529,6 +611,7 @@ export const getProjectsData = (lang = 'en') => {
   return rawProjectsData.map((project) => ({
     ...project,
     summary: typeof project.summary === 'object' ? (project.summary[lang] || project.summary.en) : project.summary,
+    overview: typeof project.overview === 'object' && !Array.isArray(project.overview) ? (project.overview[lang] || project.overview.en) : project.overview,
     problem: typeof project.problem === 'object' ? (project.problem[lang] || project.problem.en) : project.problem,
     solution: typeof project.solution === 'object' ? (project.solution[lang] || project.solution.en) : project.solution,
     keyMetrics: typeof project.keyMetrics === 'object' && !Array.isArray(project.keyMetrics) ? (project.keyMetrics[lang] || project.keyMetrics.en) : project.keyMetrics,

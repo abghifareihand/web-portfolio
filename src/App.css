@@ -2616,17 +2616,17 @@
   margin: 0;
 }
 
-.overview-subhead {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #38bdf8;
-  margin-bottom: 6px;
+.case-study-overview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .case-study-overview-body p {
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: 0.95rem;
+  margin: 0;
 }
 
 .case-study-features-grid {

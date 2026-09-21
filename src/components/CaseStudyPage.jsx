@@ -83,17 +83,19 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
                 <h2 className="case-study-section-heading">{t('caseStudy.projectOverview')}</h2>
               </div>
               <div className="case-study-overview-body">
-                {project.problem && (
-                  <div className="overview-subblock">
-                    <h3 className="overview-subhead">{t('caseStudy.theChallenge')}</h3>
-                    <p>{project.problem}</p>
-                  </div>
-                )}
-                {project.solution && (
-                  <div className="overview-subblock" style={{ marginTop: '18px' }}>
-                    <h3 className="overview-subhead">{t('caseStudy.theSolution')}</h3>
-                    <p>{project.solution}</p>
-                  </div>
+                {Array.isArray(project.overview) ? (
+                  project.overview.map((para, idx) => (
+                    <p key={idx} className="case-study-overview-paragraph">
+                      {para}
+                    </p>
+                  ))
+                ) : project.overview ? (
+                  <p className="case-study-overview-paragraph">{project.overview}</p>
+                ) : (
+                  <>
+                    {project.problem && <p className="case-study-overview-paragraph">{project.problem}</p>}
+                    {project.solution && <p className="case-study-overview-paragraph">{project.solution}</p>}
+                  </>
                 )}
               </div>
             </div>
