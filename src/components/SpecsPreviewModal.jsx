@@ -75,16 +75,8 @@ export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy })
 
         {/* Modal Footer */}
         <div className="specs-modal-footer">
-          <button 
-            type="button" 
-            className="specs-close-text-btn" 
-            onClick={onClose}
-          >
-            CLOSE
-          </button>
-
           <div className="specs-footer-actions">
-            {project.github && (
+            {project.github && project.github !== '#' && (
               <a 
                 href={project.github} 
                 target="_blank" 

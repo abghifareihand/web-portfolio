@@ -2249,26 +2249,10 @@
 .specs-modal-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 28px;
   padding-top: 20px;
   border-top: 1px solid var(--border-subtle);
-}
-
-.specs-close-text-btn {
-  background: transparent;
-  border: none;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: color var(--transition-fast);
-}
-
-.specs-close-text-btn:hover {
-  color: var(--text-primary);
 }
 
 .specs-footer-actions {
