@@ -10,7 +10,7 @@ export const personalData = {
   role: "Mobile Developer (Flutter)",
   tagline: "Crafting fluid, high-performance cross-platform mobile apps with end-to-end backend integration.",
   location: "Jakarta Selatan, Indonesia",
-  availability: "Available for Fulltime & Project",
+  availability: "Available for Fulltime & Project-Based",
   statusColor: "#10b981", // Emerald active status
   email: "abghifareihand@gmail.com",
   github: "https://github.com/abghifareihand",
@@ -27,7 +27,7 @@ export const personalData = {
     { value: "2+", label: "Years Experience", detail: "Flutter & Mobile Ecosystem" },
     { value: "10+", label: "Mobile Apps & Systems", detail: "End-to-End Solutions Delivered" },
     { value: "1:1", label: "Pixel-Perfect UI", detail: "Precise Figma-to-Code Slicing" },
-    { value: "Fullstack", label: "Fullstack Systems", detail: "Flutter & Laravel REST API" }
+    { value: "Android & iOS", label: "Cross-Platform", detail: "Optimized Single Codebase" }
   ]
 };
 

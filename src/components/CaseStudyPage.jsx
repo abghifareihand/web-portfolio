@@ -189,14 +189,6 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
                   <span className="info-key">Year</span>
                   <span className="info-val">{project.year}</span>
                 </div>
-                <div className="info-row">
-                  <span className="info-key">Status</span>
-                  <span className="info-val status-val">{project.status}</span>
-                </div>
-                <div className="info-row">
-                  <span className="info-key">Platform</span>
-                  <span className="info-val">Flutter (iOS & Android)</span>
-                </div>
               </div>
             </div>
           </aside>
