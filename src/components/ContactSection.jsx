@@ -291,7 +291,7 @@ export default function ContactSection({ onShowToast }) {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label" htmlFor="contact-email">Your Email Address</label>
+                  <label className="form-label" htmlFor="contact-email">Email Address</label>
                   <input
                     id="contact-email"
                     name="email"
