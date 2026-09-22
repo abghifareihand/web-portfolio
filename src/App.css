@@ -2467,7 +2467,11 @@
 }
 
 .case-study-top-nav {
-  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
 }
 
 .case-study-back-btn {
@@ -2494,87 +2498,167 @@
   transform: translateX(-2px);
 }
 
-/* GAMBAR 3: HERO HEADER CARD */
+.case-study-breadcrumb-trail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb-slash {
+  color: var(--border-muted);
+}
+
+.breadcrumb-current {
+  color: var(--text-secondary);
+  max-width: 380px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================================================
+   GAMBAR 1: UNIFIED COMPACT HERO CARD DENGAN BACKGROUND COVER IMAGE
+   ============================================================================ */
 .case-study-hero-card {
   position: relative;
   width: 100%;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   margin-bottom: 32px;
-  min-height: clamp(480px, 58vh, 600px);
+  min-height: clamp(450px, 54vh, 560px);
   display: flex;
   align-items: flex-end;
-  background: #020617;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .case-study-hero-card {
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .case-study-hero-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
-  filter: blur(2px) brightness(0.65);
-  transform: scale(1.04);
+  background-position: center right;
+  filter: none;
+  transform: scale(1.01);
 }
 
+/* Overlay merata dan tipis sesuai contoh referensi: gambar cover terlihat menyeluruh, teks kontras */
 .case-study-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 12, 20, 0.4) 0%, rgba(8, 12, 20, 0.92) 80%, rgba(8, 12, 20, 0.98) 100%);
+  background: 
+    linear-gradient(180deg, rgba(8, 12, 22, 0.32) 0%, rgba(8, 12, 22, 0.62) 55%, rgba(8, 12, 22, 0.86) 100%),
+    linear-gradient(90deg, rgba(8, 12, 22, 0.6) 0%, rgba(8, 12, 22, 0.28) 45%, rgba(8, 12, 22, 0.08) 100%);
+  pointer-events: none;
+}
+
+[data-theme="light"] .case-study-hero-overlay {
+  background: 
+    linear-gradient(180deg, rgba(11, 17, 32, 0.32) 0%, rgba(11, 17, 32, 0.62) 55%, rgba(11, 17, 32, 0.86) 100%),
+    linear-gradient(90deg, rgba(11, 17, 32, 0.6) 0%, rgba(11, 17, 32, 0.28) 45%, rgba(11, 17, 32, 0.08) 100%);
 }
 
 .case-study-hero-content {
   position: relative;
   z-index: 2;
-  padding: clamp(24px, 5vw, 48px);
+  padding: clamp(22px, 3.2vw, 36px);
   width: 100%;
+  max-width: 580px;
 }
 
 .case-study-hero-badge-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.case-study-badge-cat {
+  background: #2563eb;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .case-study-badge-year {
   background: rgba(0, 0, 0, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   padding: 4px 10px;
   border-radius: 6px;
+  backdrop-filter: blur(8px);
 }
 
 .case-study-hero-title {
-  font-size: clamp(1.85rem, 4vw, 3rem);
+  font-size: clamp(1.4rem, 2.3vw, 1.95rem);
   font-weight: 800;
-  color: #fff;
-  margin-bottom: 14px;
+  color: #ffffff;
+  margin-bottom: 10px;
   line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
 
 .case-study-hero-desc {
-  font-size: 1.05rem;
-  color: #cbd5e1;
-  line-height: 1.65;
-  max-width: 860px;
-  margin-bottom: 20px;
+  font-size: clamp(0.85rem, 1vw, 0.92rem);
+  color: #f1f5f9;
+  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 16px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
 }
 
 .case-study-hero-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .tag-pill-hero {
-  background: rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
   backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+  .case-study-hero-card {
+    border-radius: 16px;
+    min-height: 420px;
+    margin-bottom: 24px;
+  }
+  .case-study-hero-content {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+  .case-study-hero-overlay {
+    background: linear-gradient(180deg, rgba(8, 12, 22, 0.32) 0%, rgba(8, 12, 22, 0.65) 50%, rgba(8, 12, 22, 0.9) 100%);
+  }
 }
 
 /* GAMBAR 4: 2-COLUMN CONTENT SECTION */

@@ -30,7 +30,7 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
   return (
     <div className="case-study-page">
       <div className="site-container">
-        {/* Top Back Button */}
+        {/* Top Back Button & Breadcrumbs */}
         <div className="case-study-top-nav">
           <button 
             type="button" 
@@ -41,21 +41,25 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
             <ArrowLeft size={16} />
             <span>{t('caseStudy.backBtn')}</span>
           </button>
+          <div className="case-study-breadcrumb-trail">
+            <span className="breadcrumb-slash">/</span>
+            <span className="breadcrumb-current">{project.title}</span>
+          </div>
         </div>
 
-        {/* HERO HEADER CARD (GAMBAR 3) */}
+        {/* HERO CARD COMPACT DENGAN COVER IMAGE BACKGROUND (GAMBAR 1) */}
         <div className="case-study-hero-card">
-          {/* Background image & gradient overlay */}
+          {/* Background image & directional gradient overlay */}
           <div 
             className="case-study-hero-bg" 
             style={{ backgroundImage: `url(${coverImg})` }}
           />
           <div className="case-study-hero-overlay" />
 
-          {/* Hero Content */}
+          {/* Hero Content inside the card */}
           <div className="case-study-hero-content">
             <div className="case-study-hero-badge-row">
-              <span className="card-badge-category">{project.categoryLabel}</span>
+              <span className="case-study-badge-cat">{project.categoryLabel}</span>
               <span className="case-study-badge-year">{project.year}</span>
             </div>
 
@@ -64,7 +68,7 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
 
             <div className="case-study-hero-tags">
               {project.tags.map((tag) => (
-                <span key={tag} className="tag-pill tag-pill-hero">
+                <span key={tag} className="tag-pill-hero">
                   {tag}
                 </span>
               ))}
