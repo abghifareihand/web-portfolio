@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { 
-  X, 
-  ChevronLeft, 
-  ChevronRight, 
-  ZoomIn, 
-  ZoomOut, 
+import {
+  X,
+  ChevronLeft,
+  ChevronRight,
+  ZoomIn,
+  ZoomOut,
   RotateCcw
 } from 'lucide-react';
 
@@ -194,18 +194,18 @@ export default function FullscreenLightbox({ project, initialIndex = 0, onClose 
         <div className="pro-lightbox-nav-cluster">
           {screenshots.length > 1 && (
             <div className="pro-nav-buttons">
-              <button 
-                type="button" 
-                className="pro-nav-arrow-btn" 
+              <button
+                type="button"
+                className="pro-nav-arrow-btn"
                 onClick={prevImage}
                 title="Previous (Left Arrow)"
                 aria-label="Previous image"
               >
                 <ChevronLeft size={18} />
               </button>
-              <button 
-                type="button" 
-                className="pro-nav-arrow-btn" 
+              <button
+                type="button"
+                className="pro-nav-arrow-btn"
                 onClick={nextImage}
                 title="Next (Right Arrow)"
                 aria-label="Next image"
@@ -259,9 +259,9 @@ export default function FullscreenLightbox({ project, initialIndex = 0, onClose 
         </div>
 
         {/* Right: Close Button */}
-        <button 
-          type="button" 
-          className="pro-close-pill" 
+        <button
+          type="button"
+          className="pro-close-pill"
           onClick={onClose}
           title="Close (Esc)"
         >
@@ -271,7 +271,7 @@ export default function FullscreenLightbox({ project, initialIndex = 0, onClose 
       </header>
 
       {/* 2. MAIN VIEWPORT - DEDICATED STAGE, NO FORCED ASPECT RATIO */}
-      <main 
+      <main
         className="pro-lightbox-stage"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -282,19 +282,19 @@ export default function FullscreenLightbox({ project, initialIndex = 0, onClose 
         onMouseLeave={handleMouseUp}
         onDoubleClick={toggleDoubleTapZoom}
       >
-        <div 
+        <div
           className="pro-image-canvas"
           style={{
-            transform: zoomLevel > 1 
+            transform: zoomLevel > 1
               ? `scale(${zoomLevel}) translate(${pan.x / zoomLevel}px, ${pan.y / zoomLevel}px)`
               : `translateX(${swipeOffset}px)`,
             transition: isDragging || swipeOffset !== 0 ? 'none' : 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
             cursor: zoomLevel > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default'
           }}
         >
-          <img 
-            src={screenshots[activeIdx]} 
-            alt={`Screenshot ${activeIdx + 1}`} 
+          <img
+            src={screenshots[activeIdx]}
+            alt={`Screenshot ${activeIdx + 1}`}
             className="pro-screenshot-display"
             draggable={false}
           />

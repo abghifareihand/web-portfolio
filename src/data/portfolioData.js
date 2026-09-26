@@ -390,7 +390,9 @@ const rawProjectsData = [
     screenshots: [
       "/projects/fondaco-app/screen1.png",
       "/projects/fondaco-app/screen2.png",
-      "/projects/fondaco-app/screen3.png"
+      "/projects/fondaco-app/screen3.png",
+      "/projects/fondaco-app/screen4.png",
+      "/projects/fondaco-app/screen5.png"
     ],
     highlights: {
       en: [
@@ -479,7 +481,8 @@ const rawProjectsData = [
     screenshots: [
       "/projects/quickmark-app/screen1.png",
       "/projects/quickmark-app/screen2.png",
-      "/projects/quickmark-app/screen3.png"
+      "/projects/quickmark-app/screen3.png",
+      "/projects/quickmark-app/screen4.png"
     ],
     highlights: {
       en: [
@@ -742,7 +745,10 @@ const rawProjectsData = [
     screenshots: [
       "/projects/sales-inventory-app/screen1.png",
       "/projects/sales-inventory-app/screen2.png",
-      "/projects/sales-inventory-app/screen3.png"
+      "/projects/sales-inventory-app/screen3.png",
+      "/projects/sales-inventory-app/screen4.png",
+      "/projects/sales-inventory-app/screen5.png",
+      "/projects/sales-inventory-app/screen6.png"
     ],
     highlights: {
       en: [
@@ -767,7 +773,7 @@ const rawProjectsData = [
   },
   {
     id: "nuset-app",
-    title: "Nusantara Aset App",
+    title: "Nuset App",
     category: "mobile",
     categoryLabel: "Flutter",
     year: "2025",
@@ -776,7 +782,7 @@ const rawProjectsData = [
     featured: false,
     summary: {
       en: "An offline-first mobile application designed to simplify recording, tracking, and managing enterprise asset inventories, operational tools, and circulation transactions efficiently.",
-      id: "Nusantara Aset adalah aplikasi mobile berbasis offline-first yang dirancang untuk mempermudah pencatatan, pelacakan, dan pengelolaan inventaris aset, perkakas operasional (tools), serta sirkulasi transaksi barang secara efisien dan terstruktur."
+      id: "Nuset adalah aplikasi mobile berbasis offline-first yang dirancang untuk mempermudah pencatatan, pelacakan, dan pengelolaan inventaris aset, perkakas operasional (tools), serta sirkulasi transaksi barang secara efisien dan terstruktur."
     },
     tags: ["Flutter", "Dart", "MVVM", "Provider", "Hive NoSQL", "Sqflite", "Syncfusion XlsIO", "Image Picker"],
     overview: {
@@ -785,7 +791,7 @@ const rawProjectsData = [
         "Engineered with an offline-first architecture utilizing Hive NoSQL and Sqflite local databases, enabling seamless warehouse and facility inventory operations even in zero-connectivity environments."
       ],
       id: [
-        "Aplikasi ini mendigitalkan proses manajemen aset fisik dan logistik internal perusahaan. Nusantara Aset memfasilitasi pencatatan data aset lengkap dengan dokumentasi foto, pemantauan transaksi arus barang (masuk/keluar), pelacakan peminjaman barang beserta riwayatnya, hingga pembuatan laporan rekapitulasi otomatis ke format Excel langsung dari perangkat mobile.",
+        "Aplikasi ini mendigitalkan proses manajemen aset fisik dan logistik internal perusahaan. Nuset memfasilitasi pencatatan data aset lengkap dengan dokumentasi foto, pemantauan transaksi arus barang (masuk/keluar), pelacakan peminjaman barang beserta riwayatnya, hingga pembuatan laporan rekapitulasi otomatis ke format Excel langsung dari perangkat mobile.",
         "Dengan arsitektur offline-first menggunakan database NoSQL Hive dan Sqflite, seluruh operasional gudang dan inventarisasi dapat berjalan tanpa gangguan meski di area tanpa koneksi internet."
       ]
     },

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  X, 
-  ExternalLink, 
-  CheckCircle2, 
-  Cpu, 
-  ShieldAlert, 
+import {
+  X,
+  ExternalLink,
+  CheckCircle2,
+  Cpu,
+  ShieldAlert,
   Layers,
   ChevronLeft,
   ChevronRight,
@@ -94,13 +94,13 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
   return (
     <>
       <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true">
-        <div 
-          className={`modal-content ${activeTab === 'screenshots' ? 'modal-content-wide' : ''}`} 
+        <div
+          className={`modal-content ${activeTab === 'screenshots' ? 'modal-content-wide' : ''}`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button */}
-          <button 
-            className="modal-close-btn" 
+          <button
+            className="modal-close-btn"
             onClick={onClose}
             aria-label="Close dialog"
           >
@@ -216,14 +216,14 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
               {hasScreenshots ? (
                 <div className="modal-gallery-wrapper">
                   {/* Gallery Viewport with Swipe Support */}
-                  <div 
+                  <div
                     className="gallery-main-view"
                     onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}
                   >
-                    <img 
-                      src={screenshots[activeImageIdx]} 
+                    <img
+                      src={screenshots[activeImageIdx]}
                       alt={`${project.title} Screenshot ${activeImageIdx + 1}`}
                       className="gallery-active-img"
                       onClick={() => setIsFullscreen(true)}
@@ -233,17 +233,17 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
                     {/* Navigation Prev / Next */}
                     {screenshots.length > 1 && (
                       <>
-                        <button 
+                        <button
                           type="button"
-                          className="gallery-nav-btn prev-btn" 
+                          className="gallery-nav-btn prev-btn"
                           onClick={prevImage}
                           aria-label="Previous screenshot"
                         >
                           <ChevronLeft size={22} />
                         </button>
-                        <button 
+                        <button
                           type="button"
-                          className="gallery-nav-btn next-btn" 
+                          className="gallery-nav-btn next-btn"
                           onClick={nextImage}
                           aria-label="Next screenshot"
                         >
@@ -258,7 +258,7 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
                         <Smartphone size={13} />
                         <span>Screenshot {activeImageIdx + 1} of {screenshots.length}</span>
                       </span>
-                      <button 
+                      <button
                         type="button"
                         className="gallery-zoom-btn"
                         onClick={() => setIsFullscreen(true)}
@@ -305,10 +305,10 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
           <div className="project-actions" style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid var(--border-subtle)' }}>
             <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
               {project.liveDemo && (
-                <a 
-                  href={project.liveDemo} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noreferrer"
                   className="btn btn-primary btn-sm"
                 >
                   <span>Live Demo</span>
@@ -316,32 +316,32 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
                 </a>
               )}
               {project.github ? (
-                <a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
                   className="btn btn-secondary btn-sm"
                 >
                   <GithubIcon size={14} />
                   <span>Source Code</span>
                 </a>
               ) : (
-                <span style={{ 
-                  display: 'inline-flex', 
-                  alignItems: 'center', 
-                  gap: '6px', 
-                  fontSize: '0.8rem', 
+                <span style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontSize: '0.8rem',
                   color: 'var(--text-muted)',
-                  fontFamily: 'var(--font-mono)' 
+                  fontFamily: 'var(--font-mono)'
                 }}>
                   <Lock size={13} />
                   <span>Private Client Project</span>
                 </span>
               )}
             </div>
-            <button 
-              type="button" 
-              onClick={onClose} 
+            <button
+              type="button"
+              onClick={onClose}
               className="btn btn-ghost btn-sm"
             >
               Close
@@ -352,8 +352,8 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
 
       {/* FULLSCREEN / ZOOM LIGHTBOX WITH FULL SWIPE & NAVIGATION */}
       {isFullscreen && hasScreenshots && (
-        <div 
-          className="fullscreen-lightbox" 
+        <div
+          className="fullscreen-lightbox"
           onClick={() => setIsFullscreen(false)}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -370,8 +370,8 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
 
             <div className="lightbox-actions">
               <span className="lightbox-shortcut-hint">Swipe or use ← → to browse</span>
-              <button 
-                className="lightbox-close-btn" 
+              <button
+                className="lightbox-close-btn"
                 onClick={() => setIsFullscreen(false)}
                 title="Close fullscreen (Esc)"
               >
@@ -382,7 +382,7 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
 
           {/* Left Arrow Button */}
           {screenshots.length > 1 && (
-            <button 
+            <button
               type="button"
               className="lightbox-arrow-btn lightbox-prev"
               onClick={prevImage}
@@ -394,16 +394,16 @@ export default function ProjectModal({ project, initialTab = 'details', onClose 
 
           {/* Main Large Image */}
           <div className="lightbox-image-container" onClick={(e) => e.stopPropagation()}>
-            <img 
-              src={screenshots[activeImageIdx]} 
-              alt={`${project.title} Screenshot Fullscreen ${activeImageIdx + 1}`} 
+            <img
+              src={screenshots[activeImageIdx]}
+              alt={`${project.title} Screenshot Fullscreen ${activeImageIdx + 1}`}
               className="lightbox-image"
             />
           </div>
 
           {/* Right Arrow Button */}
           {screenshots.length > 1 && (
-            <button 
+            <button
               type="button"
               className="lightbox-arrow-btn lightbox-next"
               onClick={nextImage}
