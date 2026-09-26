@@ -42,7 +42,10 @@ export const translations = {
       btnCaseStudy: "CASE STUDY",
       catAll: "ALL PROJECTS",
       catMobile: "MOBILE APPS",
-      catFullstack: "CROSS-PLATFORM & BACKEND"
+      catFullstack: "CROSS-PLATFORM & BACKEND",
+      sortBy: "Sort:",
+      sortNewest: "Newest",
+      sortOldest: "Oldest"
     },
     // Specs Preview Modal
     specsModal: {
@@ -153,7 +156,10 @@ export const translations = {
       btnCaseStudy: "STUDI KASUS",
       catAll: "SEMUA PROYEK",
       catMobile: "APLIKASI MOBILE",
-      catFullstack: "CROSS-PLATFORM & BACKEND"
+      catFullstack: "CROSS-PLATFORM & BACKEND",
+      sortBy: "Urutkan:",
+      sortNewest: "Terbaru",
+      sortOldest: "Terlama"
     },
     // Specs Preview Modal
     specsModal: {

@@ -235,14 +235,9 @@ export default function ContactSection({ onShowToast }) {
 
           {/* Right Column: Interactive Message Form */}
           <div className="contact-form-card">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <h3 style={{ fontSize: '1.25rem' }}>
-                {t('contact.sendViaGmail')}
-              </h3>
-              <span style={{ fontSize: '0.75rem', color: '#38bdf8', background: 'rgba(56, 189, 248, 0.1)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(56, 189, 248, 0.25)', fontFamily: 'var(--font-mono)' }}>
-                {t('contact.directRedirect')}
-              </span>
-            </div>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>
+              {t('contact.sendViaGmail')}
+            </h3>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '20px' }}>
               {t('contact.formSubtitle')}

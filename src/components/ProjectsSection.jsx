@@ -4,7 +4,8 @@ import {
   Smartphone, 
   FilterX, 
   Eye, 
-  ArrowUpRight 
+  ArrowUpRight,
+  ArrowUpDown 
 } from 'lucide-react';
 import { getProjectCategories, getProjectsData } from '../data/portfolioData';
 import { useLanguage } from '../context/LanguageContext';
@@ -13,12 +14,14 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
   const { lang, t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortOrder, setSortOrder] = useState('newest'); // 'newest' | 'oldest'
 
   const projectCategories = useMemo(() => getProjectCategories(lang), [lang]);
   const projectsData = useMemo(() => getProjectsData(lang), [lang]);
 
   const filteredProjects = useMemo(() => {
-    return projectsData.filter((project) => {
+    // 1. Filter by category and search query
+    const list = projectsData.filter((project) => {
       const matchCategory = 
         activeCategory === 'all' || project.category === activeCategory;
       
@@ -31,11 +34,32 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
 
       return matchCategory && (matchName || matchSummary || matchTags);
     });
-  }, [projectsData, activeCategory, searchQuery]);
+
+    // 2. Sort by date (YYYY-MM) or year, then by name
+    return list.slice().sort((a, b) => {
+      const dateA = a.date || a.year || '';
+      const dateB = b.date || b.year || '';
+
+      if (sortOrder === 'newest') {
+        const cmp = dateB.localeCompare(dateA); // Newest date first
+        if (cmp !== 0) return cmp;
+        return a.title.localeCompare(b.title); // Alphabetical fallback
+      } else {
+        const cmp = dateA.localeCompare(dateB); // Oldest date first
+        if (cmp !== 0) return cmp;
+        return a.title.localeCompare(b.title); // Alphabetical fallback
+      }
+    });
+  }, [projectsData, activeCategory, searchQuery, sortOrder]);
 
   const handleResetFilters = () => {
     setActiveCategory('all');
     setSearchQuery('');
+    setSortOrder('newest');
+  };
+
+  const toggleSortOrder = () => {
+    setSortOrder((prev) => (prev === 'newest' ? 'oldest' : 'newest'));
   };
 
   return (
@@ -70,16 +94,33 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
           </div>
 
           <div className="search-bar-wrapper">
-            <div className="search-box">
-              <Search size={16} className="search-icon" />
-              <input
-                type="text"
-                className="search-input"
-                placeholder={t('projects.searchPlaceholder')}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                aria-label="Search mobile projects by keyword or tech stack"
-              />
+            <div className="search-and-sort-group">
+              <div className="search-box">
+                <Search size={16} className="search-icon" />
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder={t('projects.searchPlaceholder')}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  aria-label="Search mobile projects by keyword or tech stack"
+                />
+              </div>
+
+              {/* Sort Toggle Button (Newest <-> Oldest) */}
+              <button
+                type="button"
+                className={`sort-toggle-btn ${sortOrder === 'oldest' ? 'sort-oldest-active' : ''}`}
+                onClick={toggleSortOrder}
+                title={sortOrder === 'newest' ? t('projects.sortOldest') : t('projects.sortNewest')}
+                aria-label="Toggle sort order by year"
+              >
+                <ArrowUpDown size={14} className="sort-icon" />
+                <span className="sort-label-prefix">{t('projects.sortBy')}</span>
+                <span className="sort-label-val">
+                  {sortOrder === 'newest' ? t('projects.sortNewest') : t('projects.sortOldest')}
+                </span>
+              </button>
             </div>
 
             <div className="results-count">

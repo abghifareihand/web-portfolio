@@ -1,0 +1,265 @@
+==============
+OVERTIME APP
+==============
+
+1. Project Summary
+Overtime Connect adalah aplikasi mobile berbasis Flutter untuk membantu pekerja mencatat, menghitung, dan memantau jam kerja lembur secara otomatis, akurat, dan transparan sesuai regulasi ketenagakerjaan.
+
+2. Project Overview
+Aplikasi ini menyelesaikan masalah pencatatan lembur manual yang sering kali rawan salah hitung. Dibangun dengan arsitektur MVVM yang terstruktur, Overtime Connect menyediakan fitur absensi lembur harian, kalkulasi otomatis upah lembur secara real-time, visualisasi tren lembur via grafik dan kalender interaktif, serta rekapitulasi estimasi total pendapatan bulanan.
+
+3. Key Feature
+Smart Overtime Attendance: Pencatatan lembur harian dengan kalkulasi otomatis berdasarkan jenis hari (hari kerja biasa vs hari libur).
+Interactive Dashboard: Ringkasan total jam lembur & nominal pendapatan, dilengkapi grafik mingguan serta kalender bulanan interaktif.
+Overtime Calculator: Simulasi mandiri untuk menghitung estimasi upah lembur bertingkat tanpa harus menyimpan absensi.
+Salary & Overtime Recap: Riwayat detail lembur dan estimasi akumulasi gaji dengan filter rentang tanggal fleksibel.
+Secure Auth & OTP via Gmail: Sistem login, registrasi, serta pemulihan akun (Forgot Password) yang aman menggunakan kode OTP yang dikirim langsung ke Gmail / Email.
+User Profile Management: Pembaruan profil, unggah foto (kamera/galeri), ganti email/password, serta konfigurasi gaji pokok dan jumlah hari kerja.
+
+4. Tech Stack
+Flutter & Dart
+MVVM Architecture
+Provider (State Management)
+REST API (Dio & Retrofit)
+Shared Preferences (Local Storage)
+Syncfusion Charts & Table Calendar
+
+
+=================
+REKALABA PPOB APP
+=================
+
+1. Project Summary
+Rekalaba PPOB (Payment Point Online Bank) adalah modul layanan finansial digital berbasis Flutter yang memungkinkan merchant/kasir melayani berbagai transaksi pembayaran tagihan, pembelian produk digital, hingga transfer bank langsung dari aplikasi kasir dengan dukungan cetak struk via printer thermal.
+
+2. Project Overview
+Modul ini dikembangkan sebagai sub-sistem mandiri di dalam ekosistem Rekalaba POS. Mengadopsi arsitektur MVVM yang terstruktur rapi, modul ini dirancang responsif dengan dukungan tampilan Portrait & Landscape agar nyaman digunakan di smartphone kasir maupun tablet POS. Fokus modul ini mencakup transaksi pembayaran instan, top-up deposit mitra via payment gateway, keamanan berbasis OTP & PIN, serta integrasi hardware printer Bluetooth.
+
+3. Key Feature
+Produk Digital & Pulsa: Pembelian pulsa, paket data internet, paket SMS/telepon semua operator, serta voucher game online.
+Pembayaran Tagihan (Bill Payment): Pembayaran utilitas rutin seperti token & tagihan PLN, PDAM, BPJS Kesehatan, Telkom/Indihome, TV Kabel, dan cicilan multifinance.
+Top-Up E-Money & Dompet Digital: Pengisian saldo GoPay, OVO, DANA, ShopeePay, LinkAja, Mandiri e-Money, TapCash, dan e-wallet lainnya.
+Transfer Antar Bank: Cek rekening tujuan (account inquiry) dan transfer dana antar bank secara real-time.
+Manajemen Deposit & Payment Gateway: Pengisian saldo deposit kasir melalui Virtual Account (VA), minimarket (Indomaret/Alfamart), dan E-Wallet via integrasi Nicepay.
+Cetak Struk Thermal (ESC/POS): Fitur cetak bukti transaksi otomatis ke printer Bluetooth thermal dengan QR code dan format struk resmi.
+Keamanan & Transaksi Cepat: Autentikasi via OTP SMS, verifikasi PIN saat transaksi, serta integrasi kontak ponsel untuk input nomor yang cepat.
+
+
+4. Tech Stack
+Flutter & Dart
+MVVM Pattern, Provider
+Dio, Retrofit, RESTful API
+Nicepay (Virtual Account, Minimarket, E-Wallet)
+ESC/POS Thermal Printer (Bluetooth)
+Secure Storage, SharedPreferences, Flutter UDID, JWT, OTP/PIN Verification
+Flutter ScreenUtil (Responsive Portrait & Landscape), Pinput, Alice Network Inspector, Flutter SVG
+
+
+===============
+FONDACO APP
+===============
+
+1. Project Summary
+Fondaco App adalah aplikasi mobile e-commerce dan loyalty platform berbasis Flutter untuk Fondaco Dental (fondacoshop.com), yang memudahkan klinik dan dokter gigi di Indonesia dalam memesan peralatan medis, mendaftar seminar kedokteran gigi, dan mengumpulkan poin loyalitas.
+
+2. Project Overview
+Aplikasi ini dibangun menggunakan arsitektur Clean Architecture (Feature-First) dengan pola BLoC untuk memisahkan logika bisnis dan antarmuka secara rapi, scalable, serta mudah dirawat. Seluruh modul fitur terintegrasi dengan REST API menggunakan Dio dan memanfaatkan GetIt untuk Dependency Injection.
+
+3. Key Feature
+Product Catalog & Advanced Filter: Pencarian produk cepat, infinite scroll pagination, dan filter berdasarkan kategori serta brand resmi.
+Cart & Order Tracking: Manajemen keranjang belanja, integrasi buku alamat pengiriman, kalkulasi biaya, dan pelacakan riwayat pesanan/invoice.
+In-App Payment Gateway: Proses checkout dan pembayaran online yang aman menggunakan embedded WebView.
+Event & Seminar Registration: Katalog pendaftaran workshop/webinar kedokteran gigi dengan rincian jadwal dan tiket.
+Education Points (Loyalty System): Sistem reward poin loyalitas bagi pengguna dari aktivitas transaksi dan partisipasi event.
+User & Account Management: Registrasi, login, manajemen profil, ganti kata sandi, dan sinkronisasi produk favorit (wishlist).
+Network Monitoring: Deteksi konektivitas internet secara real-time untuk mencegah kegagalan transaksi saat offline.
+
+4. Tech Stack
+Framework & Language: Flutter (Dart)
+State Management: Flutter BLoC, Equatable
+Architecture: Feature-First Clean Architecture, Dependency Injection (GetIt)
+Networking: Dio (REST API Client), Pretty Dio Logger
+Local Storage: SharedPreferences
+UI / UX: Infinite Scroll Pagination, Carousel Slider, Shimmer Effect, Cached Network Image, Flutter HTML, Fluttertoast
+Platform Features: WebView Flutter, Image Picker, Connectivity Plus
+
+
+===============
+QUICKMARK APP
+===============
+
+1. Project Summary
+QuickMark adalah aplikasi mobile berbasis Flutter yang terintegrasi langsung dengan API Kementerian Kehutanan (KLHK / SIPUHH) untuk memverifikasi dan melacak (tracking) legalitas dokumen hasil hutan kayu (SKSHHK) serta identitas kayu bulat (LOG) secara real-time. Dilengkapi pemindai Barcode/QR Code, penyimpanan lokal offline, ekspor rekap ke Excel, dan proteksi keamanan perangkat tingkat lanjut.
+
+2. Project Overview
+Peran/Tujuan: Solusi digital bagi verifikator lapangan untuk memvalidasi keabsahan dokumen kayu dan rantai pasok logistik kehutanan secara cepat dan akurat.
+Arsitektur: MVVM (Model-View-ViewModel) dengan struktur modular, memisahkan logika bisnis, services, dan UI secara clean dan scalable.
+Platform: Android & iOS (Cross-Platform).
+
+3. Key Features
+Pelacakan Dokumen SKSHHK: Validasi legalitas, data pengangkut, izin edar, dan volume muatan melalui nomor dokumen atau scan barcode.
+Pelacakan Batang Kayu (Track LOG): Penelusuran riwayat kayu bulat (Laporan Tebangan/LHC, data ukur, dan asal TPK hutan) berbasis QR Code.
+Integrated QR & Barcode Scanner: Pemindai kamera responsif dengan dukungan kontrol flash dan orientasi dinamis.
+Offline Storage & Caching: Penyimpanan data riwayat pencarian secara lokal menggunakan database NoSQL Hive agar dapat diakses tanpa koneksi internet.
+Export to Excel (.xlsx): Rekap dan ekspor data SKSHHK/LOG ke format spreadsheet multi-sheet yang tersimpan otomatis di perangkat.
+Device Security Protection: Proteksi aplikasi dari ancaman keamanan (anti-root, anti-jailbreak, anti-emulator, & developer-mode detection).
+
+4. Tech Stack
+Core: Flutter, Dart
+State Management: Provider (MVVM Pattern)
+API & Networking: Dio, Retrofit, REST API (Integrasi API Kementerian Kehutanan)
+Local Database: Hive (NoSQL), SharedPreferences
+Hardware & Tools: Mobile Scanner, Safe Device, Permission Handler
+Document Processing: Excel package (.xlsx generator)
+UI/UX: Custom Design System, Poppins Typography, Shimmer Loading
+
+
+============
+PION APP
+============
+
+
+1. Project Summary
+PION adalah platform digitalisasi serikat pekerja end-to-end yang menghubungkan ribuan anggota serikat dengan pengurus secara transparan, aman, dan real-time melalui aplikasi mobile dan dashboard web administrasi terpusat.
+
+2. Project Overview
+Sebelumnya, operasional serikat pekerja masih mengandalkan pencatatan manual, penyebaran informasi satu arah, dan pemungutan suara konvensional. Sistem ini dibangun untuk mentransformasikan tata kelola serikat buruh menjadi serba digital—mulai dari pendaftaran keanggotaan otomatis, penerbitan KTA digital, transparansi laporan keuangan, voting digital yang terverifikasi, hingga kanal aspirasi/tiket pengaduan langsung.
+
+3. Key Features
+Digital KTA & Barcode Identification: Pembuatan identitas keanggotaan digital terverifikasi dengan barcode/QR code dan fitur unduh berkas kartu tanda anggota.
+Member Onboarding & Workflow Approval: Registrasi anggota baru secara mandiri via aplikasi dengan persetujuan admin dan cetak dokumen PDF surat kuasa potong iuran otomatis.
+E-Voting & Polling System: Fasilitas pemungutan suara digital yang aman dan transparan untuk pengambilan keputusan atau pemilihan ketua serikat.
+Ticketing & Aspirations (Helpdesk): Sistem pengaduan buruh dua arah dilengkapi thread reply, status penyelesaian, dan ekspor laporan PDF.
+Financial Transparency & Reports: Publikasi laporan arus kas keuangan serikat secara berkala untuk akuntabilitas organisasi.
+Push Notification & Broadcast (FCM): Pengiriman pengumuman penting secara instan langsung ke perangkat anggota melalui Firebase Cloud Messaging.
+Mobile Security Measures: Pembatasan tangkapan layar (anti-screenshot), verifikasi PIN/OTP, dan tokenisasi sesi via Laravel Sanctum.
+
+4. Tech Stack
+Mobile Application: Flutter (Dart), Provider (MVVM Pattern), Retrofit, Dio, Flutter Local Notifications.
+Backend & REST API: Laravel 12, PHP 8.2+, Laravel Sanctum (API Authentication).
+Web Admin Dashboard: Laravel Blade, Tailwind CSS, Vite.
+Database & Storage: MySQL.
+Cloud & Third-Party Services: Firebase Cloud Messaging (FCM), DomPDF (PDF Generator), Maatwebsite Excel (Import/Export Data).
+
+
+===========
+HRIS APP
+===========
+
+1. Project Summary
+HRIS APP (Human Resource Information System) adalah solusi manajemen SDM multi-platform berbasis cloud yang terdiri dari Web Admin Dashboard dan Mobile App (Android & iOS). Sistem ini mengotomatisasi absensi real-time berbasis radius lokasi menggunakan peta OpenStreetMap, pengelolaan jadwal kerja, hingga sistem penggajian (payroll) dan perpajakan Indonesia.
+
+2. Project Overview
+Project ini dirancang untuk mendigitalisasi dan menyederhanakan proses operasional HR perusahaan secara terpusat. Mengusung arsitektur multi-role (Owner/HR & Karyawan), sistem ini menyediakan dashboard web untuk memonitor data operasional dan keuangan, serta aplikasi mobile Employee Self-Service (ESS) yang memungkinkan karyawan mencatat kehadiran secara akurat dengan verifikasi peta OpenStreetMap dan foto selfie.
+
+3. Key Feature
+Geofencing & Selfie Attendance via OpenStreetMap: Presensi kehadiran real-time dengan validasi radius lokasi kantor menggunakan visualisasi peta OpenStreetMap (OSM) dan verifikasi foto selfie.
+Automated Payroll & Tax Compliance: Penggajian otomatis terintegrasi kalkulasi PPh 21 (skema TER & PTKP), iuran BPJS Kesehatan/Ketenagakerjaan, dan tunjangan THR.
+Leave & Overtime Management: Pengajuan serta approval cuti, izin, dan lembur dengan pelacakan kuota sisa cuti otomatis.
+Shift Scheduling & Shift Swap: Manajemen jadwal kerja bergilir dengan fitur tukar shift (personal & tim).
+Financial Claims & Kasbon: Pengajuan klaim reimbursement dan pinjaman karyawan (loan) dengan pelunasan cicilan potong gaji otomatis.
+Daily Reports & Announcements: Pengiriman laporan progres kerja harian karyawan dan pengumuman siaran (broadcast) perusahaan.
+
+4. Tech Stack
+Backend & API: PHP 8.3+, Laravel 13, Laravel Sanctum (Token Auth)
+Web Admin Frontend: Blade Templates, Alpine.js, Tailwind CSS v4, Vite
+Mobile Application: Flutter & Dart (Android & iOS)
+State Management & Pattern: Provider, MVVM Pattern
+Maps & Geolocation: OpenStreetMap (OSM via flutter_map), LatLong2, Geolocator
+Device & Hardware: Camera, Image Picker, Permission Handler
+Networking & Storage: Retrofit, Dio, SharedPreferences
+Reporting & Export: DomPDF, Maatwebsite Excel
+
+
+==========
+SALES INVENTORY APP
+===========
+
+1. Project Summary
+Sistem manajemen inventaris dan penjualan terintegrasi berbasis Web & Mobile (Cross-Platform) yang mengotomatisasi alur distribusi barang berjenjang (Pusat $\rightarrow$ Cabang $\rightarrow$ Sales Lapangan $\rightarrow$ Toko/Outlet Mitra) serta pencatatan transaksi kasir lapangan (Point of Sale) secara real-time.
+
+2. Project Overview
+Aplikasi ini menyelesaikan inefisiensi pencatatan manual distribusi voucher telekomunikasi dan barang fisik lintas cabang. Sistem terbagi menjadi dua bagian utama:
+
+Web Portal (Multi-Role Dashboard): Digunakan oleh Owner, Admin Pusat, dan Admin Cabang untuk mengontrol pengadaan stok, persetujuan mutasi barang, pemantauan transaksi sales, dan audit keuangan.
+
+Mobile App (Field Sales Assistant): Digunakan oleh Sales Lapangan saat kunjungan toko untuk mengelola sisa stok fisik yang dibawa, memproses keranjang pesanan outlet, cetak nota/struk langsung di tempat via Bluetooth thermal printer, dan pengembalian (retur) sisa barang ke cabang.
+
+3. Key Features
+Multi-Tier Inventory & Stock Distribution: Alur distribusi dan mutasi stok berjenjang dari Gudang Pusat ke Cabang hingga ke tangan Sales Lapangan secara transparan dan terlacak.
+Mobile POS & Order Cart: Keranjang penjualan dinamis bagi sales lapangan untuk akumulasi pesanan berbagai produk, perhitungan subtotal otomatis, serta kalkulasi estimasi margin/profit.
+Bluetooth Thermal Receipt Printing (58mm): Integrasi cetak struk nota penjualan dan test-print langsung ke printer thermal portable via Bluetooth ESC/POS.
+Stock Return / Retur Manajemen: Fitur pengembalian sisa stok fisik sales kembali ke cabang dengan validasi kuantitas dan pencatatan alasan retur.
+Transaction Edit Approval Workflow: Mekanisme penyesuaian nominal transaksi sales dengan sistem persetujuan (approval/rejection) bertingkat oleh Owner/Pusat.
+Role-Based Access Control (RBAC): Pembatasan akses berjenjang untuk 4 peran (Owner, Pusat, Cabang, dan Sales).
+
+4. Tech Stack
+Backend & API:
+Laravel 12 (PHP 8.3)
+Laravel Sanctum (Token-based Mobile Auth)
+MySQL Database (Relational multi-tier schema)
+
+Web Dashboard:
+Laravel Blade & Alpine.js
+TailwindCSS & Vite
+ApexCharts (Analytics & Sales Performance)
+
+Mobile Application:
+Flutter (Dart)
+Provider (State Management & MVVM Pattern)
+Retrofit & Dio (REST Client)
+Flutter Blue Plus / ESC-POS (Bluetooth Thermal Printing)
+
+
+
+===========
+NUSET APP
+===========
+
+1. Project Summary
+Nusantara Aset adalah aplikasi mobile berbasis offline-first yang dirancang untuk mempermudah pencatatan, pelacakan, dan pengelolaan inventaris aset, perkakas operasional (tools), serta sirkulasi transaksi barang secara efisien dan terstruktur.
+
+2. Project Overview
+Aplikasi ini mendigitalkan proses manajemen aset fisik dan logistik internal perusahaan. Nusantara Aset memfasilitasi pencatatan data aset lengkap dengan dokumentasi foto, pemantauan transaksi arus barang (masuk/keluar), pelacakan peminjaman barang beserta riwayatnya, hingga pembuatan laporan rekapitulasi otomatis ke format Excel langsung dari perangkat mobile.
+
+3. Key Feature
+Manajemen Katalog Aset: Pencatatan, pembaruan, dan detail spesifikasi aset lengkap dengan lampiran foto bukti fisik.
+Pencatatan Transaksi (Barang In / Out): Monitoring arus pergerakan stok barang masuk dan keluar yang disertai riwayat histori lengkap.
+Pelacakan Peminjaman Aset: Pengelolaan alur peminjaman, batas waktu pengembalian, status unit, dan histori peminjam.
+Kelola Perkakas (Tools Management): Inventarisasi dan pencatatan khusus untuk peralatan/tools kerja operasional.
+Pencarian & Filter Cepat: Kemudahan menemukan aset dan histori transaksi secara instan berdasarkan kata kunci atau status.
+Export Laporan ke Excel (.xlsx): Konversi data aset, transaksi, peminjaman, dan tools ke format spreadsheet untuk keperluan audit dan pelaporan.
+
+4. Tech Stack
+Framework & Language: Flutter (Dart)
+Architecture & State Management: MVVM Architecture, Provider
+Local Storage / Database: Hive (Offline-First NoSQL Database), Sqflite
+Reporting & Document Engine: Syncfusion Flutter XlsIO, Excel Package, Path Provider
+Device & Media Services: Image Picker (Kamera/Galeri), Permission Handler
+UI / UX Libraries: Flutter Material Design, Table Calendar, Flutter SVG
+
+
+============
+DUAL SCREEN INTEGRATION
+============
+
+1. Project Summary
+Implementasi fitur Dual-Screen Customer-Facing Display pada aplikasi POS (Rekalaba) berbasis Flutter. Fitur ini memungkinkan layar sekunder (menghadap pelanggan) pada perangkat Android POS menampilkan ringkasan pesanan, kode QRIS pembayaran, dan status transaksi secara real-time tersinkronisasi dari layar kasir utama.
+
+2. Project Overview
+Pada perangkat POS dual-screen (seperti Sunmi, iMin, dsb.), pelanggan membutuhkan visibilitas terhadap detail belanja dan kemudahan proses pembayaran mandiri. Proyek ini mengintegrasikan komunikasi data native antar-layar menggunakan arsitektur event-driven service (SecondaryDisplayService), sehingga kasir dapat melayani pesanan di layar utama sementara layar kedua otomatis menampilkan antarmuka khusus pelanggan tanpa interferensi input.
+
+3. Key Features
+Real-Time Order Summary Sync: Menampilkan daftar belanja, kuantitas, diskon, pajak, dan total tagihan secara live saat kasir menginput produk.
+Dynamic QRIS Display: Men-generate dan menampilkan QR Code pembayaran (GoPay, DANA, ShopeePay, dll.) di layar pelanggan untuk langsung di-scan.
+Transaction Status & Success Screen: Notifikasi visual status pembayaran (berhasil/gagal) dan auto-reset ke status standby setelah transaksi selesai.
+Adaptive Dual-Orientation (Portrait & Landscape): Tampilan layar sekunder responsif menyesuaikan orientasi monitor perangkat (portrait/landscape).
+Decoupled Data Communication Layer: Komunikasi data antar-layar berbasis JSON messaging yang aman, cepat, dan tidak membebani performa UI layar utama.
+
+4. Tech Stack
+Framework & Language: Flutter, Dart
+Hardware Integration: presentation_displays (Android Presentation API wrapper)
+Data Handling: json_serializable, dart:convert
+UI & Visualization: qr_flutter (QRIS Renderer), flutter_screenutil (Adaptive Layout)
+Local Persistence: shared_preferences (Orientation & Config caching)
+Target Platform: Android POS Terminals (Dual-Screen Devices)
