@@ -568,11 +568,14 @@ const rawProjectsData = [
         "Proteksi privasi aplikasi mobile dengan pencegahan anti-screenshot"
       ]
     },
-    coverImage: "/projects/pion-app/screen1.png",
+    coverImage: "/projects/pion-app/screen6.png",
     screenshots: [
       "/projects/pion-app/screen1.png",
       "/projects/pion-app/screen2.png",
-      "/projects/pion-app/screen3.png"
+      "/projects/pion-app/screen3.png",
+      "/projects/pion-app/screen4.png",
+      "/projects/pion-app/screen5.png",
+      "/projects/pion-app/screen6.png"
     ],
     highlights: {
       en: [
