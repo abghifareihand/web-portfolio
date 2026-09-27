@@ -156,7 +156,7 @@ const rawProjectsData = [
     category: "mobile",
     categoryLabel: "Flutter",
     year: "2025",
-    date: "2025-01",
+    date: "2025-03",
     status: "Production",
     featured: true,
     summary: {
@@ -244,7 +244,7 @@ const rawProjectsData = [
     category: "mobile",
     categoryLabel: "Flutter",
     year: "2025",
-    date: "2025-03",
+    date: "2025-11",
     status: "Production",
     featured: true,
     summary: {
@@ -334,8 +334,8 @@ const rawProjectsData = [
     title: "Fondaco App",
     category: "mobile",
     categoryLabel: "Flutter",
-    year: "2025",
-    date: "2025-05",
+    year: "2026",
+    date: "2026-05",
     status: "Production",
     featured: true,
     summary: {
@@ -425,8 +425,8 @@ const rawProjectsData = [
     title: "QuickMark App",
     category: "mobile",
     categoryLabel: "Flutter",
-    year: "2025",
-    date: "2025-07",
+    year: "2026",
+    date: "2026-04",
     status: "Production",
     featured: true,
     summary: {
@@ -513,8 +513,8 @@ const rawProjectsData = [
     title: "PION App & Web",
     category: "backend",
     categoryLabel: "Flutter & Laravel",
-    year: "2025",
-    date: "2025-09",
+    year: "2026",
+    date: "2026-02",
     status: "Production",
     featured: true,
     summary: {
@@ -606,7 +606,7 @@ const rawProjectsData = [
     category: "backend",
     categoryLabel: "Flutter & Laravel",
     year: "2026",
-    date: "2026-02",
+    date: "2026-08",
     status: "Production",
     featured: true,
     summary: {
@@ -664,7 +664,8 @@ const rawProjectsData = [
     screenshots: [
       "/projects/hris-app/screen1.png",
       "/projects/hris-app/screen2.png",
-      "/projects/hris-app/screen3.png"
+      "/projects/hris-app/screen3.png",
+      "/projects/hris-app/screen4.png"
     ],
     highlights: {
       en: [
@@ -783,7 +784,7 @@ const rawProjectsData = [
     category: "mobile",
     categoryLabel: "Flutter",
     year: "2025",
-    date: "2025-04",
+    date: "2025-05",
     status: "Production",
     featured: false,
     summary: {
@@ -871,7 +872,7 @@ const rawProjectsData = [
     category: "mobile",
     categoryLabel: "Flutter",
     year: "2025",
-    date: "2025-02",
+    date: "2025-11",
     status: "Production",
     featured: false,
     summary: {
