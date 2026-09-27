@@ -151,179 +151,88 @@ export const projectCategories = projectCategoriesI18n.en;
 
 const rawProjectsData = [
   {
-    id: "overtime-app",
-    title: "Overtime Connect App",
-    category: "mobile",
-    categoryLabel: "Flutter",
-    year: "2025",
-    date: "2025-03",
+    id: "hris-app",
+    title: "HRIS App & Web",
+    category: "backend",
+    categoryLabel: "Flutter & Laravel",
+    year: "2026",
+    date: "2026-08",
     status: "Production",
     featured: true,
     summary: {
-      en: "A Flutter mobile app designed to help workers record, calculate, and monitor overtime hours automatically, accurately, and transparently in accordance with labor regulations.",
-      id: "Aplikasi mobile berbasis Flutter untuk membantu pekerja mencatat, menghitung, dan memantau jam kerja lembur secara otomatis, akurat, dan transparan sesuai regulasi ketenagakerjaan."
+      en: "A multi-platform cloud HR management solution comprising a Web Admin Dashboard and Mobile App (Android & iOS). It automates real-time geofenced attendance via OpenStreetMap, shift scheduling, payroll, and Indonesian tax compliance.",
+      id: "Solusi manajemen SDM multi-platform berbasis cloud yang terdiri dari Web Admin Dashboard dan Mobile App (Android & iOS). Mengotomatisasi absensi real-time berbasis radius lokasi peta OpenStreetMap, jadwal kerja, payroll, dan pajak Indonesia."
     },
-    tags: ["Flutter", "Dart", "MVVM", "Provider", "Dio & Retrofit", "REST API", "Syncfusion Charts", "Table Calendar"],
+    tags: ["Flutter", "Laravel 13", "PHP 8.3+", "OpenStreetMap", "Alpine.js", "Tailwind CSS v4", "MySQL", "DomPDF"],
     overview: {
       en: [
-        "Overtime Connect solves manual overtime logging challenges prone to calculation errors and wage disputes. Built with structured MVVM architecture and Provider, it provides daily overtime attendance logging, real-time automated wage calculation, interactive weekly trend charts, monthly calendar overviews, and monthly earnings summaries.",
-        "The app features secure authentication with Gmail OTP verification, a standalone tiered overtime wage calculator without requiring saved attendance, and flexible profile management for configuring base salary and working days."
+        "Engineered to centralize and automate enterprise HR operations. Featuring a multi-role architecture (Owner/HR Administrators and Employees), it delivers a web monitoring dashboard for company operations and an Employee Self-Service (ESS) mobile app.",
+        "Employees log daily clock-in/out with OpenStreetMap geofencing and selfie camera verification, submit leave/overtime requests, request reimbursement/loans, and access automated digital payslips computed with Indonesian PPh 21 (TER & PTKP) and BPJS deductions."
       ],
       id: [
-        "Overtime Connect menyelesaikan masalah pencatatan lembur manual yang sering kali rawan salah hitung upah. Dibangun dengan arsitektur MVVM yang terstruktur, aplikasi ini menyediakan fitur absensi lembur harian, kalkulasi otomatis upah lembur secara real-time, visualisasi tren lembur via grafik mingguan serta kalender bulanan interaktif, dan rekapitulasi estimasi pendapatan bulanan.",
-        "Sistem dilengkapi autentikasi aman verifikasi OTP via Gmail, simulasi mandiri kalkulator upah lembur bertingkat tanpa harus menyimpan absensi, serta manajemen profil fleksibel untuk pembaruan foto profil dan konfigurasi gaji pokok serta hari kerja."
+        "Project ini dirancang untuk mendigitalisasi dan menyederhanakan proses operasional HR perusahaan secara terpusat. Mengusung arsitektur multi-role (Owner/HR & Karyawan), sistem ini menyediakan dashboard web untuk memonitor data operasional dan keuangan, serta aplikasi mobile Employee Self-Service (ESS).",
+        "Karyawan dapat mencatat kehadiran secara akurat dengan verifikasi peta OpenStreetMap dan foto selfie, mengajukan cuti dan lembur, meminta kasbon/klaim, serta menerima slip gaji digital otomatis dengan perhitungan PPh 21 (skema TER & PTKP) dan BPJS."
       ]
     },
     problem: {
-      en: "Manual paper and spreadsheet overtime logging frequently leads to tiered rate calculation errors, missing attendance records, and disputes between employees and employers.",
-      id: "Pencatatan lembur manual berbasis kertas atau spreadsheet sering memicu perselisihan upah akibat kesalahan kalkulasi bertingkat, hilangnya data absensi, dan ketiadaan transparansi antara pekerja dan pengawas."
+      en: "Companies faced fraudulent attendance (fake GPS/proxy clock-ins) and spent days manually computing complex Indonesian PPh 21 tax tiers and BPJS healthcare deductions.",
+      id: "Perusahaan kesulitan memvalidasi absensi karyawan di luar kantor (kecurangan lokasi GPS palsu/titip absen) dan memakan waktu berhari-hari untuk menghitung payroll PPh 21 dan BPJS manual."
     },
     solution: {
-      en: "Engineered a Flutter mobile application using MVVM architecture with an automated labor-compliant wage calculation engine, Syncfusion trend visualization, interactive calendar, and Gmail OTP auth.",
-      id: "Membangun aplikasi mobile Flutter dengan arsitektur MVVM dan Provider, menghadirkan engine kalkulasi upah lembur otomatis sesuai regulasi, kalender dan grafik tren interaktif, serta autentikasi OTP Gmail yang aman."
+      en: "Delivered an integrated HRIS suite: Flutter mobile app enforcing selfie validation + OpenStreetMap geofencing, synchronized with a Laravel 13 backend featuring automated PPh 21 tax engines and Tailwind v4 admin.",
+      id: "Membangun sistem HRIS terpadu: Aplikasi Mobile Flutter dengan presensi kamera selfie + geofencing OpenStreetMap terverifikasi, dipadukan Backend Laravel 13 dengan engine kalkulasi PPh 21 otomatis dan Web Admin Tailwind v4."
     },
     keyMetrics: {
       en: [
-        "100% automated calculation accuracy for tiered overtime wages",
-        "Fluid 60fps overtime trend analytics with Syncfusion Charts",
-        "99% delivery rate for secure Gmail OTP authentication"
+        "Sub-meter office geofencing accuracy with OpenStreetMap & mock location protection",
+        "Automated payroll calculation reducing monthly payroll processing time by 80%",
+        "Full Indonesian labor tax compliance (PPh 21 TER/PTKP & BPJS formulas)"
       ],
       id: [
-        "Kalkulasi upah lembur bertingkat otomatis dengan akurasi 100%",
-        "Visualisasi tren lembur 60fps dengan Syncfusion Charts",
-        "Verifikasi autentikasi OTP Gmail aman dengan tingkat keberhasilan 99%"
+        "Validasi radius presensi akurat dengan OpenStreetMap & deteksi lokasi mock",
+        "Kalkulasi penggajian otomatis memangkas waktu proses payroll bulanan hingga 80%",
+        "Kepatuhan regulasi pajak ketenagakerjaan Indonesia (PPh 21 TER/PTKP & BPJS)"
       ]
     },
     architecturePoints: {
       en: [
-        "Structured MVVM pattern cleanly decoupling business logic, viewmodels, and UI",
-        "Centralized and reactive state management powered by Provider",
-        "Structured REST API communication utilizing Dio and Retrofit with automatic serialization",
-        "Local preferences and session caching via SharedPreferences",
-        "Interactive data visualization with Syncfusion Charts & Table Calendar"
+        "Backend & API: PHP 8.3+, Laravel 13, Laravel Sanctum token-based authentication",
+        "Web Admin Frontend: Blade Templates, Alpine.js, modern Tailwind CSS v4, Vite",
+        "Mobile Client: Flutter & Dart (Android & iOS) utilizing MVVM pattern & Provider",
+        "Maps & Geolocation: OpenStreetMap (flutter_map), LatLong2 distance, Geolocator SDK",
+        "Reporting & Export: DomPDF for automated payslips and Maatwebsite Excel for HR data audits"
       ],
       id: [
-        "Pola arsitektur MVVM memisahkan model data, logika viewmodel, dan antarmuka secara bersih",
-        "State management terpusat dan reaktif menggunakan Provider",
-        "Integrasi REST API terstruktur menggunakan Dio dan Retrofit dengan serialisasi otomatis",
-        "Penyimpanan lokal preferensi dan sesi via SharedPreferences",
-        "Visualisasi data dinamis dengan Syncfusion Charts dan Table Calendar"
+        "Backend & REST API: PHP 8.3+, Laravel 13, Laravel Sanctum (Token Auth)",
+        "Web Admin Frontend: Blade Templates, Alpine.js, Tailwind CSS v4, Vite",
+        "Aplikasi Mobile: Flutter & Dart (Android & iOS) dengan arsitektur MVVM & Provider",
+        "Peta & Geolokasi: OpenStreetMap (OSM via flutter_map), LatLong2, Geolocator",
+        "Pelaporan & Ekspor: DomPDF untuk slip gaji otomatis, Maatwebsite Excel untuk data rekap HR"
       ]
     },
-    coverImage: "/projects/overtime-app/screen1.png",
+    coverImage: "/projects/hris-app/screen1.png",
     screenshots: [
-      "/projects/overtime-app/screen1.png",
-      "/projects/overtime-app/screen2.png",
-      "/projects/overtime-app/screen3.png",
-      "/projects/overtime-app/screen4.png"
+      "/projects/hris-app/screen1.png",
+      "/projects/hris-app/screen2.png",
+      "/projects/hris-app/screen3.png",
+      "/projects/hris-app/screen4.png"
     ],
     highlights: {
       en: [
-        "Smart Overtime Attendance: Daily overtime logging with automatic calculation based on day type (regular workday vs holiday)",
-        "Interactive Dashboard: Summary of total overtime hours & earnings with interactive weekly charts and monthly calendar",
-        "Overtime Calculator: Standalone simulation to estimate tiered overtime wages without saving attendance",
-        "Salary & Overtime Recap: Detailed overtime history and accumulated wage estimation with flexible date range filters",
-        "Secure Auth & OTP via Gmail: Secure login, registration, and password recovery via one-time passwords sent to Gmail",
-        "User Profile Management: Profile updates, photo upload (camera/gallery), and base salary & working day configuration"
+        "Geofencing & Selfie Attendance via OpenStreetMap: Real-time clock-in/out with office radius validation via OpenStreetMap (OSM) and live camera selfie capture",
+        "Automated Payroll & Tax Compliance: Automated payroll engine calculating Indonesian PPh 21 tax (TER & PTKP rules), BPJS Health/Employment, and holiday allowances (THR)",
+        "Leave & Overtime Management: Digital leave, sick, and overtime request workflows with automated quota deduction tracking",
+        "Shift Scheduling & Shift Swap: Multi-shift scheduling with peer and team shift-swap request approval workflows",
+        "Financial Claims & Kasbon: Expense reimbursement and salary advance (kasbon) management with automated payroll installment deductions",
+        "Daily Reports & Announcements: Daily employee task progress submission and company-wide broadcast announcements"
       ],
       id: [
-        "Smart Overtime Attendance: Pencatatan lembur harian dengan kalkulasi otomatis berdasarkan jenis hari (hari kerja biasa vs hari libur)",
-        "Interactive Dashboard: Ringkasan total jam lembur & nominal pendapatan, dilengkapi grafik mingguan serta kalender bulanan interaktif",
-        "Overtime Calculator: Simulasi mandiri untuk menghitung estimasi upah lembur bertingkat tanpa harus menyimpan absensi",
-        "Salary & Overtime Recap: Riwayat detail lembur dan estimasi akumulasi gaji dengan filter rentang tanggal fleksibel",
-        "Secure Auth & OTP via Gmail: Sistem login, registrasi, serta pemulihan akun yang aman menggunakan kode OTP yang dikirim langsung ke Gmail",
-        "User Profile Management: Pembaruan profil, unggah foto (kamera/galeri), ganti email/password, serta konfigurasi gaji pokok dan jumlah hari kerja"
-      ]
-    },
-    github: "#",
-    liveDemo: "#"
-  },
-  {
-    id: "rekalaba-ppob",
-    title: "Rekalaba PPOB App",
-    category: "mobile",
-    categoryLabel: "Flutter",
-    year: "2025",
-    date: "2025-11",
-    status: "Production",
-    featured: true,
-    summary: {
-      en: "A Flutter digital financial services module enabling merchants and cashiers to process bill payments, digital products, and interbank transfers directly from the POS with thermal receipt printing.",
-      id: "Modul layanan finansial digital berbasis Flutter yang memungkinkan merchant/kasir melayani berbagai transaksi pembayaran tagihan, pembelian produk digital, hingga transfer bank langsung dari aplikasi kasir dengan dukungan cetak struk via printer thermal."
-    },
-    tags: ["Flutter", "Dart", "MVVM", "Provider", "Nicepay", "Bluetooth ESC/POS", "Dio & Retrofit", "ScreenUtil"],
-    overview: {
-      en: [
-        "Developed as an autonomous financial subsystem within the Rekalaba POS ecosystem. Utilizing structured MVVM architecture, it is engineered with responsive Portrait and Landscape orientation support for cashier smartphones and POS tablets.",
-        "Key focal points include instant utility bill transactions, partner deposit top-ups via Nicepay payment gateway (Virtual Account, convenience stores, e-wallets), transactional PIN and OTP security, and seamless Bluetooth ESC/POS thermal printer hardware integration for official receipts with QR codes."
-      ],
-      id: [
-        "Modul ini dikembangkan sebagai sub-sistem mandiri di dalam ekosistem Rekalaba POS. Mengadopsi arsitektur MVVM yang terstruktur rapi, modul ini dirancang responsif dengan dukungan tampilan Portrait & Landscape agar nyaman digunakan di smartphone kasir maupun tablet POS.",
-        "Fokus modul ini mencakup transaksi pembayaran instan, top-up deposit mitra via payment gateway Nicepay, keamanan berbasis OTP & PIN transaksi, serta integrasi hardware printer Bluetooth ESC/POS untuk pencetakan struk resmi dengan QR code."
-      ]
-    },
-    problem: {
-      en: "Merchants previously had to juggle disparate third-party apps for digital product sales and bill payments without synchronized POS sales records or unified thermal printing.",
-      id: "Merchant kasir kesulitan melayani transaksi produk digital dan tagihan karena harus berpindah-pindah aplikasi pihak ketiga tanpa pencatatan struk kasir yang tersinkronisasi."
-    },
-    solution: {
-      en: "Built an integrated native PPOB module inside the POS application using MVVM, featuring Nicepay payment gateway, transactional PIN/OTP authorization, and ESC/POS Bluetooth thermal printing.",
-      id: "Mengintegrasikan modul PPOB native berarsitektur MVVM langsung ke dalam aplikasi POS, lengkap dengan gateway Nicepay, verifikasi PIN/OTP, dan driver printer Bluetooth ESC/POS otomatis."
-    },
-    keyMetrics: {
-      en: [
-        "Instant Bluetooth ESC/POS thermal receipt printing in < 2 seconds",
-        "Adaptive dual-orientation support across smartphone & tablet POS",
-        "Multi-factor transaction security with SMS OTP and 6-digit PIN"
-      ],
-      id: [
-        "Pencetakan struk transaksi termal Bluetooth instan < 2 detik",
-        "Dukungan adaptif penuh untuk orientasi Layar Portrait & Landscape",
-        "Validasi keamanan transaksi ganda dengan OTP SMS & PIN transaksi"
-      ]
-    },
-    architecturePoints: {
-      en: [
-        "MVVM architecture with Provider for isolated transactional state flows",
-        "Nicepay Gateway integration (Virtual Account, Retail Stores, E-Wallets)",
-        "ESC/POS thermal printing engine with dynamic QR code rasterization",
-        "Secure credential persistence via Flutter Secure Storage & UDID",
-        "Adaptive Portrait & Landscape layout engine using Flutter ScreenUtil"
-      ],
-      id: [
-        "Arsitektur MVVM dengan Provider untuk manajemen state transaksi terisolasi",
-        "Integrasi Nicepay Gateway (Virtual Account, Minimarket, E-Wallet)",
-        "Engine pencetakan thermal ESC/POS dengan encoding QR code dinamis",
-        "Penyimpanan kredensial aman dengan Flutter Secure Storage, SharedPreferences, dan UDID",
-        "Layout adaptif Portrait & Landscape memanfaatkan Flutter ScreenUtil"
-      ]
-    },
-    coverImage: "/projects/rekalaba-ppob/screen1.png",
-    screenshots: [
-      "/projects/rekalaba-ppob/screen1.png",
-      "/projects/rekalaba-ppob/screen2.png",
-      "/projects/rekalaba-ppob/screen3.png",
-      "/projects/rekalaba-ppob/screen4.png",
-      "/projects/rekalaba-ppob/screen5.png"
-    ],
-    highlights: {
-      en: [
-        "Digital Products & Airtime: Mobile top-ups, data packages, SMS/voice bundles across all operators, and online gaming vouchers",
-        "Utility Bill Payment: Routine utility payments including PLN (tokens & bills), PDAM water, BPJS Health, Telkom/Indihome, Cable TV, and multifinance",
-        "E-Money & Digital Wallet Top-Up: Balance top-ups for GoPay, OVO, DANA, ShopeePay, LinkAja, Mandiri e-Money, TapCash, and more",
-        "Interbank Fund Transfers: Real-time recipient bank account inquiry and instant interbank money transfers",
-        "Deposit Management & Nicepay: Cashier deposit top-ups via Virtual Accounts, retail convenience stores, and digital wallets",
-        "Thermal Receipt Printing (ESC/POS): Instant receipt printing to Bluetooth thermal printers using ESC/POS protocol with QR codes",
-        "Security & Rapid Checkout: SMS OTP authentication, transactional PIN verification, and phonebook contact integration"
-      ],
-      id: [
-        "Produk Digital & Pulsa: Pembelian pulsa, paket data internet, paket SMS/telepon semua operator, serta voucher game online",
-        "Pembayaran Tagihan (Bill Payment): Pembayaran utilitas rutin seperti token & tagihan PLN, PDAM, BPJS Kesehatan, Telkom/Indihome, TV Kabel, dan cicilan multifinance",
-        "Top-Up E-Money & Dompet Digital: Pengisian saldo GoPay, OVO, DANA, ShopeePay, LinkAja, Mandiri e-Money, TapCash, dan e-wallet lainnya",
-        "Transfer Antar Bank: Cek rekening tujuan (account inquiry) dan transfer dana antar bank secara real-time",
-        "Manajemen Deposit & Payment Gateway: Pengisian saldo deposit kasir melalui Virtual Account (VA), minimarket (Indomaret/Alfamart), dan E-Wallet via Nicepay",
-        "Cetak Struk Thermal (ESC/POS): Fitur cetak bukti transaksi otomatis ke printer Bluetooth thermal dengan format struk resmi dan QR code",
-        "Keamanan & Transaksi Cepat: Autentikasi via OTP SMS, verifikasi PIN saat transaksi, serta integrasi kontak ponsel untuk input nomor cepat"
+        "Geofencing & Selfie Attendance via OpenStreetMap: Presensi kehadiran real-time dengan validasi radius lokasi kantor menggunakan visualisasi peta OpenStreetMap (OSM) dan verifikasi foto selfie",
+        "Automated Payroll & Tax Compliance: Penggajian otomatis terintegrasi kalkulasi PPh 21 (skema TER & PTKP), iuran BPJS Kesehatan/Ketenagakerjaan, dan tunjangan THR",
+        "Leave & Overtime Management: Pengajuan serta approval cuti, izin, dan lembur dengan pelacakan kuota sisa cuti otomatis",
+        "Shift Scheduling & Shift Swap: Manajemen jadwal kerja bergilir dengan fitur tukar shift (personal & tim)",
+        "Financial Claims & Kasbon: Pengajuan klaim reimbursement dan pinjaman karyawan (loan) dengan pelunasan cicilan potong gaji otomatis",
+        "Daily Reports & Announcements: Pengiriman laporan progres kerja harian karyawan dan pengumuman siaran (broadcast) perusahaan"
       ]
     },
     github: "#",
@@ -601,94 +510,6 @@ const rawProjectsData = [
     liveDemo: "#"
   },
   {
-    id: "hris-app",
-    title: "HRIS App & Web",
-    category: "backend",
-    categoryLabel: "Flutter & Laravel",
-    year: "2026",
-    date: "2026-08",
-    status: "Production",
-    featured: true,
-    summary: {
-      en: "A multi-platform cloud HR management solution comprising a Web Admin Dashboard and Mobile App (Android & iOS). It automates real-time geofenced attendance via OpenStreetMap, shift scheduling, payroll, and Indonesian tax compliance.",
-      id: "Solusi manajemen SDM multi-platform berbasis cloud yang terdiri dari Web Admin Dashboard dan Mobile App (Android & iOS). Mengotomatisasi absensi real-time berbasis radius lokasi peta OpenStreetMap, jadwal kerja, payroll, dan pajak Indonesia."
-    },
-    tags: ["Flutter", "Laravel 13", "PHP 8.3+", "OpenStreetMap", "Alpine.js", "Tailwind CSS v4", "MySQL", "DomPDF"],
-    overview: {
-      en: [
-        "Engineered to centralize and automate enterprise HR operations. Featuring a multi-role architecture (Owner/HR Administrators and Employees), it delivers a web monitoring dashboard for company operations and an Employee Self-Service (ESS) mobile app.",
-        "Employees log daily clock-in/out with OpenStreetMap geofencing and selfie camera verification, submit leave/overtime requests, request reimbursement/loans, and access automated digital payslips computed with Indonesian PPh 21 (TER & PTKP) and BPJS deductions."
-      ],
-      id: [
-        "Project ini dirancang untuk mendigitalisasi dan menyederhanakan proses operasional HR perusahaan secara terpusat. Mengusung arsitektur multi-role (Owner/HR & Karyawan), sistem ini menyediakan dashboard web untuk memonitor data operasional dan keuangan, serta aplikasi mobile Employee Self-Service (ESS).",
-        "Karyawan dapat mencatat kehadiran secara akurat dengan verifikasi peta OpenStreetMap dan foto selfie, mengajukan cuti dan lembur, meminta kasbon/klaim, serta menerima slip gaji digital otomatis dengan perhitungan PPh 21 (skema TER & PTKP) dan BPJS."
-      ]
-    },
-    problem: {
-      en: "Companies faced fraudulent attendance (fake GPS/proxy clock-ins) and spent days manually computing complex Indonesian PPh 21 tax tiers and BPJS healthcare deductions.",
-      id: "Perusahaan kesulitan memvalidasi absensi karyawan di luar kantor (kecurangan lokasi GPS palsu/titip absen) dan memakan waktu berhari-hari untuk menghitung payroll PPh 21 dan BPJS manual."
-    },
-    solution: {
-      en: "Delivered an integrated HRIS suite: Flutter mobile app enforcing selfie validation + OpenStreetMap geofencing, synchronized with a Laravel 13 backend featuring automated PPh 21 tax engines and Tailwind v4 admin.",
-      id: "Membangun sistem HRIS terpadu: Aplikasi Mobile Flutter dengan presensi kamera selfie + geofencing OpenStreetMap terverifikasi, dipadukan Backend Laravel 13 dengan engine kalkulasi PPh 21 otomatis dan Web Admin Tailwind v4."
-    },
-    keyMetrics: {
-      en: [
-        "Sub-meter office geofencing accuracy with OpenStreetMap & mock location protection",
-        "Automated payroll calculation reducing monthly payroll processing time by 80%",
-        "Full Indonesian labor tax compliance (PPh 21 TER/PTKP & BPJS formulas)"
-      ],
-      id: [
-        "Validasi radius presensi akurat dengan OpenStreetMap & deteksi lokasi mock",
-        "Kalkulasi penggajian otomatis memangkas waktu proses payroll bulanan hingga 80%",
-        "Kepatuhan regulasi pajak ketenagakerjaan Indonesia (PPh 21 TER/PTKP & BPJS)"
-      ]
-    },
-    architecturePoints: {
-      en: [
-        "Backend & API: PHP 8.3+, Laravel 13, Laravel Sanctum token-based authentication",
-        "Web Admin Frontend: Blade Templates, Alpine.js, modern Tailwind CSS v4, Vite",
-        "Mobile Client: Flutter & Dart (Android & iOS) utilizing MVVM pattern & Provider",
-        "Maps & Geolocation: OpenStreetMap (flutter_map), LatLong2 distance, Geolocator SDK",
-        "Reporting & Export: DomPDF for automated payslips and Maatwebsite Excel for HR data audits"
-      ],
-      id: [
-        "Backend & REST API: PHP 8.3+, Laravel 13, Laravel Sanctum (Token Auth)",
-        "Web Admin Frontend: Blade Templates, Alpine.js, Tailwind CSS v4, Vite",
-        "Aplikasi Mobile: Flutter & Dart (Android & iOS) dengan arsitektur MVVM & Provider",
-        "Peta & Geolokasi: OpenStreetMap (OSM via flutter_map), LatLong2, Geolocator",
-        "Pelaporan & Ekspor: DomPDF untuk slip gaji otomatis, Maatwebsite Excel untuk data rekap HR"
-      ]
-    },
-    coverImage: "/projects/hris-app/screen1.png",
-    screenshots: [
-      "/projects/hris-app/screen1.png",
-      "/projects/hris-app/screen2.png",
-      "/projects/hris-app/screen3.png",
-      "/projects/hris-app/screen4.png"
-    ],
-    highlights: {
-      en: [
-        "Geofencing & Selfie Attendance via OpenStreetMap: Real-time clock-in/out with office radius validation via OpenStreetMap (OSM) and live camera selfie capture",
-        "Automated Payroll & Tax Compliance: Automated payroll engine calculating Indonesian PPh 21 tax (TER & PTKP rules), BPJS Health/Employment, and holiday allowances (THR)",
-        "Leave & Overtime Management: Digital leave, sick, and overtime request workflows with automated quota deduction tracking",
-        "Shift Scheduling & Shift Swap: Multi-shift scheduling with peer and team shift-swap request approval workflows",
-        "Financial Claims & Kasbon: Expense reimbursement and salary advance (kasbon) management with automated payroll installment deductions",
-        "Daily Reports & Announcements: Daily employee task progress submission and company-wide broadcast announcements"
-      ],
-      id: [
-        "Geofencing & Selfie Attendance via OpenStreetMap: Presensi kehadiran real-time dengan validasi radius lokasi kantor menggunakan visualisasi peta OpenStreetMap (OSM) dan verifikasi foto selfie",
-        "Automated Payroll & Tax Compliance: Penggajian otomatis terintegrasi kalkulasi PPh 21 (skema TER & PTKP), iuran BPJS Kesehatan/Ketenagakerjaan, dan tunjangan THR",
-        "Leave & Overtime Management: Pengajuan serta approval cuti, izin, dan lembur dengan pelacakan kuota sisa cuti otomatis",
-        "Shift Scheduling & Shift Swap: Manajemen jadwal kerja bergilir dengan fitur tukar shift (personal & tim)",
-        "Financial Claims & Kasbon: Pengajuan klaim reimbursement dan pinjaman karyawan (loan) dengan pelunasan cicilan potong gaji otomatis",
-        "Daily Reports & Announcements: Pengiriman laporan progres kerja harian karyawan dan pengumuman siaran (broadcast) perusahaan"
-      ]
-    },
-    github: "#",
-    liveDemo: "#"
-  },
-  {
     id: "sales-inventory-app",
     title: "Sales Inventory App & Web",
     category: "backend",
@@ -773,6 +594,274 @@ const rawProjectsData = [
         "Stock Return / Retur Manajemen: Fitur pengembalian sisa stok fisik sales kembali ke cabang dengan validasi kuantitas dan pencatatan alasan retur",
         "Transaction Edit Approval Workflow: Mekanisme penyesuaian nominal transaksi sales dengan sistem persetujuan (approval/rejection) bertingkat oleh Owner/Pusat",
         "Role-Based Access Control (RBAC): Pembatasan akses berjenjang untuk 4 peran (Owner, Pusat, Cabang, dan Sales)"
+      ]
+    },
+    github: "#",
+    liveDemo: "#"
+  },
+  {
+    id: "rekalaba-ppob",
+    title: "Rekalaba PPOB App",
+    category: "mobile",
+    categoryLabel: "Flutter",
+    year: "2025",
+    date: "2025-11",
+    status: "Production",
+    featured: true,
+    summary: {
+      en: "A Flutter digital financial services module enabling merchants and cashiers to process bill payments, digital products, and interbank transfers directly from the POS with thermal receipt printing.",
+      id: "Modul layanan finansial digital berbasis Flutter yang memungkinkan merchant/kasir melayani berbagai transaksi pembayaran tagihan, pembelian produk digital, hingga transfer bank langsung dari aplikasi kasir dengan dukungan cetak struk via printer thermal."
+    },
+    tags: ["Flutter", "Dart", "MVVM", "Provider", "Nicepay", "Bluetooth ESC/POS", "Dio & Retrofit", "ScreenUtil"],
+    overview: {
+      en: [
+        "Developed as an autonomous financial subsystem within the Rekalaba POS ecosystem. Utilizing structured MVVM architecture, it is engineered with responsive Portrait and Landscape orientation support for cashier smartphones and POS tablets.",
+        "Key focal points include instant utility bill transactions, partner deposit top-ups via Nicepay payment gateway (Virtual Account, convenience stores, e-wallets), transactional PIN and OTP security, and seamless Bluetooth ESC/POS thermal printer hardware integration for official receipts with QR codes."
+      ],
+      id: [
+        "Modul ini dikembangkan sebagai sub-sistem mandiri di dalam ekosistem Rekalaba POS. Mengadopsi arsitektur MVVM yang terstruktur rapi, modul ini dirancang responsif dengan dukungan tampilan Portrait & Landscape agar nyaman digunakan di smartphone kasir maupun tablet POS.",
+        "Fokus modul ini mencakup transaksi pembayaran instan, top-up deposit mitra via payment gateway Nicepay, keamanan berbasis OTP & PIN transaksi, serta integrasi hardware printer Bluetooth ESC/POS untuk pencetakan struk resmi dengan QR code."
+      ]
+    },
+    problem: {
+      en: "Merchants previously had to juggle disparate third-party apps for digital product sales and bill payments without synchronized POS sales records or unified thermal printing.",
+      id: "Merchant kasir kesulitan melayani transaksi produk digital dan tagihan karena harus berpindah-pindah aplikasi pihak ketiga tanpa pencatatan struk kasir yang tersinkronisasi."
+    },
+    solution: {
+      en: "Built an integrated native PPOB module inside the POS application using MVVM, featuring Nicepay payment gateway, transactional PIN/OTP authorization, and ESC/POS Bluetooth thermal printing.",
+      id: "Mengintegrasikan modul PPOB native berarsitektur MVVM langsung ke dalam aplikasi POS, lengkap dengan gateway Nicepay, verifikasi PIN/OTP, dan driver printer Bluetooth ESC/POS otomatis."
+    },
+    keyMetrics: {
+      en: [
+        "Instant Bluetooth ESC/POS thermal receipt printing in < 2 seconds",
+        "Adaptive dual-orientation support across smartphone & tablet POS",
+        "Multi-factor transaction security with SMS OTP and 6-digit PIN"
+      ],
+      id: [
+        "Pencetakan struk transaksi termal Bluetooth instan < 2 detik",
+        "Dukungan adaptif penuh untuk orientasi Layar Portrait & Landscape",
+        "Validasi keamanan transaksi ganda dengan OTP SMS & PIN transaksi"
+      ]
+    },
+    architecturePoints: {
+      en: [
+        "MVVM architecture with Provider for isolated transactional state flows",
+        "Nicepay Gateway integration (Virtual Account, Retail Stores, E-Wallets)",
+        "ESC/POS thermal printing engine with dynamic QR code rasterization",
+        "Secure credential persistence via Flutter Secure Storage & UDID",
+        "Adaptive Portrait & Landscape layout engine using Flutter ScreenUtil"
+      ],
+      id: [
+        "Arsitektur MVVM dengan Provider untuk manajemen state transaksi terisolasi",
+        "Integrasi Nicepay Gateway (Virtual Account, Minimarket, E-Wallet)",
+        "Engine pencetakan thermal ESC/POS dengan encoding QR code dinamis",
+        "Penyimpanan kredensial aman dengan Flutter Secure Storage, SharedPreferences, dan UDID",
+        "Layout adaptif Portrait & Landscape memanfaatkan Flutter ScreenUtil"
+      ]
+    },
+    coverImage: "/projects/rekalaba-ppob/screen1.png",
+    screenshots: [
+      "/projects/rekalaba-ppob/screen1.png",
+      "/projects/rekalaba-ppob/screen2.png",
+      "/projects/rekalaba-ppob/screen3.png",
+      "/projects/rekalaba-ppob/screen4.png",
+      "/projects/rekalaba-ppob/screen5.png"
+    ],
+    highlights: {
+      en: [
+        "Digital Products & Airtime: Mobile top-ups, data packages, SMS/voice bundles across all operators, and online gaming vouchers",
+        "Utility Bill Payment: Routine utility payments including PLN (tokens & bills), PDAM water, BPJS Health, Telkom/Indihome, Cable TV, and multifinance",
+        "E-Money & Digital Wallet Top-Up: Balance top-ups for GoPay, OVO, DANA, ShopeePay, LinkAja, Mandiri e-Money, TapCash, and more",
+        "Interbank Fund Transfers: Real-time recipient bank account inquiry and instant interbank money transfers",
+        "Deposit Management & Nicepay: Cashier deposit top-ups via Virtual Accounts, retail convenience stores, and digital wallets",
+        "Thermal Receipt Printing (ESC/POS): Instant receipt printing to Bluetooth thermal printers using ESC/POS protocol with QR codes",
+        "Security & Rapid Checkout: SMS OTP authentication, transactional PIN verification, and phonebook contact integration"
+      ],
+      id: [
+        "Produk Digital & Pulsa: Pembelian pulsa, paket data internet, paket SMS/telepon semua operator, serta voucher game online",
+        "Pembayaran Tagihan (Bill Payment): Pembayaran utilitas rutin seperti token & tagihan PLN, PDAM, BPJS Kesehatan, Telkom/Indihome, TV Kabel, dan cicilan multifinance",
+        "Top-Up E-Money & Dompet Digital: Pengisian saldo GoPay, OVO, DANA, ShopeePay, LinkAja, Mandiri e-Money, TapCash, dan e-wallet lainnya",
+        "Transfer Antar Bank: Cek rekening tujuan (account inquiry) dan transfer dana antar bank secara real-time",
+        "Manajemen Deposit & Payment Gateway: Pengisian saldo deposit kasir melalui Virtual Account (VA), minimarket (Indomaret/Alfamart), dan E-Wallet via Nicepay",
+        "Cetak Struk Thermal (ESC/POS): Fitur cetak bukti transaksi otomatis ke printer Bluetooth thermal dengan format struk resmi dan QR code",
+        "Keamanan & Transaksi Cepat: Autentikasi via OTP SMS, verifikasi PIN saat transaksi, serta integrasi kontak ponsel untuk input nomor cepat"
+      ]
+    },
+    github: "#",
+    liveDemo: "#"
+  },
+  // {
+  //   id: "dual-screen-pos",
+  //   title: "Dual Screen POS App",
+  //   category: "mobile",
+  //   categoryLabel: "Flutter",
+  //   year: "2025",
+  //   date: "2025-11",
+  //   status: "Production",
+  //   featured: false,
+  //   summary: {
+  //     en: "Implementation of Dual-Screen Customer-Facing Display on the Rekalaba POS Flutter application. Enables the secondary customer-facing display on Android POS terminals to render real-time order summaries, dynamic QRIS payment codes, and transaction status synchronized from the primary cashier screen.",
+  //     id: "Implementasi fitur Dual-Screen Customer-Facing Display pada aplikasi POS (Rekalaba) berbasis Flutter. Memungkinkan layar sekunder pada perangkat Android POS menampilkan ringkasan pesanan, kode QRIS pembayaran, dan status transaksi secara real-time tersinkronisasi dari layar kasir utama."
+  //   },
+  //   tags: ["Flutter", "Dart", "Android Presentation API", "presentation_displays", "QRIS / qr_flutter", "JSON Serialization", "ScreenUtil"],
+  //   overview: {
+  //     en: [
+  //       "On dual-screen enterprise Android POS terminals (such as Sunmi, iMin, and Pax devices), customers require immediate visibility of their itemized order and streamlined self-service QR payments.",
+  //       "This project integrates native inter-display communication using an event-driven architecture (SecondaryDisplayService). Cashiers operate unimpeded on the primary terminal while the secondary display presents a specialized customer view with zero UI blocking or input interference."
+  //     ],
+  //     id: [
+  //       "Pada perangkat POS dual-screen (seperti Sunmi, iMin, dsb.), pelanggan membutuhkan visibilitas terhadap detail belanja dan kemudahan proses pembayaran mandiri.",
+  //       "Proyek ini mengintegrasikan komunikasi data native antar-layar menggunakan arsitektur event-driven service (SecondaryDisplayService), sehingga kasir dapat melayani pesanan di layar utama sementara layar kedua otomatis menampilkan antarmuka khusus pelanggan tanpa interferensi input."
+  //     ]
+  //   },
+  //   problem: {
+  //     en: "Dual-screen POS hardware features a secondary customer monitor, but cross-platform frameworks lack out-of-the-box native multi-display support for the Android Presentation API.",
+  //     id: "Terminal POS modern memiliki layar kedua yang menghadap pelanggan, namun framework lintas-platform seperti Flutter tidak memiliki dukungan bawaan multi-display native di Android Presentation API."
+  //   },
+  //   solution: {
+  //     en: "Engineered an event-driven display service bridging Flutter with the Android Presentation API, featuring decoupled JSON serialization, dynamic QRIS rendering, and adaptive orientation layouts.",
+  //     id: "Membangun jembatan komunikasi event-driven dengan package presentation_displays, serializer JSON yang decoupled, perender kode QRIS dinamis, dan layout adaptif portrait/landscape."
+  //   },
+  //   keyMetrics: {
+  //     en: [
+  //       "Zero-latency real-time synchronization between cashier and customer displays",
+  //       "Decoupled rendering maintaining consistent 60fps on primary cashier terminal",
+  //       "Universal hardware compatibility across Android dual-screen terminals (Sunmi, iMin, etc.)"
+  //     ],
+  //     id: [
+  //       "Sinkronisasi data antar-layar real-time tanpa latensi (zero perceived delay)",
+  //       "Pemisahan total thread display: Layar pelanggan berjalan tanpa mempengaruhi 60fps layar kasir",
+  //       "Dukungan fleksibel perangkat hardware POS dual-screen (Sunmi, iMin, dsb.)"
+  //     ]
+  //   },
+  //   architecturePoints: {
+  //     en: [
+  //       "Hardware Bridge: presentation_displays (Android Presentation API native wrapper)",
+  //       "Data Communication Layer: Event-driven SecondaryDisplayService with decoupled JSON messaging",
+  //       "UI & QR Rendering: qr_flutter for dynamic QRIS codes and flutter_screenutil for layout scaling",
+  //       "Local Persistence: SharedPreferences for orientation preferences and display configuration",
+  //       "Target Platform: Enterprise Android Dual-Screen POS Terminals (Sunmi, iMin, Pax, etc.)"
+  //     ],
+  //     id: [
+  //       "Integrasi Hardware: presentation_displays (Wrapper Android Presentation API)",
+  //       "Layer Komunikasi Data: Event-driven SecondaryDisplayService dengan JSON serializable",
+  //       "Rendering UI & QR: qr_flutter untuk QRIS dinamis dan flutter_screenutil untuk layout adaptif",
+  //       "Penyimpanan Persisten: SharedPreferences untuk cache konfigurasi orientasi layar",
+  //       "Target Platform: Terminal Android POS Dual-Screen (Sunmi, iMin, Pax, dsb.)"
+  //     ]
+  //   },
+  //   coverImage: "/projects/dual-screen-pos/screen1.png",
+  //   screenshots: [
+  //     "/projects/dual-screen-pos/screen1.png",
+  //     "/projects/dual-screen-pos/screen2.png",
+  //     "/projects/dual-screen-pos/screen3.png"
+  //   ],
+  //   highlights: {
+  //     en: [
+  //       "Real-Time Order Summary Sync: Live order synchronization showing itemized cart, quantities, discounts, taxes, and grand totals in real-time",
+  //       "Dynamic QRIS Display: Dynamic on-screen QRIS code rendering for rapid customer scanning via digital e-wallets and mobile banking",
+  //       "Transaction Status & Success Screen: Visual transaction status animations (processing, success, failed) with automatic standby reset timers",
+  //       "Adaptive Dual-Orientation (Portrait & Landscape): Adaptive responsive UI layout seamlessly catering to both portrait and landscape secondary monitor aspect ratios",
+  //       "Decoupled Data Communication Layer: High-speed decoupled JSON message bridge ensuring zero UI jank or performance degradation on the primary cashier screen"
+  //     ],
+  //     id: [
+  //       "Real-Time Order Summary Sync: Menampilkan daftar belanja, kuantitas, diskon, pajak, dan total tagihan secara live saat kasir menginput produk",
+  //       "Dynamic QRIS Display: Men-generate dan menampilkan QR Code pembayaran (GoPay, DANA, ShopeePay, dll.) di layar pelanggan untuk langsung di-scan",
+  //       "Transaction Status & Success Screen: Notifikasi visual status pembayaran (berhasil/gagal) dan auto-reset ke status standby setelah transaksi selesai",
+  //       "Adaptive Dual-Orientation (Portrait & Landscape): Tampilan layar sekunder responsif menyesuaikan orientasi monitor perangkat (portrait/landscape)",
+  //       "Decoupled Data Communication Layer: Komunikasi data antar-layar berbasis JSON messaging yang aman, cepat, dan tidak membebani performa UI layar utama"
+  //     ]
+  //   },
+  //   github: "#",
+  //   liveDemo: "#"
+  // },
+  {
+    id: "absensi-app",
+    title: "Absensi App & Web",
+    category: "backend",
+    categoryLabel: "Flutter & Laravel",
+    year: "2025",
+    date: "2025-09",
+    status: "Production",
+    featured: true,
+    summary: {
+      en: "A modern multi-role (Staff, Lecturers, Students) attendance management system across mobile and web platforms, integrating high-precision geofencing and anti-fraud security (device binding & Fake GPS detection).",
+      id: "Sistem absensi modern multi-role (Staff, Dosen, Mahasiswa) berbasis mobile dan web yang mengintegrasikan validasi lokasi presisi (geofencing) serta proteksi anti-kecurangan (device binding & deteksi Fake GPS)."
+    },
+    tags: ["Flutter", "Laravel 12", "PHP 8.2", "OpenStreetMap", "Geolocator", "Device Binding (UDID)", "Laravel Sanctum", "MySQL", "DomPDF", "Excel Export"],
+    overview: {
+      en: [
+        "Absensi App was engineered to digitize and automate attendance tracking and leave management across academic and corporate environments.",
+        "Mobile App (Flutter): Empowers staff, lecturers, and students to perform self-service GPS-verified clock-ins, file leave requests, and inspect real-time schedules and attendance history.",
+        "Web Admin Dashboard (Laravel): Provides administrators with centralized user management, campus/office geofence radius configuration, leave approval workflows, device monitoring, and automated report auditing."
+      ],
+      id: [
+        "Aplikasi ini dikembangkan untuk mendigitalisasi dan mengotomatisasi pencatatan kehadiran serta manajemen perizinan secara terpadu.",
+        "Mobile App (Flutter): Digunakan pengguna untuk melakukan presensi mandiri berbasis koordinat GPS, mengajukan izin, serta memantau jadwal dan riwayat kehadiran.",
+        "Web Admin Dashboard (Laravel): Digunakan administrator untuk manajemen data pengguna, penentuan titik lokasi & radius kantor/kampus, approval izin, monitoring perangkat, serta rekapitulasi laporan."
+      ]
+    },
+    problem: {
+      en: "Institutions struggled with rampant attendance fraud—including proxy clock-ins, GPS spoofing (Fake GPS / Mock Location apps), and laborious manual attendance reconciliation prone to errors.",
+      id: "Institusi menghadapi maraknya kecurangan absensi seperti titip absen antar-pengguna, manipulasi koordinat lokasi (Fake GPS / Mock Location), serta rekapitulasi laporan kehadiran manual yang lambat dan rentan inkonsistensi."
+    },
+    solution: {
+      en: "Engineered a unified attendance ecosystem: Flutter mobile client enforcing OpenStreetMap geofencing, unique device binding (UDID), and Fake GPS detection, paired with a Laravel 12 admin dashboard with multi-role management and automated PDF/Excel exports.",
+      id: "Mengembangkan ekosistem absensi terpadu: Aplikasi Mobile Flutter dengan verifikasi OpenStreetMap, device binding (UDID), dan deteksi mock location, dipadukan Web Admin Laravel 12 dengan ekspor laporan otomatis (PDF/Excel) dan manajemen multi-role."
+    },
+    keyMetrics: {
+      en: [
+        "Dual anti-fraud security: Real-time Fake GPS detection and hardware Device Binding (UDID)",
+        "Sub-meter geofence accuracy powered by interactive OpenStreetMap radius checks",
+        "Granular multi-role workflow support across Staff, Lecturers, and Students"
+      ],
+      id: [
+        "Proteksi anti-kecurangan ganda: Deteksi Fake GPS dan penguncian ID perangkat (Device Binding / UDID)",
+        "Presisi radius geofencing berbasis koordinat peta interaktif (OpenStreetMap)",
+        "Dukungan multi-role terintegrasi untuk 3 entitas (Staff, Dosen, dan Mahasiswa)"
+      ]
+    },
+    architecturePoints: {
+      en: [
+        "Mobile Client (Frontend): Flutter & Dart with Provider state management, Retrofit & Dio REST client",
+        "Geolocation & Security: Flutter Map (OpenStreetMap), Geolocator SDK, and Flutter UDID for Device Binding",
+        "Web & Backend: Laravel 12 (PHP 8.2), Blade Templating, Laravel Sanctum token API authentication",
+        "Relational Database: MySQL / MariaDB relational schema",
+        "Reporting & Analytics: Barryvdh DomPDF generator and Maatwebsite Excel export pipelines"
+      ],
+      id: [
+        "Aplikasi Mobile: Flutter (Dart) dengan arsitektur Provider State Management serta Retrofit & Dio (Networking)",
+        "Geolokasi & Keamanan: Flutter Map (OSM), Geolocator, dan Flutter UDID untuk Device Binding / Anti-Fraud",
+        "Web & Backend: Laravel 12 (PHP 8.2), Blade Templating, Laravel Sanctum (API Authentication)",
+        "Database: Skema relasional MySQL / MariaDB terstruktur",
+        "Pelaporan & Ekspor: Barryvdh DomPDF (PDF Generator), Maatwebsite Excel (Data Export), RESTful API"
+      ]
+    },
+    coverImage: "/projects/absensi-app/screen6.png",
+    screenshots: [
+      "/projects/absensi-app/screen1.png",
+      "/projects/absensi-app/screen2.png",
+      "/projects/absensi-app/screen3.png",
+      "/projects/absensi-app/screen4.png",
+      "/projects/absensi-app/screen5.png",
+      "/projects/absensi-app/screen6.png"
+    ],
+    highlights: {
+      en: [
+        "Geofencing & Map Integration: Real-time clock-in validation based on nearest location radius using interactive OpenStreetMap",
+        "Anti-Fraud Security: Integrated anti-fraud defense with Mock Location detection and hardware Device Binding (UDID) preventing proxy attendance",
+        "Multi-Role Access Control: Granular access control, distinct schedules, and custom attendance rules for Staff, Lecturers, and Students",
+        "Leave & Permission System: In-app leave and sick-permission submission with document and attachment upload support",
+        "Dynamic Scheduling & Events: Flexible shift/class scheduling configuration and institutional calendar/event broadcasting",
+        "Automated Reporting: Automated attendance and leave auditing with one-click export to PDF (DomPDF) and Excel"
+      ],
+      id: [
+        "Geofencing & Map Integration: Validasi kehadiran real-time berbasis radius titik lokasi terdekat menggunakan peta interaktif (OpenStreetMap)",
+        "Anti-Fraud Security: Proteksi terintegrasi dengan deteksi Fake GPS / Mock Location dan penguncian ID perangkat (Device Binding / UDID) agar tidak bisa titip absen",
+        "Multi-Role Access: Manajemen hak akses, jadwal, dan aturan presensi terpisah untuk Staff, Dosen, dan Mahasiswa",
+        "Leave & Permission System: Pengajuan izin/sakit langsung dari aplikasi mobile disertai upload dokumen atau bukti pendukung",
+        "Dynamic Scheduling & Events: Pengaturan jadwal kehadiran yang fleksibel serta publikasi kalender kegiatan/event institusi",
+        "Automated Reporting: Rekapitulasi absensi dan perizinan otomatis yang dapat diekspor langsung ke format PDF dan Excel"
       ]
     },
     github: "#",
@@ -867,90 +956,94 @@ const rawProjectsData = [
     liveDemo: "#"
   },
   {
-    id: "dual-screen-pos",
-    title: "Dual Screen POS App",
+    id: "overtime-app",
+    title: "Overtime Connect App",
     category: "mobile",
     categoryLabel: "Flutter",
     year: "2025",
-    date: "2025-11",
+    date: "2025-03",
     status: "Production",
-    featured: false,
+    featured: true,
     summary: {
-      en: "Implementation of Dual-Screen Customer-Facing Display on the Rekalaba POS Flutter application. Enables the secondary customer-facing display on Android POS terminals to render real-time order summaries, dynamic QRIS payment codes, and transaction status synchronized from the primary cashier screen.",
-      id: "Implementasi fitur Dual-Screen Customer-Facing Display pada aplikasi POS (Rekalaba) berbasis Flutter. Memungkinkan layar sekunder pada perangkat Android POS menampilkan ringkasan pesanan, kode QRIS pembayaran, dan status transaksi secara real-time tersinkronisasi dari layar kasir utama."
+      en: "A Flutter mobile app designed to help workers record, calculate, and monitor overtime hours automatically, accurately, and transparently in accordance with labor regulations.",
+      id: "Aplikasi mobile berbasis Flutter untuk membantu pekerja mencatat, menghitung, dan memantau jam kerja lembur secara otomatis, akurat, dan transparan sesuai regulasi ketenagakerjaan."
     },
-    tags: ["Flutter", "Dart", "Android Presentation API", "presentation_displays", "QRIS / qr_flutter", "JSON Serialization", "ScreenUtil"],
+    tags: ["Flutter", "Dart", "MVVM", "Provider", "Dio & Retrofit", "REST API", "Syncfusion Charts", "Table Calendar"],
     overview: {
       en: [
-        "On dual-screen enterprise Android POS terminals (such as Sunmi, iMin, and Pax devices), customers require immediate visibility of their itemized order and streamlined self-service QR payments.",
-        "This project integrates native inter-display communication using an event-driven architecture (SecondaryDisplayService). Cashiers operate unimpeded on the primary terminal while the secondary display presents a specialized customer view with zero UI blocking or input interference."
+        "Overtime Connect solves manual overtime logging challenges prone to calculation errors and wage disputes. Built with structured MVVM architecture and Provider, it provides daily overtime attendance logging, real-time automated wage calculation, interactive weekly trend charts, monthly calendar overviews, and monthly earnings summaries.",
+        "The app features secure authentication with Gmail OTP verification, a standalone tiered overtime wage calculator without requiring saved attendance, and flexible profile management for configuring base salary and working days."
       ],
       id: [
-        "Pada perangkat POS dual-screen (seperti Sunmi, iMin, dsb.), pelanggan membutuhkan visibilitas terhadap detail belanja dan kemudahan proses pembayaran mandiri.",
-        "Proyek ini mengintegrasikan komunikasi data native antar-layar menggunakan arsitektur event-driven service (SecondaryDisplayService), sehingga kasir dapat melayani pesanan di layar utama sementara layar kedua otomatis menampilkan antarmuka khusus pelanggan tanpa interferensi input."
+        "Overtime Connect menyelesaikan masalah pencatatan lembur manual yang sering kali rawan salah hitung upah. Dibangun dengan arsitektur MVVM yang terstruktur, aplikasi ini menyediakan fitur absensi lembur harian, kalkulasi otomatis upah lembur secara real-time, visualisasi tren lembur via grafik mingguan serta kalender bulanan interaktif, dan rekapitulasi estimasi pendapatan bulanan.",
+        "Sistem dilengkapi autentikasi aman verifikasi OTP via Gmail, simulasi mandiri kalkulator upah lembur bertingkat tanpa harus menyimpan absensi, serta manajemen profil fleksibel untuk pembaruan foto profil dan konfigurasi gaji pokok serta hari kerja."
       ]
     },
     problem: {
-      en: "Dual-screen POS hardware features a secondary customer monitor, but cross-platform frameworks lack out-of-the-box native multi-display support for the Android Presentation API.",
-      id: "Terminal POS modern memiliki layar kedua yang menghadap pelanggan, namun framework lintas-platform seperti Flutter tidak memiliki dukungan bawaan multi-display native di Android Presentation API."
+      en: "Manual paper and spreadsheet overtime logging frequently leads to tiered rate calculation errors, missing attendance records, and disputes between employees and employers.",
+      id: "Pencatatan lembur manual berbasis kertas atau spreadsheet sering memicu perselisihan upah akibat kesalahan kalkulasi bertingkat, hilangnya data absensi, dan ketiadaan transparansi antara pekerja dan pengawas."
     },
     solution: {
-      en: "Engineered an event-driven display service bridging Flutter with the Android Presentation API, featuring decoupled JSON serialization, dynamic QRIS rendering, and adaptive orientation layouts.",
-      id: "Membangun jembatan komunikasi event-driven dengan package presentation_displays, serializer JSON yang decoupled, perender kode QRIS dinamis, dan layout adaptif portrait/landscape."
+      en: "Engineered a Flutter mobile application using MVVM architecture with an automated labor-compliant wage calculation engine, Syncfusion trend visualization, interactive calendar, and Gmail OTP auth.",
+      id: "Membangun aplikasi mobile Flutter dengan arsitektur MVVM dan Provider, menghadirkan engine kalkulasi upah lembur otomatis sesuai regulasi, kalender dan grafik tren interaktif, serta autentikasi OTP Gmail yang aman."
     },
     keyMetrics: {
       en: [
-        "Zero-latency real-time synchronization between cashier and customer displays",
-        "Decoupled rendering maintaining consistent 60fps on primary cashier terminal",
-        "Universal hardware compatibility across Android dual-screen terminals (Sunmi, iMin, etc.)"
+        "100% automated calculation accuracy for tiered overtime wages",
+        "Fluid 60fps overtime trend analytics with Syncfusion Charts",
+        "99% delivery rate for secure Gmail OTP authentication"
       ],
       id: [
-        "Sinkronisasi data antar-layar real-time tanpa latensi (zero perceived delay)",
-        "Pemisahan total thread display: Layar pelanggan berjalan tanpa mempengaruhi 60fps layar kasir",
-        "Dukungan fleksibel perangkat hardware POS dual-screen (Sunmi, iMin, dsb.)"
+        "Kalkulasi upah lembur bertingkat otomatis dengan akurasi 100%",
+        "Visualisasi tren lembur 60fps dengan Syncfusion Charts",
+        "Verifikasi autentikasi OTP Gmail aman dengan tingkat keberhasilan 99%"
       ]
     },
     architecturePoints: {
       en: [
-        "Hardware Bridge: presentation_displays (Android Presentation API native wrapper)",
-        "Data Communication Layer: Event-driven SecondaryDisplayService with decoupled JSON messaging",
-        "UI & QR Rendering: qr_flutter for dynamic QRIS codes and flutter_screenutil for layout scaling",
-        "Local Persistence: SharedPreferences for orientation preferences and display configuration",
-        "Target Platform: Enterprise Android Dual-Screen POS Terminals (Sunmi, iMin, Pax, etc.)"
+        "Structured MVVM pattern cleanly decoupling business logic, viewmodels, and UI",
+        "Centralized and reactive state management powered by Provider",
+        "Structured REST API communication utilizing Dio and Retrofit with automatic serialization",
+        "Local preferences and session caching via SharedPreferences",
+        "Interactive data visualization with Syncfusion Charts & Table Calendar"
       ],
       id: [
-        "Integrasi Hardware: presentation_displays (Wrapper Android Presentation API)",
-        "Layer Komunikasi Data: Event-driven SecondaryDisplayService dengan JSON serializable",
-        "Rendering UI & QR: qr_flutter untuk QRIS dinamis dan flutter_screenutil untuk layout adaptif",
-        "Penyimpanan Persisten: SharedPreferences untuk cache konfigurasi orientasi layar",
-        "Target Platform: Terminal Android POS Dual-Screen (Sunmi, iMin, Pax, dsb.)"
+        "Pola arsitektur MVVM memisahkan model data, logika viewmodel, dan antarmuka secara bersih",
+        "State management terpusat dan reaktif menggunakan Provider",
+        "Integrasi REST API terstruktur menggunakan Dio dan Retrofit dengan serialisasi otomatis",
+        "Penyimpanan lokal preferensi dan sesi via SharedPreferences",
+        "Visualisasi data dinamis dengan Syncfusion Charts dan Table Calendar"
       ]
     },
-    coverImage: "/projects/dual-screen-pos/screen1.png",
+    coverImage: "/projects/overtime-app/screen1.png",
     screenshots: [
-      "/projects/dual-screen-pos/screen1.png",
-      "/projects/dual-screen-pos/screen2.png",
-      "/projects/dual-screen-pos/screen3.png"
+      "/projects/overtime-app/screen1.png",
+      "/projects/overtime-app/screen2.png",
+      "/projects/overtime-app/screen3.png",
+      "/projects/overtime-app/screen4.png"
     ],
     highlights: {
       en: [
-        "Real-Time Order Summary Sync: Live order synchronization showing itemized cart, quantities, discounts, taxes, and grand totals in real-time",
-        "Dynamic QRIS Display: Dynamic on-screen QRIS code rendering for rapid customer scanning via digital e-wallets and mobile banking",
-        "Transaction Status & Success Screen: Visual transaction status animations (processing, success, failed) with automatic standby reset timers",
-        "Adaptive Dual-Orientation (Portrait & Landscape): Adaptive responsive UI layout seamlessly catering to both portrait and landscape secondary monitor aspect ratios",
-        "Decoupled Data Communication Layer: High-speed decoupled JSON message bridge ensuring zero UI jank or performance degradation on the primary cashier screen"
+        "Smart Overtime Attendance: Daily overtime logging with automatic calculation based on day type (regular workday vs holiday)",
+        "Interactive Dashboard: Summary of total overtime hours & earnings with interactive weekly charts and monthly calendar",
+        "Overtime Calculator: Standalone simulation to estimate tiered overtime wages without saving attendance",
+        "Salary & Overtime Recap: Detailed overtime history and accumulated wage estimation with flexible date range filters",
+        "Secure Auth & OTP via Gmail: Secure login, registration, and password recovery via one-time passwords sent to Gmail",
+        "User Profile Management: Profile updates, photo upload (camera/gallery), and base salary & working day configuration"
       ],
       id: [
-        "Real-Time Order Summary Sync: Menampilkan daftar belanja, kuantitas, diskon, pajak, dan total tagihan secara live saat kasir menginput produk",
-        "Dynamic QRIS Display: Men-generate dan menampilkan QR Code pembayaran (GoPay, DANA, ShopeePay, dll.) di layar pelanggan untuk langsung di-scan",
-        "Transaction Status & Success Screen: Notifikasi visual status pembayaran (berhasil/gagal) dan auto-reset ke status standby setelah transaksi selesai",
-        "Adaptive Dual-Orientation (Portrait & Landscape): Tampilan layar sekunder responsif menyesuaikan orientasi monitor perangkat (portrait/landscape)",
-        "Decoupled Data Communication Layer: Komunikasi data antar-layar berbasis JSON messaging yang aman, cepat, dan tidak membebani performa UI layar utama"
+        "Smart Overtime Attendance: Pencatatan lembur harian dengan kalkulasi otomatis berdasarkan jenis hari (hari kerja biasa vs hari libur)",
+        "Interactive Dashboard: Ringkasan total jam lembur & nominal pendapatan, dilengkapi grafik mingguan serta kalender bulanan interaktif",
+        "Overtime Calculator: Simulasi mandiri untuk menghitung estimasi upah lembur bertingkat tanpa harus menyimpan absensi",
+        "Salary & Overtime Recap: Riwayat detail lembur dan estimasi akumulasi gaji dengan filter rentang tanggal fleksibel",
+        "Secure Auth & OTP via Gmail: Sistem login, registrasi, serta pemulihan akun yang aman menggunakan kode OTP yang dikirim langsung ke Gmail",
+        "User Profile Management: Pembaruan profil, unggah foto (kamera/galeri), ganti email/password, serta konfigurasi gaji pokok dan jumlah hari kerja"
       ]
     },
     github: "#",
     liveDemo: "#"
   }
+
 ];
 
 export const getProjectsData = (lang = 'en') => {

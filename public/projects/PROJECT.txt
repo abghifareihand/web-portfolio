@@ -263,3 +263,30 @@ Data Handling: json_serializable, dart:convert
 UI & Visualization: qr_flutter (QRIS Renderer), flutter_screenutil (Adaptive Layout)
 Local Persistence: shared_preferences (Orientation & Config caching)
 Target Platform: Android POS Terminals (Dual-Screen Devices)
+
+
+============
+ABSENSI APP
+============
+
+1. Project Summary
+Absensi App adalah sistem absensi modern multi-role (Staff, Dosen, Mahasiswa) berbasis mobile dan web yang mengintegrasikan validasi lokasi presisi (geofencing) serta proteksi anti-kecurangan (device binding & deteksi Fake GPS).
+
+2. Project Overview
+Aplikasi ini dikembangkan untuk mendigitalisasi dan mengotomatisasi pencatatan kehadiran serta manajemen perizinan. Sistem terdiri dari:
+- Mobile App (Flutter): Digunakan pengguna untuk melakukan presensi mandiri berbasis koordinat GPS, mengajukan izin, serta memantau jadwal dan riwayat kehadiran.
+- Web Admin Dashboard (Laravel): Digunakan administrator untuk manajemen data pengguna, penentuan titik lokasi & radius kantor/kampus, approval izin, monitoring perangkat, serta rekapitulasi laporan.
+
+3. Key Features
+- Geofencing & Map Integration: Validasi kehadiran real-time berbasis radius titik lokasi terdekat menggunakan peta interaktif (OpenStreetMap).
+- Anti-Fraud Security: Proteksi terintegrasi dengan deteksi Fake GPS / Mock Location dan penguncian ID perangkat (Device Binding / UDID) agar tidak bisa titip absen.
+- Multi-Role Access: Manajemen hak akses, jadwal, dan aturan presensi terpisah untuk Staff, Dosen, dan Mahasiswa.
+- Leave & Permission System: Pengajuan izin/sakit langsung dari aplikasi mobile disertai upload dokumen atau bukti pendukung.
+- Dynamic Scheduling & Events: Pengaturan jadwal kehadiran yang fleksibel serta publikasi kalender kegiatan/event institusi.
+- Automated Reporting: Rekapitulasi absensi dan perizinan otomatis yang dapat diekspor langsung ke format PDF dan Excel.
+
+4. Tech Stack
+- Mobile (Frontend): Flutter (Dart), Provider (State Management), Retrofit & Dio (Networking), Flutter Map (OSM), Geolocator, Flutter UDID.
+- Web & Backend: Laravel 12 (PHP 8.2), Blade Templating, Laravel Sanctum (API Authentication).
+- Database: MySQL / MariaDB.
+- Libraries & Tools: Barryvdh DomPDF (PDF Generator), Maatwebsite Excel (Data Export), RESTful API.

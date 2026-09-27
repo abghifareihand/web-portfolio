@@ -1,0 +1,156 @@
+================================================================================
+RANGKUMAN PENGALAMAN PROYEK UNTUK CV / RESUME
+Urutan: Terbaru ke Terlama (Chronological: Newest to Oldest)
+================================================================================
+
+1. HRIS App & Web (2026-08)
+
+id
+- Membangun solusi HR terpadu yang mencakup aplikasi mobile karyawan (Flutter) dan web admin dashboard (Laravel 13).
+- Mengembangkan sistem absensi selfie real-time dengan validasi geofencing OpenStreetMap dan proteksi mock location.
+- Merancang engine payroll otomatis yang terintegrasi dengan regulasi perpajakan PPh 21 (skema TER/PTKP) dan iuran BPJS.
+- Mengembangkan fitur pengajuan cuti, lembur, klaim reimbursement, dan kasbon dengan pemotongan gaji berkala.
+- Mengintegrasikan manajemen jadwal kerja fleksibel dengan fitur tukar shift antar-karyawan.
+
+en
+- Engineered an end-to-end HR management suite comprising an Employee Self-Service app (Flutter) and web dashboard (Laravel 13).
+- Built real-time selfie clock-in/out with OpenStreetMap geofencing and mock location protection.
+- Developed an automated payroll engine fully compliant with Indonesian PPh 21 (TER/PTKP) and BPJS regulations.
+- Implemented automated workflows for leave, overtime, expense reimbursements, and salary loans.
+- Designed flexible shift scheduling and peer-to-peer shift-swapping approval workflows.
+
+
+2. Fondaco App (2026-05)
+
+id
+- Mengembangkan aplikasi mobile e-commerce B2B produk dental dan seminar medis dokter gigi berbasis Flutter.
+- Menerapkan Clean Architecture dan BLoC state management untuk menjaga skalabilitas dan kestabilan performa aplikasi.
+- Mengembangkan katalog produk interaktif dengan pencarian cepat, filter multi-kategori, dan manajemen keranjang belanja.
+- Mengintegrasikan sistem pendaftaran workshop/seminar dokter gigi lengkap dengan tiket digital.
+- Mengembangkan sistem poin loyalitas (Fondaco Poin) dan integrasi checkout multi-pembayaran via embedded WebView.
+
+en
+- Engineered a B2B dental supplies e-commerce and medical seminar registration app using Flutter.
+- Implemented Clean Architecture and BLoC pattern for robust state management and code maintainability.
+- Built interactive product catalogs with instant search, multi-faceted filtering, and cart management.
+- Developed dental workshop and seminar booking workflows with digital event ticketing.
+- Created customer loyalty rewards (points accrual/redemption) and in-app WebView checkout integration.
+
+
+3. QuickMark App (2026-04)
+
+id
+- Mengembangkan aplikasi mobile verifikasi legalitas dokumen hasil hutan kayu (SKSHHK) berbasis Flutter.
+- Mengintegrasikan REST API resmi Kementerian Lingkungan Hidup dan Kehutanan (SIPUHH / KLHK).
+- Mengimplementasikan barcode & QR scanner cepat untuk identifikasi nomor batang kayu bulat (LOG) di lapangan.
+- Menerapkan arsitektur offline-first menggunakan database lokal NoSQL (Hive) untuk operasional di wilayah minim sinyal.
+- Mengembangkan fitur ekspor rekapitulasi data verifikasi lapangan langsung ke format spreadsheet Excel (.xlsx).
+
+en
+- Developed a timber legality verification mobile application integrating with Indonesian Forestry Ministry (KLHK SIPUHH) APIs.
+- Integrated camera-based barcode and QR scanning for rapid verification of registered timber log identifiers.
+- Implemented an offline-first architecture utilizing NoSQL Hive storage for remote forest areas with limited connectivity.
+- Built automated on-device data export capabilities generating formatted Excel (.xlsx) audit sheets.
+- Added data integrity validations to prevent unauthorized logging record manipulation in the field.
+
+
+4. PION App & Web (2026-02)
+
+id
+- Membangun ekosistem digitalisasi serikat buruh melalui aplikasi mobile anggota (Flutter) dan portal admin (Laravel 12).
+- Mengembangkan Kartu Tanda Anggota (KTA) digital interaktif dengan QR Code unik untuk verifikasi keanggotaan.
+- Merancang modul E-Voting aman (one-man one-vote) dengan hashing data untuk pemilihan ketua secara transparan.
+- Mengimplementasikan sistem pengaduan ketenagakerjaan (Helpdesk/Ticketing) dengan pelacakan status penanganan.
+- Mengembangkan modul transparansi kas keuangan dan integrasi push broadcast Firebase Cloud Messaging (FCM).
+
+en
+- Delivered a union digitalization platform featuring an intuitive mobile client (Flutter) and web portal (Laravel 12).
+- Built interactive digital membership cards (e-KTA) with unique QR codes for instant member verification.
+- Developed a secure, tamper-resistant digital voting system (e-Voting) for union leadership elections.
+- Implemented a structured legal aid/grievance ticketing workflow with real-time progress tracking.
+- Created transparent union financial reporting dashboards and real-time push broadcasts via Firebase Cloud Messaging (FCM).
+
+
+5. Sales Inventory App & Web (2025-11)
+
+id
+- Mengembangkan sistem inventaris dan Point of Sale (POS) multi-tier berbasis mobile (Flutter) dan web (Laravel 12).
+- Merancang alur mutasi dan distribusi stok fisik berjenjang dari Gudang Pusat, Cabang, hingga Sales Lapangan.
+- Mengembangkan aplikasi POS lapangan dengan keranjang belanja dinamis dan kalkulasi margin keuntungan otomatis.
+- Mengintegrasikan fitur cetak struk transaksi instan menggunakan printer thermal portable Bluetooth 58mm (ESC/POS).
+- Mengimplementasikan alur retur stok fisik dan sistem persetujuan (approval) edit transaksi oleh pihak Pusat/Owner.
+
+en
+- Developed a multi-tier inventory and field POS ecosystem utilizing Flutter (mobile) and Laravel 12 (web).
+- Architected a traceable multi-tier stock transfer workflow from Central Warehouse to Branches and Field Sales agents.
+- Built a mobile POS ordering cart with real-time tax calculation and profit margin estimation.
+- Integrated on-the-spot thermal receipt printing via Bluetooth ESC/POS (58mm) hardware protocol.
+- Implemented field stock return workflows and a multi-level transaction adjustment approval system.
+
+
+6. Rekalaba PPOB App (2025-11)
+
+id
+- Mengembangkan modul layanan produk digital & tagihan (PPOB) terintegrasi pada aplikasi kasir Rekalaba POS (Flutter).
+- Mengintegrasikan pembayaran tagihan multi-biller (PLN, PDAM, BPJS, Pulsa, E-Wallet) melalui gateway Nicepay.
+- Mengimplementasikan sistem keamanan transaksi finansial menggunakan verifikasi PIN 6-digit dan OTP SMS.
+- Mengembangkan fitur cetak struk pembayaran resmi secara otomatis melalui printer thermal Bluetooth ESC/POS.
+- Merancang UI/UX transaksi yang responsif dan adaptif untuk smartphone maupun tablet kasir (Portrait & Landscape).
+
+en
+- Developed an integrated bill payment (PPOB) module embedded within the Rekalaba POS Flutter application.
+- Integrated multi-biller digital payments (utilities, telecoms, BPJS, e-wallets) via Nicepay API gateway.
+- Enforced transaction security protocols using 6-digit cashier PIN authorization and SMS OTP.
+- Implemented automated customer receipt printing via Bluetooth ESC/POS thermal printers.
+- Designed an adaptive, responsive UI optimized for both smartphone and tablet POS form factors (Portrait & Landscape).
+
+
+7. Absensi App & Web (2025-09)
+
+id
+- Mengembangkan aplikasi mobile presensi (Flutter) dan dashboard admin terpusat (Laravel 12).
+- Mengintegrasikan sistem validasi presensi berbasis radius lokasi (Geofencing OpenStreetMap).
+- Mengimplementasikan proteksi anti-fraud dengan deteksi Fake GPS/Mock Location dan penguncian ID perangkat (Device Binding / UDID).
+- Membangun sistem hak akses multi-role terpisah untuk Staff, Dosen, dan Mahasiswa.
+- Mengembangkan alur pengajuan izin/sakit mandiri dengan upload bukti pendukung serta ekspor laporan otomatis (PDF & Excel).
+
+en
+- Developed a cross-platform mobile attendance app (Flutter) and centralized admin dashboard (Laravel 12).
+- Integrated real-time location radius validation using OpenStreetMap geofencing.
+- Implemented anti-fraud security featuring Fake GPS/Mock Location detection and Device Binding (UDID).
+- Built granular multi-role access control tailored for Staff, Lecturers, and Students.
+- Created digital leave/sick permission workflows with file attachments and automated PDF/Excel reporting.
+
+
+8. Nuset App (2025-05)
+
+id
+- Mengembangkan aplikasi mobile manajemen aset dan perkakas operasional (tools) berbasis Flutter offline-first.
+- Menerapkan penyimpanan data lokal persisten menggunakan Hive NoSQL dan SQLite (Sqflite).
+- Membangun sistem pencatatan mutasi barang masuk/keluar serta pelacakan sirkulasi peminjaman aset.
+- Mengintegrasikan dokumentasi foto bukti fisik aset menggunakan kamera ponsel dan kompresi gambar lokal.
+- Mengembangkan engine ekspor data inventaris dan histori transaksi langsung ke spreadsheet Excel (.xlsx).
+
+en
+- Developed an offline-first asset and heavy-duty operational tools tracking mobile application with Flutter.
+- Implemented persistent on-device data storage utilizing a hybrid of Hive NoSQL and SQLite (Sqflite).
+- Designed inventory movement logs (in/out) and end-to-end asset lending lifecycle tracking.
+- Integrated camera capture for physical asset photo documentation with local image optimization.
+- Created on-device report generation exporting comprehensive asset audits into Excel (.xlsx) format.
+
+
+9. Overtime Connect App (2025-03)
+
+id
+- Mengembangkan aplikasi mobile pencatatan dan kalkulasi upah lembur berbasis Flutter dengan arsitektur MVVM & Provider.
+- Membangun engine kalkulasi upah lembur bertingkat otomatis sesuai regulasi Depnaker Indonesia.
+- Menyajikan visualisasi data analitik riwayat dan tren jam lembur mingguan menggunakan Syncfusion Charts.
+- Mengintegrasikan kalender interaktif (Table Calendar) untuk monitoring absensi harian dan estimasi pendapatan bulanan.
+- Mengimplementasikan autentikasi aman verifikasi OTP berbasis Gmail.
+
+en
+- Built an overtime tracking and wage calculation mobile app using Flutter with clean MVVM architecture and Provider.
+- Developed an automated calculation engine for tiered overtime rates aligned with Indonesian labor laws.
+- Integrated interactive overtime analytics and weekly work-hour trend graphs powered by Syncfusion Charts.
+- Implemented a monthly interactive calendar interface for attendance tracking and earnings forecasting.
+- Secured user authentication via automated Gmail OTP verification.
