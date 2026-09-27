@@ -744,13 +744,14 @@ const rawProjectsData = [
         "Networking & REST Client: Retrofit & Dio (REST Client)"
       ]
     },
-    coverImage: "/projects/sales-inventory-app/screen1.png",
+    coverImage: "/projects/sales-inventory-app/screen6.png",
     screenshots: [
       "/projects/sales-inventory-app/screen1.png",
       "/projects/sales-inventory-app/screen2.png",
       "/projects/sales-inventory-app/screen3.png",
       "/projects/sales-inventory-app/screen4.png",
-      "/projects/sales-inventory-app/screen5.png"
+      "/projects/sales-inventory-app/screen5.png",
+      "/projects/sales-inventory-app/screen6.png"
     ],
     highlights: {
       en: [
