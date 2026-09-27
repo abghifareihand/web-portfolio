@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CV Abghi Fareihan Desailie - Mobile Developer</title>
+  <style>
+  @page {
+    size: A4;
+    margin: 13mm 15mm 13mm 15mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1f2937;
+    background: #ffffff;
+    font-size: 9pt;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+  }
+  a {
+    color: #0284c7;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .header {
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 7px;
+    margin-bottom: 8px;
+  }
+  .name {
+    font-size: 20pt;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+  .title {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #0284c7;
+    margin-top: 1px;
+    margin-bottom: 5px;
+  }
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 8.8pt;
+    color: #4b5563;
+  }
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+  }
+  .intro-summary {
+    font-size: 8.8pt;
+    color: #374151;
+    text-align: justify;
+    line-height: 1.42;
+    margin-bottom: 11px;
+  }
+  .section {
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+  }
+  .exp-item {
+    margin-bottom: 7px;
+    page-break-inside: avoid;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .exp-role {
+    font-size: 9.3pt;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .exp-company {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #0284c7;
+  }
+  .exp-date {
+    font-size: 8.3pt;
+    font-weight: 600;
+    color: #64748b;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .bullet-list {
+    margin-top: 2px;
+    padding-left: 15px;
+    list-style-type: square;
+  }
+  .bullet-list li {
+    font-size: 8.6pt;
+    color: #374151;
+    margin-bottom: 1.5px;
+    line-height: 1.35;
+  }
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 9pt;
+    page-break-inside: avoid;
+  }
+  .edu-degree {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .edu-inst {
+    color: #0284c7;
+    font-weight: 600;
+  }
+  .edu-date {
+    font-size: 8.3pt;
+    font-weight: 600;
+    color: #64748b;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .edu-desc {
+    font-size: 8.4pt;
+    color: #4b5563;
+    margin-top: 1px;
+  }
+  .proj-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .proj-item {
+    page-break-inside: avoid;
+    margin-bottom: 2px;
+  }
+  .proj-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .proj-link {
+    font-size: 9.2pt;
+    font-weight: 700;
+    color: #0f172a;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+  }
+  .proj-link:hover {
+    color: #0284c7;
+  }
+  .link-icon {
+    font-size: 8.5pt;
+    color: #0284c7;
+    font-weight: 700;
+  }
+  .proj-year {
+    font-size: 8.3pt;
+    font-weight: 600;
+    color: #64748b;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .skills-plain-text {
+    font-size: 8.8pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="name">Abghi Fareihan Desailie</div>
+    <div class="title">Mobile Developer (Flutter)</div>
+    <div class="contact-info">
+      <span class="contact-item">📍 Jakarta Selatan, Indonesia</span>
+      <span class="contact-item">✉️ <a href="mailto:abghifareihand@gmail.com">abghifareihand@gmail.com</a></span>
+      <span class="contact-item">🔗 <a href="https://linkedin.com/in/abghifareihand">linkedin.com/in/abghifareihand</a></span>
+      <span class="contact-item">🐙 <a href="https://github.com/abghifareihand">github.com/abghifareihand</a></span>
+      <span class="contact-item">🌐 <a href="https://abghifareihan.com">abghifareihan.com</a></span>
+    </div>
+  </div>
+
+  <!-- INTRO SUMMARY (LANGSUNG TANPA JUDUL) -->
+  <p class="intro-summary">
+    Mobile Developer dengan spesialisasi pengembangan aplikasi lintas platform (Android & iOS) menggunakan Flutter dan Dart. Berpengalaman lebih dari 2 tahun dalam merancang arsitektur aplikasi mobile yang scalable dan terstruktur (MVVM & Clean Architecture), manajemen state (BLoC & Provider), kapabilitas offline-first (SQLite & Hive), serta integrasi hardware kasir (Bluetooth Thermal Printer ESC/POS & Android Presentation API). Terbiasa mengintegrasikan RESTful API secara seamless dan telah berhasil merilis berbagai aplikasi mobile skala produksi.
+  </p>
+
+  <!-- 1. PENGALAMAN KERJA -->
+  <div class="section">
+    <div class="section-title">Pengalaman Kerja</div>
+    
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <span class="exp-role">Mobile Developer</span> — <span class="exp-company">Ignatia</span>
+        </div>
+        <span class="exp-date">Sep 2024 - Sekarang | Hybrid</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Berkontribusi aktif dalam pengembangan fitur aplikasi mobile dan integrasi hardware pada aplikasi Point of Sale (POS) unggulan.</li>
+        <li>Mengembangkan modul transaksi finansial & PPOB terintegrasi (pembayaran tagihan PLN, PDAM, BPJS, pulsa, dan e-wallet) via payment gateway Nicepay.</li>
+        <li>Mengimplementasikan dukungan tampilan Dual-Screen (Customer-Facing Display) pada perangkat terminal Android POS untuk sinkronisasi pesanan dan QRIS real-time.</li>
+        <li>Menstabilkan dan mengoptimalkan performa aplikasi mobile produksi melalui profiling memori, penanganan bug sistematis, dan refaktor arsitektur.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <span class="exp-role">Freelance Mobile / Fullstack Developer</span> — <span class="exp-company">Mandiri / Self-Employed</span>
+        </div>
+        <span class="exp-date">Okt 2023 - Sekarang | Remote</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Mengembangkan aplikasi mobile kustom berbasis Flutter (Android & iOS) dengan arsitektur bersih dan antarmuka responsif.</li>
+        <li>Membangun web admin dashboard terpusat menggunakan Laravel untuk manajemen data, kontrol akses multi-role, dan visualisasi laporan.</li>
+        <li>Merancang dan mengimplementasikan RESTful API (Laravel & Sanctum) yang aman sebagai penyedia data utama bagi aplikasi mobile Flutter.</li>
+        <li>Mengelola seluruh alur proyek end-to-end dari perancangan skema database MySQL, slicing desain Figma, hingga integrasi sistem.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <span class="exp-role">Mobile Developer Intern</span> — <span class="exp-company">Perum Perhutani</span>
+        </div>
+        <span class="exp-date">Nov 2023 - Feb 2024 | Jakarta Selatan</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Merancang dan mengembangkan aplikasi mobile offline-first 'Union Getah' untuk mandor hutan dalam mencatat dan mengkalkulasi hasil panen getah di area terpencil tanpa sinyal internet.</li>
+        <li>Mengintegrasikan perangkat printer termal Bluetooth (ESC/POS) untuk pencetakan nota fisik instan di tempat bagi petani penyadap.</li>
+        <li>Menerapkan penyimpanan lokal terisolasi dengan sinkronisasi batch dua arah otomatis ke server saat perangkat kembali mendapat jaringan.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2. PENDIDIKAN -->
+  <div class="section">
+    <div class="section-title">Pendidikan</div>
+    <div class="edu-item">
+      <div>
+        <span class="edu-degree">Sarjana Komputer (S.Kom) - Informatika</span> — <span class="edu-inst">Universitas Nasional</span>
+      </div>
+      <span class="edu-date">2019 - 2023 | Jakarta, Indonesia</span>
+    </div>
+    <div class="edu-desc">
+      Fokus studi: Rekayasa Perangkat Lunak, Pemrograman Berorientasi Objek (OOP), Algoritma & Struktur Data, serta Sistem Basis Data Relasional.
+    </div>
+  </div>
+
+  <!-- 3. PORTOFOLIO PROJECT -->
+  <div class="section">
+    <div class="section-title">Portofolio Project</div>
+    <div class="proj-grid">
+      
+      <div class="proj-item">
+        <div class="proj-header">
+          <a href="https://abghifareihan.com/#case-study/hris-app" target="_blank" class="proj-link">
+            <span>1. HRIS App & Web</span>
+            <span class="link-icon">↗</span>
+          </a>
+          <span class="proj-year">2026</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Membangun solusi HR terpadu yang mencakup aplikasi mobile karyawan (Flutter) dan web admin dashboard (Laravel 13).</li>
+          <li>Mengembangkan sistem absensi selfie real-time dengan validasi geofencing OpenStreetMap dan proteksi mock location.</li>
+          <li>Merancang engine payroll otomatis yang terintegrasi dengan regulasi perpajakan PPh 21 (skema TER/PTKP) dan iuran BPJS.</li>
+          <li>Mengembangkan fitur pengajuan cuti, lembur, klaim reimbursement, dan kasbon dengan pemotongan gaji berkala.</li>
+          <li>Mengintegrasikan manajemen jadwal kerja fleksibel dengan fitur tukar shift antar-karyawan.</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <a href="https://abghifareihan.com/#case-study/fondaco-app" target="_blank" class="proj-link">
+            <span>2. Fondaco App</span>
+            <span class="link-icon">↗</span>
+          </a>
+          <span class="proj-year">2026</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Mengembangkan aplikasi mobile e-commerce B2B produk dental dan seminar medis dokter gigi berbasis Flutter.</li>
+          <li>Menerapkan Clean Architecture dan BLoC state management untuk menjaga skalabilitas dan kestabilan performa aplikasi.</li>
+          <li>Mengembangkan katalog produk interaktif dengan pencarian cepat, filter multi-kategori, dan manajemen keranjang belanja.</li>
+          <li>Mengintegrasikan sistem pendaftaran workshop/seminar dokter gigi lengkap dengan tiket digital.</li>
+          <li>Mengembangkan sistem poin loyalitas (Fondaco Poin) dan integrasi checkout multi-pembayaran via embedded WebView.</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <a href="https://abghifareihan.com/#case-study/quickmark-app" target="_blank" class="proj-link">
+            <span>3. QuickMark App</span>
+            <span class="link-icon">↗</span>
+          </a>
+          <span class="proj-year">2026</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Mengembangkan aplikasi mobile verifikasi legalitas dokumen hasil hutan kayu (SKSHHK) berbasis Flutter.</li>
+          <li>Mengintegrasikan REST API resmi Kementerian Lingkungan Hidup dan Kehutanan (SIPUHH / KLHK).</li>
+          <li>Mengimplementasikan barcode & QR scanner cepat untuk identifikasi nomor batang kayu bulat (LOG) di lapangan.</li>
+          <li>Menerapkan arsitektur offline-first menggunakan database lokal NoSQL (Hive) untuk operasional di wilayah minim sinyal.</li>
+          <li>Mengembangkan fitur ekspor rekapitulasi data verifikasi lapangan langsung ke format spreadsheet Excel (.xlsx).</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <a href="https://abghifareihan.com/#case-study/pion-app" target="_blank" class="proj-link">
+            <span>4. PION App & Web</span>
+            <span class="link-icon">↗</span>
+          </a>
+          <span class="proj-year">2026</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Membangun ekosistem digitalisasi serikat buruh melalui aplikasi mobile anggota (Flutter) dan portal admin (Laravel 12).</li>
+          <li>Mengembangkan Kartu Tanda Anggota (KTA) digital interaktif dengan QR Code unik untuk verifikasi keanggotaan.</li>
+          <li>Merancang modul E-Voting aman (one-man one-vote) dengan hashing data untuk pemilihan ketua secara transparan.</li>
+          <li>Mengimplementasikan sistem pengaduan ketenagakerjaan (Helpdesk/Ticketing) dengan pelacakan status penanganan.</li>
+          <li>Mengembangkan modul transparansi kas keuangan dan integrasi push broadcast Firebase Cloud Messaging (FCM).</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <a href="https://abghifareihan.com/#case-study/sales-inventory-app" target="_blank" class="proj-link">
+            <span>5. Sales Inventory App & Web</span>
+            <span class="link-icon">↗</span>
+          </a>
+          <span class="proj-year">2025</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Mengembangkan sistem inventaris dan Point of Sale (POS) multi-tier berbasis mobile (Flutter) dan web (Laravel 12).</li>
+          <li>Merancang alur mutasi dan distribusi stok fisik berjenjang dari Gudang Pusat, Cabang, hingga Sales Lapangan.</li>
+          <li>Mengembangkan aplikasi POS lapangan dengan keranjang belanja dinamis dan kalkulasi margin keuntungan otomatis.</li>
+          <li>Mengintegrasikan fitur cetak struk transaksi instan menggunakan printer thermal portable Bluetooth 58mm (ESC/POS).</li>
+          <li>Mengimplementasikan alur retur stok fisik dan sistem persetujuan (approval) edit transaksi oleh pihak Pusat/Owner.</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <a href="https://abghifareihan.com/#case-study/rekalaba-ppob" target="_blank" class="proj-link">
+            <span>6. Rekalaba PPOB App</span>
+            <span class="link-icon">↗</span>
+          </a>
+          <span class="proj-year">2025</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Mengembangkan modul layanan produk digital & tagihan (PPOB) terintegrasi pada aplikasi kasir Rekalaba POS (Flutter).</li>
+          <li>Mengintegrasikan pembayaran tagihan multi-biller (PLN, PDAM, BPJS, Pulsa, E-Wallet) melalui gateway Nicepay.</li>
+          <li>Mengimplementasikan sistem keamanan transaksi finansial menggunakan verifikasi PIN 6-digit dan OTP SMS.</li>
+          <li>Mengembangkan fitur cetak struk pembayaran resmi secara otomatis melalui printer thermal Bluetooth ESC/POS.</li>
+          <li>Merancang UI/UX transaksi yang responsif dan adaptif untuk smartphone maupun tablet kasir (Portrait & Landscape).</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <a href="https://abghifareihan.com/#case-study/absensi-app" target="_blank" class="proj-link">
+            <span>7. Absensi App & Web</span>
+            <span class="link-icon">↗</span>
+          </a>
+          <span class="proj-year">2025</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Mengembangkan aplikasi mobile presensi (Flutter) dan dashboard admin terpusat (Laravel 12).</li>
+          <li>Mengintegrasikan sistem validasi presensi berbasis radius lokasi (Geofencing OpenStreetMap).</li>
+          <li>Mengimplementasikan proteksi anti-fraud dengan deteksi Fake GPS/Mock Location dan penguncian ID perangkat (Device Binding / UDID).</li>
+          <li>Membangun sistem hak akses multi-role terpisah untuk Staff, Dosen, dan Mahasiswa.</li>
+          <li>Mengembangkan alur pengajuan izin/sakit mandiri dengan upload bukti pendukung serta ekspor laporan otomatis (PDF & Excel).</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <a href="https://abghifareihan.com/#case-study/nuset-app" target="_blank" class="proj-link">
+            <span>8. Nuset App</span>
+            <span class="link-icon">↗</span>
+          </a>
+          <span class="proj-year">2025</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Mengembangkan aplikasi mobile manajemen aset dan perkakas operasional (tools) berbasis Flutter offline-first.</li>
+          <li>Menerapkan penyimpanan data lokal persisten menggunakan Hive NoSQL dan SQLite (Sqflite).</li>
+          <li>Membangun sistem pencatatan mutasi barang masuk/keluar serta pelacakan sirkulasi peminjaman aset.</li>
+          <li>Mengintegrasikan dokumentasi foto bukti fisik aset menggunakan kamera ponsel dan kompresi gambar lokal.</li>
+          <li>Mengembangkan engine ekspor data inventaris dan histori transaksi langsung ke spreadsheet Excel (.xlsx).</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <a href="https://abghifareihan.com/#case-study/overtime-app" target="_blank" class="proj-link">
+            <span>9. Overtime Connect App</span>
+            <span class="link-icon">↗</span>
+          </a>
+          <span class="proj-year">2025</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Mengembangkan aplikasi mobile pencatatan dan kalkulasi upah lembur berbasis Flutter dengan arsitektur MVVM & Provider.</li>
+          <li>Membangun engine kalkulasi upah lembur bertingkat otomatis sesuai regulasi Depnaker Indonesia.</li>
+          <li>Menyajikan visualisasi data analitik riwayat dan tren jam lembur mingguan menggunakan Syncfusion Charts.</li>
+          <li>Mengintegrasikan kalender interaktif (Table Calendar) untuk monitoring absensi harian dan estimasi pendapatan bulanan.</li>
+          <li>Mengimplementasikan autentikasi aman verifikasi OTP berbasis Gmail.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 4. KEAHLIAN TEKNIS -->
+  <div class="section">
+    <div class="section-title">Keahlian Teknis</div>
+    <p class="skills-plain-text">
+      Flutter, Dart, BLoC, Provider, MVVM, Clean Architecture, REST API, SQLite, Hive, Git, Postman, Figma.
+    </p>
+  </div>
+</body>
+</html>

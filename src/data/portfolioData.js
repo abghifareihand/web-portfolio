@@ -6,9 +6,9 @@
 
 export const personalDataI18n = {
   en: {
-    name: "Abghi Fareihan",
+    name: "Abghi Fareihan Desailie",
     nickname: "Abghi",
-    handle: "abghi.dev",
+    handle: "abghifareihan.com",
     role: "Mobile Developer (Flutter)",
     tagline: "Crafting fluid, high-performance cross-platform mobile apps with end-to-end backend integration.",
     location: "Jakarta Selatan, Indonesia",
@@ -17,7 +17,7 @@ export const personalDataI18n = {
     email: "abghifareihand@gmail.com",
     github: "https://github.com/abghifareihand",
     linkedin: "https://www.linkedin.com/in/abghifareihand",
-    resumeUrl: "https://drive.google.com/file/d/1E3yO_SLr5Zdg-fICt4NFPPSMRKAawK9N/view",
+    resumeUrl: "/CV/CV_Abghi_Fareihan_EN.pdf",
 
     bio: [
       "I am a Mobile Developer specializing in Flutter and Dart. I focus on building responsive, 60fps cross-platform mobile applications with clean architecture, robust state management, and reliable offline-first capabilities.",
@@ -32,9 +32,9 @@ export const personalDataI18n = {
     ]
   },
   id: {
-    name: "Abghi Fareihan",
+    name: "Abghi Fareihan Desailie",
     nickname: "Abghi",
-    handle: "abghi.dev",
+    handle: "abghifareihan.com",
     role: "Mobile Developer (Flutter)",
     tagline: "Membangun aplikasi mobile cross-platform yang fluid dan berperforma tinggi dengan integrasi backend end-to-end.",
     location: "Jakarta Selatan, Indonesia",
@@ -43,7 +43,7 @@ export const personalDataI18n = {
     email: "abghifareihand@gmail.com",
     github: "https://github.com/abghifareihand",
     linkedin: "https://www.linkedin.com/in/abghifareihand",
-    resumeUrl: "https://drive.google.com/file/d/1E3yO_SLr5Zdg-fICt4NFPPSMRKAawK9N/view",
+    resumeUrl: "/CV/CV_Abghi_Fareihan_ID.pdf",
 
     bio: [
       "Saya adalah seorang Mobile Developer dengan spesialisasi Flutter dan Dart. Saya berfokus membangun aplikasi mobile cross-platform 60fps yang responsif dengan clean architecture, manajemen state yang kokoh, dan kapabilitas offline-first yang andal.",
@@ -1071,8 +1071,8 @@ const rawExperienceData = [
     location: "Remote",
     type: { en: "Fulltime", id: "Penuh Waktu" },
     description: {
-      en: "Driving core mobile development, feature engineering, and hardware integrations for a flagship Point of Sale (POS) application and integrated merchant services.",
-      id: "Memimpin pengembangan mobile utama, rekayasa fitur, dan integrasi perangkat keras untuk aplikasi kasir Point of Sale (POS) unggulan dan layanan merchant terintegrasi."
+      en: "Contributing to core mobile development, feature engineering, and hardware integrations for a flagship Point of Sale (POS) application and integrated merchant services.",
+      id: "Berkontribusi dalam pengembangan aplikasi mobile, rekayasa fitur, dan integrasi perangkat keras untuk aplikasi kasir Point of Sale (POS) unggulan dan layanan merchant terintegrasi."
     },
     achievements: {
       en: [
@@ -1092,24 +1092,26 @@ const rawExperienceData = [
   },
   {
     period: "Oct 2023 - Present",
-    role: { en: "Freelance Mobile Developer", id: "Mobile Developer Lepas (Freelance)" },
+    role: { en: "Freelance Mobile / Fullstack Developer", id: "Freelance Mobile / Fullstack Developer" },
     company: { en: "Self-Employed", id: "Mandiri / Freelance" },
     location: "Remote",
     type: { en: "Project Based", id: "Berbasis Proyek" },
     description: {
-      en: "Delivering custom client applications on a project based milestone model, ranging from standalone cross-platform Flutter mobile apps to integrated full-stack solutions with Laravel backends.",
-      id: "Mengirimkan aplikasi kustom untuk klien dengan model milestone berbasis proyek, mulai dari aplikasi mobile Flutter mandiri hingga solusi full-stack lengkap dengan backend Laravel."
+      en: "Delivering end-to-end client applications combining Flutter mobile clients, Laravel RESTful APIs, and centralized web admin dashboards.",
+      id: "Mengembangkan aplikasi kustom untuk klien yang memadukan aplikasi mobile Flutter, RESTful API Laravel, dan web admin dashboard terpusat."
     },
     achievements: {
       en: [
-        "Shipped multiple custom mobile applications and end-to-end ecosystems (Flutter mobile client + Laravel REST API + Web Admin Dashboard).",
-        "Managed the full product lifecycle: Figma UI slicing, database architecture (MySQL), secure authentication, and payment integrations.",
-        "Consistently delivered clean, maintainable architecture with robust error handling and smooth, fluid mobile performance and responsiveness."
+        "Developed custom cross-platform mobile applications using Flutter (Android & iOS) with clean architecture and responsive UI.",
+        "Built centralized web admin dashboards (Laravel) for data management, multi-role access control, and report visualization.",
+        "Designed and engineered secure RESTful APIs (Laravel & Sanctum) powering seamless data integration with Flutter mobile clients.",
+        "Managed end-to-end project lifecycles from MySQL database design and Figma UI slicing to system deployment."
       ],
       id: [
-        "Menyelesaikan berbagai aplikasi mobile kustom dan ekosistem menyeluruh (klien mobile Flutter + REST API Laravel + Dashboard Web Admin).",
-        "Mengelola seluruh siklus produk: slicing desain Figma, perancangan arsitektur database (MySQL), autentikasi aman, dan integrasi payment gateway.",
-        "Secara konsisten menghadirkan arsitektur bersih dan mudah dirawat dengan penanganan error yang andal serta performa mobile 60fps yang fluid."
+        "Mengembangkan aplikasi mobile kustom berbasis Flutter (Android & iOS) dengan arsitektur bersih dan antarmuka responsif.",
+        "Membangun web admin dashboard terpusat menggunakan Laravel untuk manajemen data, kontrol akses multi-role, dan visualisasi laporan.",
+        "Merancang dan mengimplementasikan RESTful API (Laravel & Sanctum) yang aman sebagai penyedia data utama bagi aplikasi mobile Flutter.",
+        "Mengelola seluruh alur proyek end-to-end dari perancangan skema database MySQL, slicing desain Figma, hingga integrasi sistem."
       ]
     },
     stack: ["Flutter", "Dart", "Laravel", "MySQL", "Clean Architecture", "RESTful API", "Payment Gateways"]
