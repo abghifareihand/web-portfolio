@@ -214,7 +214,8 @@ const rawProjectsData = [
     screenshots: [
       "/projects/overtime-app/screen1.png",
       "/projects/overtime-app/screen2.png",
-      "/projects/overtime-app/screen3.png"
+      "/projects/overtime-app/screen3.png",
+      "/projects/overtime-app/screen4.png"
     ],
     highlights: {
       en: [
@@ -301,7 +302,9 @@ const rawProjectsData = [
     screenshots: [
       "/projects/rekalaba-ppob/screen1.png",
       "/projects/rekalaba-ppob/screen2.png",
-      "/projects/rekalaba-ppob/screen3.png"
+      "/projects/rekalaba-ppob/screen3.png",
+      "/projects/rekalaba-ppob/screen4.png",
+      "/projects/rekalaba-ppob/screen5.png"
     ],
     highlights: {
       en: [
@@ -747,8 +750,7 @@ const rawProjectsData = [
       "/projects/sales-inventory-app/screen2.png",
       "/projects/sales-inventory-app/screen3.png",
       "/projects/sales-inventory-app/screen4.png",
-      "/projects/sales-inventory-app/screen5.png",
-      "/projects/sales-inventory-app/screen6.png"
+      "/projects/sales-inventory-app/screen5.png"
     ],
     highlights: {
       en: [
@@ -835,7 +837,8 @@ const rawProjectsData = [
     screenshots: [
       "/projects/nuset-app/screen1.png",
       "/projects/nuset-app/screen2.png",
-      "/projects/nuset-app/screen3.png"
+      "/projects/nuset-app/screen3.png",
+      "/projects/nuset-app/screen4.png"
     ],
     highlights: {
       en: [
