@@ -24,3 +24,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private Applications & Scratch Scripts
+my_applications/
+scratch/

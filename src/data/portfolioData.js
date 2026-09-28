@@ -1068,27 +1068,29 @@ const rawExperienceData = [
     period: "Sep 2024 - Present",
     role: "Mobile Developer",
     company: "Ignatia",
-    location: "Remote",
+    location: "Hybrid",
     type: { en: "Fulltime", id: "Penuh Waktu" },
     description: {
-      en: "Contributing to core mobile development, feature engineering, and hardware integrations for a flagship Point of Sale (POS) application and integrated merchant services.",
-      id: "Berkontribusi dalam pengembangan aplikasi mobile, rekayasa fitur, dan integrasi perangkat keras untuk aplikasi kasir Point of Sale (POS) unggulan dan layanan merchant terintegrasi."
+      en: "Contributing to core cross-platform mobile development, feature engineering, and hardware integrations for a flagship Point of Sale (POS) application and merchant services.",
+      id: "Berkontribusi dalam pengembangan aplikasi mobile cross-platform, rekayasa fitur, dan integrasi perangkat keras untuk aplikasi kasir Point of Sale (POS) unggulan dan layanan merchant terintegrasi."
     },
     achievements: {
       en: [
-        "Stabilized and optimized the production POS mobile application through systematic bug fixing, performance profiling, and refactoring.",
-        "Engineered an integrated PPOB (Payment Point Online Bank) module within the main app for bill payments and digital top-ups.",
-        "Implemented Dual-Screen presentation support for cashier terminals, enabling a synchronized real-time customer-facing display.",
-        "Integrated responsive Mobile WebViews for the customer CRM portal and backoffice administration systems."
+        "Application Development: Contributed to building and scaling a flagship cross-platform Point of Sale (POS) mobile application using Flutter and Dart.",
+        "API Integration & Security: Seamlessly integrated mobile apps with secure backend RESTful APIs and an integrated PPOB financial transaction module via Nicepay gateway.",
+        "Performance Optimization: Continuously optimized app performance, memory profiling, and resolved complex bugs to ensure smooth rendering and stability.",
+        "Feature Enrichment & Hardware: Integrated third-party hardware peripherals including Bluetooth ESC/POS thermal printers and Android Dual-Screen Customer Displays.",
+        "Cross-Functional Collaboration: Partnered closely with UI/UX designers, QA engineers, and backend developers through structured Agile sprints."
       ],
       id: [
-        "Menstabilkan dan mengoptimalkan aplikasi mobile POS produksi melalui perbaikan bug sistematis, profiling performa, dan refaktor kode.",
-        "Mengembangkan modul terintegrasi PPOB (Payment Point Online Bank) di aplikasi utama untuk pembayaran tagihan dan isi ulang digital.",
-        "Menerapkan dukungan tampilan Dual-Screen untuk terminal kasir, memungkinkan layar display pelanggan tersinkronisasi real-time.",
-        "Mengintegrasikan Mobile WebView responsif untuk portal CRM pelanggan dan sistem administrasi backoffice."
+        "Application Development: Berkontribusi dalam perancangan dan pengembangan aplikasi Point of Sale (POS) unggulan menggunakan Flutter & Dart.",
+        "API Integration & Security: Mengintegrasikan aplikasi dengan RESTful API backend dan modul PPOB/transaksi finansial aman via Nicepay gateway.",
+        "Performance Optimization: Mengoptimalkan performa aplikasi, mempercepat responsivitas, dan memastikan stabilitas melalui profiling memori serta perbaikan bug sistematis.",
+        "Feature Enrichment & Hardware: Mengintegrasikan modul hardware pihak ketiga (printer thermal Bluetooth ESC/POS & Android Dual-Screen Display).",
+        "Cross-Functional Collaboration: Berkolaborasi erat dalam sprint Agile bersama UI/UX designer, QA tester, dan tim backend."
       ]
     },
-    stack: ["Flutter", "Dart", "POS Terminal SDK", "Dual-Screen API", "Mobile WebViews", "REST API", "Git", "Postman", "Figma"]
+    stack: ["Flutter", "Dart", "POS Terminal SDK", "Dual-Screen API", "RESTful API", "Bluetooth ESC/POS", "Git", "Postman", "Figma", "Agile Sprints"]
   },
   {
     period: "Oct 2023 - Present",
@@ -1102,19 +1104,19 @@ const rawExperienceData = [
     },
     achievements: {
       en: [
-        "Developed custom cross-platform mobile applications using Flutter (Android & iOS) with clean architecture and responsive UI.",
-        "Built centralized web admin dashboards (Laravel) for data management, multi-role access control, and report visualization.",
-        "Designed and engineered secure RESTful APIs (Laravel & Sanctum) powering seamless data integration with Flutter mobile clients.",
-        "Managed end-to-end project lifecycles from MySQL database design and Figma UI slicing to system deployment."
+        "Application Development: Designed and built custom cross-platform Flutter mobile applications (Android & iOS) with Clean Architecture and responsive UI.",
+        "Backend & API Integration: Engineered secure RESTful APIs and centralized web admin dashboards (Laravel) with practical understanding of modern backend concepts (including Node.js).",
+        "Maintenance & Debugging: Proactively identified performance bottlenecks, conducted code refactoring, and deployed efficient fixes for application reliability.",
+        "Feature Enrichment: Integrated advanced third-party modules, push notification services (FCM), and complex JSON data structures with high security standards."
       ],
       id: [
-        "Mengembangkan aplikasi mobile kustom berbasis Flutter (Android & iOS) dengan arsitektur bersih dan antarmuka responsif.",
-        "Membangun web admin dashboard terpusat menggunakan Laravel untuk manajemen data, kontrol akses multi-role, dan visualisasi laporan.",
-        "Merancang dan mengimplementasikan RESTful API (Laravel & Sanctum) yang aman sebagai penyedia data utama bagi aplikasi mobile Flutter.",
-        "Mengelola seluruh alur proyek end-to-end dari perancangan skema database MySQL, slicing desain Figma, hingga integrasi sistem."
+        "Application Development: Membangun aplikasi mobile kustom berbasis Flutter (Android & iOS) dengan arsitektur bersih dan antarmuka responsif.",
+        "Backend & API Integration: Merancang RESTful API aman dan terstruktur serta web admin dashboard (Laravel) dengan pemahaman konsep backend modern (termasuk dasar Node.js).",
+        "Maintenance & Debugging: Mengidentifikasi bottleneck performa, refaktor arsitektur, dan menerapkan perbaikan kode efisien untuk stabilitas aplikasi.",
+        "Feature Enrichment: Mengintegrasikan third-party modules, push notifications (FCM), dan penanganan skema data JSON kompleks."
       ]
     },
-    stack: ["Flutter", "Dart", "Laravel", "MySQL", "Clean Architecture", "RESTful API", "Payment Gateways"]
+    stack: ["Flutter", "Dart", "Laravel", "Node.js Basics", "MySQL", "Clean Architecture", "RESTful API", "FCM", "Git"]
   },
   {
     period: "Nov 2023 - Feb 2024",
