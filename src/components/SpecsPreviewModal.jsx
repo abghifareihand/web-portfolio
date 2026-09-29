@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { X, CheckCircle2, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { GithubIcon } from './TechIcons';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -96,6 +96,19 @@ export default function SpecsPreviewModal({ project, onClose, onOpenCaseStudy })
               >
                 <GithubIcon size={15} />
                 <span>{t('specsModal.btnGithub')}</span>
+              </a>
+            )}
+
+            {project.liveDemo && project.liveDemo !== '#' && (
+              <a 
+                href={project.liveDemo} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="btn btn-secondary btn-sm specs-live-btn"
+                title="Visit Live Application"
+              >
+                <ExternalLink size={15} />
+                <span>{t('specsModal.btnLiveDemo') || "LIVE DEMO"}</span>
               </a>
             )}
 

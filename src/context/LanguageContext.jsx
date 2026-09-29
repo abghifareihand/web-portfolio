@@ -39,6 +39,7 @@ export const translations = {
       noResults: "No projects match your current filters.",
       resetFilters: "Reset Filters & Search",
       btnPreview: "PREVIEW",
+      btnLiveDemo: "LIVE DEMO",
       btnCaseStudy: "CASE STUDY",
       catAll: "ALL PROJECTS",
       catMobile: "MOBILE APPS",
@@ -53,6 +54,7 @@ export const translations = {
       archHighlights: "KEY ARCHITECTURAL HIGHLIGHTS",
       techStackTags: "TECHNOLOGY STACK & TAGS",
       btnGithub: "GITHUB",
+      btnLiveDemo: "LIVE DEMO",
       btnFullCaseStudy: "FULL CASE STUDY"
     },
     // Case Study Page
@@ -153,6 +155,7 @@ export const translations = {
       noResults: "Tidak ada proyek yang cocok dengan filter pencarian Anda.",
       resetFilters: "Reset Filter & Pencarian",
       btnPreview: "PRATINJAU",
+      btnLiveDemo: "LIVE DEMO",
       btnCaseStudy: "STUDI KASUS",
       catAll: "SEMUA PROYEK",
       catMobile: "APLIKASI MOBILE",
@@ -167,6 +170,7 @@ export const translations = {
       archHighlights: "SOROTAN ARSITEKTUR UTAMA",
       techStackTags: "TEKNOLOGI & TAG",
       btnGithub: "GITHUB",
+      btnLiveDemo: "LIVE DEMO",
       btnFullCaseStudy: "STUDI KASUS LENGKAP"
     },
     // Case Study Page

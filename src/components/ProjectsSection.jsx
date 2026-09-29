@@ -5,7 +5,8 @@ import {
   FilterX, 
   Eye, 
   ArrowUpRight,
-  ArrowUpDown 
+  ArrowUpDown,
+  ExternalLink 
 } from 'lucide-react';
 import { getProjectCategories, getProjectsData } from '../data/portfolioData';
 import { useLanguage } from '../context/LanguageContext';
@@ -145,78 +146,111 @@ export default function ProjectsSection({ onOpenSpecs, onOpenCaseStudy }) {
 
         {/* Projects Grid (GAMBAR 1) */}
         <div className="projects-grid">
-          {filteredProjects.map((project) => (
-            <article key={project.id} className="project-card modern-project-card">
-              {/* Card Cover Image with Badges */}
-              <div 
-                className="card-cover-container"
-                onClick={() => onOpenCaseStudy(project)}
-                title={t('projects.btnCaseStudy')}
-              >
-                <img 
-                  src={project.coverImage || `/projects/${project.id}/screen1.png`} 
-                  alt={`${project.title} Preview`}
-                  className="card-cover-img"
-                  loading="lazy"
-                />
+          {filteredProjects.map((project) => {
+            const hasLiveDemo = Boolean(project.liveDemo && project.liveDemo !== '#' && project.liveDemo.trim() !== '');
 
-                {/* Floating Top Badges */}
-                <div className="card-top-badges">
-                  <span className="card-badge-category">{project.categoryLabel}</span>
-                  <span className="card-badge-year">{project.year}</span>
-                </div>
-              </div>
-
-              {/* Card Content Body */}
-              <div className="card-body">
-                <h3 
-                  className="card-title"
-                  onClick={() => onOpenCaseStudy(project)}
-                >
-                  {project.title}
-                </h3>
-
-                <p className="card-summary">{project.summary}</p>
-
-                {/* Tech Tags */}
-                <div className="card-tags">
-                  {project.tags.slice(0, 4).map((tag) => (
-                    <span 
-                      key={tag} 
-                      className="tag-pill"
-                      onClick={(e) => { e.stopPropagation(); setSearchQuery(tag); }}
-                      title={`Filter by ${tag}`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Card Action Buttons (GAMBAR 1 FOOTER) */}
-              <div className="card-footer-actions">
-                <button
-                  type="button"
-                  className="card-action-btn specs-preview-btn"
-                  onClick={() => onOpenSpecs(project)}
-                  title={t('projects.btnPreview')}
-                >
-                  <Eye size={15} />
-                  <span>{t('projects.btnPreview')}</span>
-                </button>
-
-                <button
-                  type="button"
-                  className="card-action-btn case-study-action-btn"
+            return (
+              <article key={project.id} className="project-card modern-project-card">
+                {/* Card Cover Image with Badges */}
+                <div 
+                  className="card-cover-container"
                   onClick={() => onOpenCaseStudy(project)}
                   title={t('projects.btnCaseStudy')}
                 >
-                  <span>{t('projects.btnCaseStudy')}</span>
-                  <ArrowUpRight size={15} />
-                </button>
-              </div>
-            </article>
-          ))}
+                  <img 
+                    src={project.coverImage || `/projects/${project.id}/screen1.png`} 
+                    alt={`${project.title} Preview`}
+                    className="card-cover-img"
+                    loading="lazy"
+                  />
+
+                  {/* Floating Top Badges */}
+                  <div className="card-top-badges">
+                    <span className="card-badge-category">{project.categoryLabel}</span>
+                    <div className="card-top-badges-right">
+                      {hasLiveDemo && (
+                        <a 
+                          href={project.liveDemo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="card-badge-live"
+                          onClick={(e) => e.stopPropagation()}
+                          title="Open Live Web Application"
+                        >
+                          <span className="live-pulse-dot" />
+                          <span>LIVE DEMO</span>
+                          <ExternalLink size={11} />
+                        </a>
+                      )}
+                      <span className="card-badge-year">{project.year}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Content Body */}
+                <div className="card-body">
+                  <h3 
+                    className="card-title"
+                    onClick={() => onOpenCaseStudy(project)}
+                  >
+                    {project.title}
+                  </h3>
+
+                  <p className="card-summary">{project.summary}</p>
+
+                  {/* Tech Tags */}
+                  <div className="card-tags">
+                    {project.tags.slice(0, 4).map((tag) => (
+                      <span 
+                        key={tag} 
+                        className="tag-pill"
+                        onClick={(e) => { e.stopPropagation(); setSearchQuery(tag); }}
+                        title={`Filter by ${tag}`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Card Action Buttons (GAMBAR 1 FOOTER) */}
+                <div className="card-footer-actions">
+                  {hasLiveDemo ? (
+                    <a
+                      href={project.liveDemo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="card-action-btn live-demo-action-btn"
+                      title={t('projects.btnLiveDemo') || "LIVE DEMO"}
+                    >
+                      <ExternalLink size={14} />
+                      <span>{t('projects.btnLiveDemo') || "LIVE DEMO"}</span>
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      className="card-action-btn specs-preview-btn"
+                      onClick={() => onOpenSpecs(project)}
+                      title={t('projects.btnPreview')}
+                    >
+                      <Eye size={15} />
+                      <span>{t('projects.btnPreview')}</span>
+                    </button>
+                  )}
+
+                  <button
+                    type="button"
+                    className="card-action-btn case-study-action-btn"
+                    onClick={() => onOpenCaseStudy(project)}
+                    title={t('projects.btnCaseStudy')}
+                  >
+                    <span>{t('projects.btnCaseStudy')}</span>
+                    <ArrowUpRight size={15} />
+                  </button>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

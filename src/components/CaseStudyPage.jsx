@@ -151,7 +151,7 @@ export default function CaseStudyPage({ project, onBack, onOpenLightbox }) {
                   </div>
                 )}
 
-                {project.liveDemo && (
+                {project.liveDemo && project.liveDemo !== '#' && (
                   <a 
                     href={project.liveDemo} 
                     target="_blank" 
