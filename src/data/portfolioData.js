@@ -236,7 +236,7 @@ const rawProjectsData = [
       ]
     },
     github: "#",
-    liveDemo: "#"
+    liveDemo: "https://hris.abghifareihan.com"
   },
   {
     id: "fondaco-app",
@@ -507,7 +507,7 @@ const rawProjectsData = [
       ]
     },
     github: "#",
-    liveDemo: "#"
+    liveDemo: "https://pion.abghifareihan.com"
   },
   {
     id: "sales-inventory-app",
@@ -597,7 +597,7 @@ const rawProjectsData = [
       ]
     },
     github: "#",
-    liveDemo: "#"
+    liveDemo: "https://sales.abghifareihan.com"
   },
   {
     id: "rekalaba-ppob",
@@ -865,7 +865,7 @@ const rawProjectsData = [
       ]
     },
     github: "#",
-    liveDemo: "#"
+    liveDemo: "https://absensi.abghifareihan.com"
   },
   {
     id: "nuset-app",
